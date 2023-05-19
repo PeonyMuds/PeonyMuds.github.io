@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: white;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script>
+function changeColor(dot) {
+  if (dot.style.backgroundColor == "white") {
+    dot.style.backgroundColor = "yellow";
+  } else {
+    dot.style.backgroundColor = "white";
+  }
+}
+
+function changeBackgroundColor(color) {
+  document.body.style.backgroundColor = color;
+}
+
+function saveImage() {
+  html2canvas(document.body).then(function(canvas) {
+    var link = document.createElement('a');
+    link.href = canvas.toDataURL();
+    link.download = 'image.png';
+    link.click();
+  });
+}
+</script>
+
+<select onchange="changeBackgroundColor(this.value)">
+  <option value="#FFFFFF">White</option>
+  <option value="#FFB6C1">Light Pink</option>
+  <option value="#FFA07A">Light Salmon</option>
+  <option value="#20B2AA">Light Sea Green</option>
+  <option value="#87CEFA">Light Sky Blue</option>
+  <option value="#778899">Light Slate Gray</option>
+  <option value="#B0C4DE">Light Steel Blue</option>
+</select>
+
+<button onclick="saveImage()">Save Image</button>
+
+<table>
+  <tr>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+  <tr>
+  <tr>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+    <td><span class="dot" onclick="changeColor(this)"></span></td>
+  <tr>
