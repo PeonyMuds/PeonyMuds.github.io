@@ -2,8 +2,21 @@
 <html>
 <head>
 <style>
-body {
-  background-color: white;
+table {
+  border-collapse: separate;
+  border-spacing: 15px 0;
+}
+
+td {
+  padding: 4px 0px;
+}
+
+.square {
+  border: 5px solid black;
+  padding: 5px 5px;
+  width: 495px;
+  height: 340x;
+  background-color: #DF5162;
 }
 
 .dot {
@@ -21,15 +34,19 @@ body {
 
 <script>
 function changeColor(dot) {
-  if (dot.style.backgroundColor == "white") {
-    dot.style.backgroundColor = "yellow";
-  } else {
+  if (dot.style.backgroundColor == "yellow") {
     dot.style.backgroundColor = "white";
+  } else {
+    dot.style.backgroundColor = "yellow";
   }
 }
 
 function changeBackgroundColor(color) {
   document.body.style.backgroundColor = color;
+}
+
+function changeSquareColor(color) {
+  document.querySelector(".square").style.backgroundColor = color;
 }
 
 function saveImage() {
@@ -41,7 +58,15 @@ function saveImage() {
   });
 }
 </script>
+<h1>
+What is this?
+</h1>
+<h2>
+<p style="font-size: 22px">When it comes to 200 µL tips, which are not as hideous as those 10 µL ones but indeed are able to cause both mental and physical damage, they have two colors: white and yellow. Natrually, or maybe not so naturally, one would think that it would be so much better if someone could create some art from these tips especially when the brand of these tips is called ART TIPs.</p>
+</h2>
+<br>
 
+Change the backgourd color:
 <select onchange="changeBackgroundColor(this.value)">
   <option value="#FFFFFF">White</option>
   <option value="#FFB6C1">Light Pink</option>
@@ -51,10 +76,21 @@ function saveImage() {
   <option value="#778899">Light Slate Gray</option>
   <option value="#B0C4DE">Light Steel Blue</option>
 </select>
+<br>
+Change the types/brands of the tip boxes:
+<select onchange="changeSquareColor(this.value)">
+  <option value="#DF5162">Axygen®️ Red</option>
+  <option value="#3A6CBC">Thermo Scientific™ ART™ Blue</option>
+  <option value="#90508C">Thermo Scientific™ QSP™ Purple</option>
+</select>
 
 <button onclick="saveImage()">Save Image</button>
 
-<table>
+<br>
+<br>
+
+<div class="square">
+  <table>
   <tr>
     <td><span class="dot" onclick="changeColor(this)"></span></td>
     <td><span class="dot" onclick="changeColor(this)"></span></td>
@@ -167,3 +203,7 @@ function saveImage() {
     <td><span class="dot" onclick="changeColor(this)"></span></td>
     <td><span class="dot" onclick="changeColor(this)"></span></td>
   <tr>
+</div>
+
+</body>
+</html>
