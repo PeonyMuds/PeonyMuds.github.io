@@ -1,34 +1,159 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>S. Wei- Home</title>
+    <title>Shengnan Wei</title>
+ 
+    <style>
+    html {
+      font-size: 20px;
+    }
+    
+    table {
+      border-collapse: separate;
+      border-spacing: 15px 0;
+    }
+
+    body {
+      caret-color: transparent;
+    }
+   
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+      }
+      
+      ul.navbar top {
+        float: left;
+        text-decoration: none;
+      }
+
+      ul.navbar top a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      ul.navbar top a:hover {
+        background-color: #111;
+      }     
+
+      ul.navbar2 {
+        list-style-type: none;
+        margin: 20px;
+        padding: 20px;
+        overflow: hidden;
+        background-color: #33;
+      }
+
+      ul.navbar2 inpage {
+        float: none;
+        text-decoration: none;
+      }
+
+      ul.navbar2 inpage a {
+        display:block;
+        text-align: center;
+        padding: 14px px;
+        text-decoration: none;
+      }
+
+      ul.navbar2 inpage a:hover {
+        background-color: #111;
+      }
+
+      .container {
+        display: flex;
+      }
+
+      .left-column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        }
+
+      .right-column {
+        flex: 3;
+        padding: 0px 50px;
+        background-color: #ccc;
+      }
+           
+      .navbar-container {
+        display: flex;
+        justify-content: center;
+      }
+    
+    </style>
   </head>
-  <body>
+
+<body>
     <nav>
-      <ul>
-        <a href="#about">About</a></li>
-        <a href="#education">Education</a></li>
-        <a href="#research">Research</a></li>
+      <ul class="navbar">
+        <top><a href="#home">Home</a></top>
+        <top><a href="#about">Illustrations</a></top>
+        <top><a href="#services">Project: TipArt</a></top>
+        <top><a href="#contact">Acknowledgement</a></top>
       </ul>
     </nav>
-    <h1>S. Wei</h1>
-    <p>Welcome to my website!</p>
-    <h2 id="about">About Me</h2>
-    <p>Introduce yourself here.
-    I am a biomedical engineer who is interested in tissue engineering and regenerative medicine.
-    Myprevious work mainly involved biomaterials such as hydrogels. 
-    With a multidisciplinary background, I also carried out experiments about fermentation engineering and finite element analysis as well. 
-    My current project focused on human PSCs and MSCs.
-    </p>
-    <h2 id="education">Education</h2>
-    <ul>
-      <li>B.Eng from Beijing University of Chemical Technology</li>
-      <li>M.Eng from the Univeristy of Sydney</li>
-    </ul>
-    <h2 id="research">Research Experience</h2>
-    <ul>
-      <li>Research Assistant at ABC University</li>
-      <li>Research Intern at XYZ Corporation</li>
-    </ul>
-  </body>
+
+    <div class="container">
+      <div class="left-column">
+          <nav>
+            <ul class="navbar2">
+              <inpage><a href="#about">About</a></inpage><br>
+              <inpage><a href="#education">Education</a></inpage><br>
+              <inpage><a href="#research">Research</a></inpage><br>
+            </ul>
+          </nav>
+      </div>
+      <div class="right-column">
+        <h1>S. Wei</h1>
+      <p>Welcome to my website!</p>
+      <h2 id="about">About Me</h2>
+      <p>
+      I am a biomedical engineer and a PhD student who is interested in tissue engineering and regenerative medicine.<br>
+      My previous work mainly involved biomaterials such as hydrogels. 
+      With a multidisciplinary background, I also carried out experiments about fermentation engineering and finite element analysis as well. 
+      My current project focused on the differentiation of human PSCs and the modulation and quanlity analysis MSCs.
+      </p>
+      <h2 id="education">Education</h2>
+      <ul>
+        <table>
+          <td><p style="font-size: 20px; font-weight: bold">Aug. 2022 – present</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">The University of Macau</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">Macau SAR, China</p></td>
+          <tr>
+          <td></td>
+          <td>B. Eng. in Biomedical Engineering</td>
+          <td></td>
+          <tr>
+          <td><p style="font-size: 20px; font-weight: bold">Aug. 2020 – Feb. 2022</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">The University of Sydney</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">NSW, Australia</p></td>
+          <tr>
+          <td></td>
+          <td>M. Eng. in Biomedical Engineering</td>
+          <td></td>
+          <tr>
+          <td><p style="font-size: 20px; font-weight: bold">Aug. 2016 – Jul. 2020</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">Beijing University of Chemical Technology</p></td>
+          <td><p style="font-size: 20px; font-weight: bold">Beijing, China</p></td>
+          <tr>
+          <td></td>
+          <td>B. Eng. in Biomedical Engineering</td>
+          <td></td>
+          
+        </table>
+      </ul>
+      <h2 id="research">Projects</h2>
+      <ul>
+        <li>PSCs</li>
+        <li>MSCs</li>
+      </ul>
+      </div>
+    </div>
+</body>
 </html>
