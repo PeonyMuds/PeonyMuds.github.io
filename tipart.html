@@ -9,7 +9,7 @@ body {
 .dot {
   height: 25px;
   width: 25px;
-  background-color: white;
+  background-color: yellow;
   border-radius: 50%;
   display: inline-block;
 }
@@ -29,6 +29,17 @@ function changeColor(dot) {
 function changeBackgroundColor(color) {
   document.body.style.backgroundColor = color;
 }
+  
+function toggleColor(dot) {
+  if (dot.style.backgroundColor == "white") {
+    dot.style.backgroundColor = "yellow";
+  } else if (dot.style.backgroundColor == "yellow") {
+    dot.style.backgroundColor = "red";
+  } else {
+    dot.style.backgroundColor = "white";
+  }
+}
+  
 }
 </script>
 
