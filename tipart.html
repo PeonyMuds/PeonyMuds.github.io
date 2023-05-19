@@ -1,209 +1,253 @@
-<!DOCTYPE html>
 <html>
-<head>
-<style>
-table {
-  border-collapse: separate;
-  border-spacing: 15px 0;
-}
+  <head>
+    <title>Shengnan Wei</title>
+ 
+    <style>
+      html {
+        font-size: 20px;
+      }
 
-td {
-  padding: 4px 0px;
-}
+      table {
+        border-collapse: separate;
+        border-spacing: 15px 0;
+      }
 
-.square {
-  border: 5px solid black;
-  padding: 5px 5px;
-  width: 495px;
-  height: 340x;
-  background-color: #DF5162;
-}
+      td {
+        padding: 4px 0px;
+      }
 
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-}
-</style>
-</head>
-<body>
+      .square {
+        border: 5px solid black;
+        padding: 5px 5px;
+        width: 495px;
+        height: 340x;
+        background-color: #DF5162;
+      }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+      .dot {
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      body {
+        caret-color: transparent;
+      }
+   
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+      }
+      
+      ul.navbar top {
+        float: left;
+        text-decoration: none;
+      }
+
+      ul.navbar top a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      ul.navbar top a:hover {
+        background-color: #111;
+      }     
+
+      .container {
+        display: flex;
+      }
+
+      .left-column {
+        flex: 1;
+        display: flex;
+        padding: 0px 20px;
+        justify-content: right;
+        }
+
+      .right-column {
+        flex: 3;
+        padding: 0px 50px;
+        background-color: #ccc;
+      }
+              
+    </style>
+  </head>
 
 <script>
-function changeColor(dot) {
-  if (dot.style.backgroundColor == "yellow") {
-    dot.style.backgroundColor = "white";
-  } else {
-    dot.style.backgroundColor = "yellow";
+  function changeColor(dot) {
+    if (dot.style.backgroundColor == "yellow") {
+      dot.style.backgroundColor = "white";
+    } else {
+      dot.style.backgroundColor = "yellow";
+    }
   }
-}
 
-function changeBackgroundColor(color) {
-  document.body.style.backgroundColor = color;
-}
+  function changeBackgroundColor(color) {
+    document.body.style.backgroundColor = color;
+  }
 
-function changeSquareColor(color) {
-  document.querySelector(".square").style.backgroundColor = color;
-}
-
-function saveImage() {
-  html2canvas(document.body).then(function(canvas) {
-    var link = document.createElement('a');
-    link.href = canvas.toDataURL();
-    link.download = 'image.png';
-    link.click();
-  });
-}
+  function changeSquareColor(color) {
+    document.querySelector(".square").style.backgroundColor = color;
+  }
 </script>
-<h1>
-What is this?
-</h1>
-<h2>
-<p style="font-size: 22px">When it comes to 200 µL tips, which are not as hideous as those 10 µL ones but indeed are able to cause both mental and physical damage, they have two colors: white and yellow. Natrually, or maybe not so naturally, one would think that it would be so much better if someone could create some art from these tips especially when the brand of these tips is called ART TIPs.</p>
-</h2>
-<br>
 
-Change the backgourd color:
-<select onchange="changeBackgroundColor(this.value)">
-  <option value="#FFFFFF">White</option>
-  <option value="#FFB6C1">Light Pink</option>
-  <option value="#FFA07A">Light Salmon</option>
-  <option value="#20B2AA">Light Sea Green</option>
-  <option value="#87CEFA">Light Sky Blue</option>
-  <option value="#778899">Light Slate Gray</option>
-  <option value="#B0C4DE">Light Steel Blue</option>
-</select>
-<br>
-Change the types/brands of the tip boxes:
-<select onchange="changeSquareColor(this.value)">
-  <option value="#DF5162">Axygen®️ Red</option>
-  <option value="#3A6CBC">Thermo Scientific™ ART™ Blue</option>
-  <option value="#90508C">Thermo Scientific™ QSP™ Purple</option>
-</select>
 
-<button onclick="saveImage()">Save Image</button>
+<body>
+    <nav>
+      <ul class="navbar">
+        <top><a href="./index.html">Home</a></top>
+        <top><a href="./illustrations.html">Illustrations</a></top>
+        <top><a href="./tipart.html">Project: TipArt</a></top>
+        <top><a href="./acknowledgement.html">Acknowledgement</a></top>
+      </ul>
+    </nav>
+    
+    <div class="container">
+      <div class="left-column">
 
-<br>
-<br>
-
-<div class="square">
-  <table>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
-  <tr>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-    <td><span class="dot" onclick="changeColor(this)"></span></td>
-  <tr>
+<div>
+        <h2>About</h2>
+        <p style="font-size: 20px">When it comes to 200 µL tips, which are not as hideous as those 10 µL ones but indeed are able to cause both mental and physical damage, they have two colours: white and yellow. Naturally, or maybe not so naturally, one would think that it would be so much better if someone could create some art from these tips, especially when the brand of these tips is called ART TIPs.</p>
 </div>
 
+      </div>
+      <div class="right-column">
+        <h2>The Tool</h2>
+        Click to insert or change the color of the tips.<br>
+        Change the types/brands of tip boxes:
+        <select onchange="changeSquareColor(this.value)">
+          <option value="#DF5162">Axygen®️ Red</option>
+          <option value="#3A6CBC">Thermo Scientific™ ART™ Blue</option>
+          <option value="#90508C">Thermo Scientific™ QSP™ Purple</option>
+        </select>
+        <br>
+        <br>
+
+        <div class="square">
+          <table>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+            <tr>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+              <td><span class="dot" onclick="changeColor(this)"></span></td>
+            <tr>
+        </div>
+	     
+      </div>
+    </div>
 </body>
 </html>
