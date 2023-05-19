@@ -17,8 +17,6 @@ body {
 </head>
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
 <script>
 function changeColor(dot) {
   if (dot.style.backgroundColor == "white") {
@@ -31,14 +29,6 @@ function changeColor(dot) {
 function changeBackgroundColor(color) {
   document.body.style.backgroundColor = color;
 }
-
-function saveImage() {
-  html2canvas(document.body).then(function(canvas) {
-    var link = document.createElement('a');
-    link.href = canvas.toDataURL();
-    link.download = 'image.png';
-    link.click();
-  });
 }
 </script>
 
@@ -50,9 +40,7 @@ function saveImage() {
   <option value="#87CEFA">Light Sky Blue</option>
   <option value="#778899">Light Slate Gray</option>
   <option value="#B0C4DE">Light Steel Blue</option>
-</select>
-
-<button onclick="saveImage()">Save Image</button>
+  </select>
 
 <table>
   <tr>
