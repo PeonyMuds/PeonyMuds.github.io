@@ -27,7 +27,7 @@
       .dot {
         height: 25px;
         width: 25px;
-        background-color: lightgray;
+        background-color: #FBFBFB;
         border-radius: 50%;
         display: inline-block;
       }
@@ -77,14 +77,36 @@
         padding: 0px 50px;
         background-color: #ccc;
       }
-              
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .gallery-item {
+      position: relative;
+      width: 200px;
+      margin: 10px;
+      overflow: hidden;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-item .comment {
+      text-align: center;
+      font-style: italic;
+      margin-top: 5px;
+    }
     </style>
   </head>
 
 <script>
   function changeColor(dot) {
     if (dot.style.backgroundColor == "yellow") {
-      dot.style.backgroundColor = "lightgray";
+      dot.style.backgroundColor = "#FBFBFB";
     } else {
       dot.style.backgroundColor = "yellow";
     }
@@ -246,7 +268,20 @@
               <td><span class="dot" onclick="changeColor(this)"></span></td>
             <tr>
         </div>
-	     
+	<h2>Samples</h2>
+	  <div class="gallery">
+	    <div class="gallery-item">
+	      <img src="assets/tipart/work/FBS.png" alt="FBS">
+	      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
+	    </div>
+	    <div class="gallery-item">
+	      <img src="assets/tipart/work/FBS.png" alt="FBS">
+	      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
+	    </div>
+		  
+	    <!-- Add more gallery items as needed -->
+
+	  </div>	
       </div>
     </div>
 </body>
