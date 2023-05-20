@@ -25,107 +25,23 @@
     }
 
     .gallery-item .comment {
-      position: absolute;
-      bottom: -100%;
-      left: 0;
-      width: 100%;
       text-align: center;
       font-style: italic;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px;
-      transition: bottom 0.3s;
-    }
-
-    .gallery-item:hover .comment {
-      bottom: 0;
-    }
-
-    .gallery-item .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .gallery-item:hover .overlay {
-      opacity: 1;
-    }
-
-    .gallery-item .overlay-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .gallery-item:hover .overlay-content {
-      opacity: 1;
-    }
-
-    .gallery-item .overlay-content button {
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s;
-    }
-
-    .gallery-item .overlay-content button:hover {
-      background-color: #555;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
   <div class="gallery">
     <div class="gallery-item">
-      <img src=".assets/tipart/work/FBS.png" alt="FBS">
-      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
-      <div class="overlay">
-        <div class="overlay-content">
-          <button>Try this one!</button>
-        </div>
-      </div>
+      <img src="assets/tipart/work/FBS.png" alt="FBS">
+      <div class="comment">1</div>
     </div>
     <div class="gallery-item">
       <img src="assets/tipart/work/FBS.png" alt="FBS">
-      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
-      <div class="overlay">
-        <div class="overlay-content">
-          <button>Try this one!</button>
-        </div>
-      </div>
-    </div>    
-    
-    <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/PeonyMuds/PeonyMuds.github.io/blob/7763b119fec298d1f561331b4a24995aa53e1e24/.assets/tipart/work/FBS.png" alt="FBS">
-      <div class="comment">Comment for Image 2</div>
-      <div class="overlay">
-        <div class="overlay-content">
-          <button>View Details</button>
-        </div>
-      </div>
+      <div class="comment">2</div>
     </div>
-    
-    <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/PeonyMuds/PeonyMuds.github.io/blob/7763b119fec298d1f561331b4a24995aa53e1e24/assets/tipart/work/FBS.png" alt="FBS">
-      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
-      <div class="overlay">
-        <div class="overlay-content">
-          <button>Try this one!</button>
-        </div>
-      </div>
-    </div>
-    
+    <!-- Add more gallery items as needed -->
   </div>
 </body>
 </html>
-
