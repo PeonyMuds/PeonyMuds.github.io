@@ -87,16 +87,16 @@
 <body>
   <div class="gallery">
     <div class="gallery-item">
-      <img src="image1.jpg" alt="Image 1">
-      <div class="comment">Comment for Image 1</div>
+      <img src="./.assets/tipart/work/FBS.png" alt="FBS">
+      <div class="comment">Would it still be serum-free if your tips say FBS?</div>
       <div class="overlay">
         <div class="overlay-content">
-          <button>View Details</button>
+          <button>Try this one!</button>
         </div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="image2.jpg" alt="Image 2">
+      <img src="./.assets/tipart/work/FBS.png" alt="FBS">
       <div class="comment">Comment for Image 2</div>
       <div class="overlay">
         <div class="overlay-content">
