@@ -18,6 +18,10 @@
     }
    
       ul.navbar {
+        position: fixed;
+        top: 5px;
+        z-index: 99;
+        width: 100%;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -41,6 +45,7 @@
       ul.navbar top a:hover {
         background-color: #111;
       }     
+   
 
       ul.navbar2 {
         list-style-type: none;
@@ -76,8 +81,10 @@
         }
 
       .container {
+        padding-top:30px;
         display: flex;
       }
+
 
       .left-column {
         flex: 1;
@@ -86,21 +93,25 @@
         justify-content: center;
         }
 
+      .left-column {
+        flex: 1;
+        width: auto;
+        padding: 0px 20px;
+        justify-content: right;
+        }
+
       .right-column {
         flex: 3;
+        margin-left: flex;
         padding: 0px 50px;
         background-color: #ccc;
-      }
-           
-      .navbar-container {
-        display: flex;
-        justify-content: center;
       }
     
     </style>
   </head>
 
 <body>
+	<div>
     <nav>
       <ul class="navbar">
         <top><a href="./index.html">Home</a></top>
@@ -110,17 +121,38 @@
         <top><a href="./acknowledgement.html">Acknowledgement</a></top>
       </ul>
     </nav>
+    </div>
 
     <div class="container">
       <div class="left-column">
+          <div>
           <nav>
             <ul class="navbar2">
               <inpage><a href="#about">About</a></inpage><br>
               <inpage><a href="#education">Education</a></inpage><br>
               <inpage><a href="#research">Research</a></inpage><br>
             </ul>
+                      <div style="padding-top: 20px;">
+              <div style="text-align:center;">
+                <img src="assets/headerfooter/boat.png" alt="Boat" style="width:80px;height:4px;">
+              </div>
+              <div style="text-align:center;">
+                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">风休住，蓬舟吹取三山去.</p>
+              </div>
+              <div style="text-align:center;">
+                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">Let the wind elevate me to the moon.</p>
+              </div>
+              <div style="text-align:center;">
+                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">&copy; 2023 WEI Shengnan</p>
+              </div>
+  		</div>
           </nav>
+          </div>
+          
+
+        
       </div>
+           
       <div class="right-column">
         <h1>WEI Shengnan</h1>
       <p>Welcome to my website!</p>
