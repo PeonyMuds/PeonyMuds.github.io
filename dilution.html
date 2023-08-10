@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="shortcut icon" href="assets/icon.ico"/>
-    <title>WEI Shengnan: Illustrations</title>
+    <title>WEI Shengnan: DiluHelper</title>
  
     <style>
       html {
@@ -142,7 +142,7 @@
 
           <div>
           <h2>DiluHelper</h2>
-          <p style="font-size: 20px">Contents.</p>
+          <p style="font-size: 20px">This is a calculator for my own use to calculate how much stock solution was required.</p>
 
           <div style="padding-top: 20px;">
               <footer>
@@ -164,8 +164,136 @@
 
         </div>
         <div class="right-column">
-          <h2>Title</h2>
-          <p style="font-size: 20px">Comments here.</p>
+          <h2>DiluHelper (Mole/Molar Version)</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dilution Calculator</title>
+</head>
+<body>
+    <form id="calculator">
+        <label for="stockConcentration">Stock Concentration:</label><br>
+        <input type="number" id="stockConcentration" name="stockConcentration" step="any">
+        <select id="stockConcentrationUnit" name="stockConcentrationUnit">
+            <option value="M">M</option>
+            <option value="mM" selected>mM</option>
+            <option value="μM">μM</option>
+            <option value="nM">nM</option>
+        </select><br><br>
+
+        <label for="workingConcentration">Working Concentration:</label><br>
+        <input type="number" id="workingConcentration" name="workingConcentration" step="any">
+        <select id="workingConcentrationUnit" name="workingConcentrationUnit">
+            <option value="M">M</option>
+            <option value="mM">mM</option>
+            <option value="μM" selected>μM</option>
+            <option value="nM">nM</option>
+        </select><br><br>
+
+        <label for="finalVolume">Final Volume:</label><br>
+        <input type="number" id="finalVolume" name="finalVolume" step="any">
+        <select id="finalVolumeUnit" name="finalVolumeUnit">
+            <option value="L">L</option>
+            <option value="mL" selected>mL</option>
+            <option value="µL">µL</option>
+        </select><br><br>
+
+        <label for="requiredAmount">Required Amount:</label><br>
+        <input type="number" id="requiredAmount" name="requiredAmount" step="any">
+        <select id="requiredAmountUnit" name="requiredAmountUnit">
+            <option value="L">L</option>
+            <option value="mL">mL</option>
+            <option value="µL" selected>µL</option>
+        </select><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <p id="result"></p>
+
+    <script type='text/javascript'>
+        const calculator = document.getElementById('calculator');
+        const result = document.getElementById('result');
+
+        calculator.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let stockConcentration = parseFloat(calculator.stockConcentration.value);
+            let workingConcentration = parseFloat(calculator.workingConcentration.value);
+            let finalVolume = parseFloat(calculator.finalVolume.value);
+            let requiredAmount = parseFloat(calculator.requiredAmount.value);
+
+            const stockConcentrationUnit = calculator.stockConcentrationUnit.value;
+            const workingConcentrationUnit = calculator.workingConcentrationUnit.value;
+            const finalVolumeUnit = calculator.finalVolumeUnit.value;
+            const requiredAmountUnit = calculator.requiredAmountUnit.value;
+
+            if (stockConcentration) {
+                stockConcentration *= getConversionFactor(stockConcentrationUnit);
+            }
+            if (workingConcentration) {
+                workingConcentration *= getConversionFactor(workingConcentrationUnit);
+            }
+            if (finalVolume) {
+                finalVolume *= getConversionFactor(finalVolumeUnit);
+            }
+            if (requiredAmount) {
+                requiredAmount *= getConversionFactor(requiredAmountUnit);
+            }
+
+            if (!stockConcentration && workingConcentration && finalVolume && requiredAmount) {
+                stockConcentration = (requiredAmount / finalVolume) * workingConcentration;
+                calculator.stockConcentration.value = (stockConcentration / getConversionFactor(stockConcentrationUnit)).toFixed(2);
+                return;
+            }
+
+            if (stockConcentration && !workingConcentration && finalVolume && requiredAmount) {
+                workingConcentration = (requiredAmount / finalVolume) * stockConcentration;
+                calculator.workingConcentration.value = (workingConcentration / getConversionFactor(workingConcentrationUnit)).toFixed(2);
+                return;
+            }
+
+            if (stockConcentration && workingConcentration && !finalVolume && requiredAmount) {
+                finalVolume = requiredAmount / (workingConcentration / stockConcentration);
+                calculator.finalVolume.value = (finalVolume / getConversionFactor(finalVolumeUnit)).toFixed(2);
+                return;
+            }
+
+            if (stockConcentration && workingConcentration && finalVolume && !requiredAmount) {
+                requiredAmount = (finalVolume * workingConcentration) / stockConcentration;
+                calculator.requiredAmount.value = (requiredAmount / getConversionFactor(requiredAmountUnit)).toFixed(2);
+                return;
+            }
+
+            result.innerHTML = 'Please fill in any three of the four values. <br><br> Please leave the value you need to calculate blank. If you find that all the spaces on the form have been filled.<br><br> This is a rather dummy calculator orz.';
+        });
+
+        function getConversionFactor(unit) {
+            switch (unit) {
+                case 'M':
+                    return 1;
+                case 'mM':
+                    return 0.001;
+                case 'μM':
+                    return 0.000001;
+                case 'nM':
+                    return 0.000000001;
+                case 'L':
+                    return 1;
+                case 'mL':
+                    return 0.001;
+                case 'µL':
+                    return 0.000001;
+                default:
+                    return 1;
+            }
+        }
+    </script>
+</body>
+</html>
+
+          
         </div>
       </div>
   </body>
