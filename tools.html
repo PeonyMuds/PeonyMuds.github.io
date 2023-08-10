@@ -115,6 +115,28 @@
       button:hover {
         background-color: #f0f0f0;
       }
+      
+      .image-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .image-container img {
+        border: 2px solid black;
+        margin-right: 10px;
+        transition: transform 0.2s;
+      }
+      .image-container a {
+        color: black;
+        text-decoration: none;
+      }
+      .image-container a:hover img {
+        border-color: red;
+        transform: scale(1.1);
+      }
+      .comment-title {
+        font-weight: bold;
+      }
                
     </style>
   </head>
@@ -141,8 +163,8 @@
         <div class="left-column">
 
           <div>
-          <h2>Tools</h2>
-          <p style="font-size: 20px">Contents.</p>
+          <h2>Tools and Gadgets</h2>
+          <p style="font-size: 20px">I created some gadgets for my own convenience and I published some of them here.</p>
 
           <div style="padding-top: 20px;">
               <footer>
@@ -164,8 +186,23 @@
 
         </div>
         <div class="right-column">
-          <h2>Title</h2>
-          <p style="font-size: 20px">Comments here.</p>
+          <h2>Tool List</h2>
+          <div class="image-container">
+            <a href="./dilution.html">
+              <img src="assets/tools/Dlhp.png" alt="Dilution Calculator: DiluHelper" width="200">
+            </a>
+            <a href="https://www.example.com/image1">
+              <p><span class="comment-title">DiluHelper:</span> A small tool that helps quickly calculate how much stock solution of chemicals and drugs is needed during dilution.</p>
+            </a>
+          </div>
+          <div class="image-container">
+            <a href="./dilution.html">
+              <img src="assets/tools/tpat.png" alt="Project: TipArt" width="200">
+            </a>
+            <a href="./tipart.html">
+              <p><span class="comment-title">TipArt:</span> A rather clumsy but funny gadget that helps to design the patterns formed by yellow and white 200 µL pipette tips.</p>
+            </a>
+          </div>
         </div>
       </div>
   </body>
