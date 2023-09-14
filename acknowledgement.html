@@ -23,10 +23,6 @@
       }
         
       ul.navbar {
-        position: fixed;
-        top: 5px;
-        z-index: 99;
-        width: 100%;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -38,7 +34,6 @@
         float: left;
         text-decoration: none;
       }
-
       ul.navbar top a {
         display: block;
         color: white;
@@ -46,29 +41,30 @@
         padding: 14px 16px;
         text-decoration: none;
       }
-
       ul.navbar top a:hover {
         background-color: #111;
       }     
-
+  
       .container {
-        padding-top:30px;
         display: flex;
       }
-
       .left-column {
         flex: 1;
-        width: auto;
+        display: flex;
         padding: 0px 20px;
-        justify-content: right;
+        justify-content: center;
         }
-
       .right-column {
         flex: 3;
-        margin-left: flex;
         padding: 0px 50px;
         background-color: #ccc;
       }
+           
+      .navbar-container {
+        display: flex;
+        justify-content: center;
+      }
+
       .gallery {
         display: flex;
         flex-wrap: wrap;
