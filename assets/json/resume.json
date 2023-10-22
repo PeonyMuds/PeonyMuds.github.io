@@ -1,98 +1,61 @@
 {
   "basics": {
-    "name": "WEI Shengnan",
+    "name": "Albert Einstein",
+    "label": "Scientist",
     "image": "",
-    "email": "yc27635@umac.mo",
-    "phone": "",
-    "url": "",
-    "summary": "",
+    "email": "albert@einstein.de",
+    "phone": "(912) 123-4567",
+    "url": "https://alshedivat.github.io/al-folio/",
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "",
-      "countryCode": "",
-      "region": ""
+      "address": "2712 Broadway St",
+      "postalCode": "CA 94115",
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "California"
     },
     "profiles": [
       {
-        "network": "",
-        "username": "",
-        "url": ""
+        "network": "Twitter",
+        "username": "AlbertEinstein",
+        "url": "https://twitter.com/AlbertEinstein"
       }
     ]
   },
   "work": [
     {
-      "name": "",
-      "position": "",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
+      "name": "Institute for Advanced Study, Princeton University",
+      "position": "Professor of Theoretical Physics",
+      "url": "https://example.com",
+      "startDate": "1933-01-01",
+      "endDate": "1955-01-01",
+      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
       "highlights": [
-        ""
+        "Relativity"
       ]
     }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "The University of Macau, Macau SAR, China",
-      "url": "https://www.um.edu.mo/",
-      "area": "Biomedical Sciences",
-      "studyType": "Ph.D. student",
-      "startDate": "Aug. 2022",
-      "endDate": "",
+      "institution": "University of Zurich, Zurich, Switzerland",
+      "url": "https://www.uzh.ch/",
+      "area": "Software Development",
+      "studyType": "PhD",
+      "startDate": "1905-01-01",
+      "endDate": "1905-01-01",
       "score": "",
       "courses": [
-        ""
-      ]
-    }
-    {
-      "institution": "The University of Sydney, Sydney, NSW, Australia",
-      "url": "https://www.sydney.edu.au/",
-      "area": "Biomedical Engineering",
-      "studyType": "M. Eng.",
-      "startDate": "Aug. 2020",
-      "endDate": "Feb. 2022",
-      "score": "",
-      "courses": [
-        ""
-      ]
-    }
-    {
-      "institution": "Beijing University of Chemical Technology, Beijing, China",
-      "url": "https://www.buct.edu.cn/main.htm",
-      "area": "Biomedical Engineering",
-      "studyType": "B. Eng.",
-      "startDate": "Aug. 2016",
-      "endDate": "Jul. 2020",
-      "score": "",
-      "courses": [
-        ""
+        "Theory of Relativity"
       ]
     }
   ],
   "awards": [
     {
-      "title": "",
-      "date": "",
-      "awarder": "",
-      "summary": ""
-    }
-  ],
-  "projects": [
-    {
-      "title":"Regulation of the early fate determination of pluripotent stem cells and its impact on the functions of the specialized descendants."
-    }
-    {
-      "title":"Quality control of immunomodulation abilities of MSCs."
-    }
-    {
-      "title":"Tissue-engineering-oriented applications of biomaterials."
-    }
-    {
-      "title":"Finite element analysis as a useful tool to investigate micro- and macro-scopic biomechanics and biophysics."
+      "title": "Nobel Prize in Physics",
+      "date": "1921-11-01",
+      "awarder": "Royal Swedish Academy of Sciences",
+      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
     }
   ],
   "certificates": [],
@@ -100,7 +63,7 @@
   "skills": [],
   "languages": [
     {
-      "language": "Chinese",
+      "language": "German",
       "fluency": "Native speaker"
     },
     {
@@ -110,4 +73,5 @@
   ],
   "interests": [],
   "references": [],
+  "projects": []
 }

@@ -1,12 +1,10 @@
-- title: General Information
+- title: Basics
   type: map
   contents:
     - name: Full Name
-      value: Albert me
-    - name: Date of Birth
-      value: 14th March 1879
+      value: WEI Shengnan
     - name: Languages
-      value: English, German
+      value: Mandarin Chinese, English
 
 - title: Education
   type: time_table
