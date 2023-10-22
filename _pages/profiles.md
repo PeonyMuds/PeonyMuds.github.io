@@ -3,8 +3,8 @@ layout: profiles
 permalink: /people/
 title: people
 description: members of the lab or group
-nav: true
-nav_order: 6
+nav: false # change this to make this present or absent on navbar
+nav_order: 97
 
 profiles:
   # if you want to include more than one profile, just replicate the following block
