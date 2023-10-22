@@ -73,5 +73,10 @@
   ],
   "interests": [],
   "references": [],
-  "projects": [],
+  "projects": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ]
   }
