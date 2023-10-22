@@ -120,7 +120,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:  # blog_name will be displayed in your blog page; blog can be disabled on _config.yml by leaving the blog_name line empty
+blog_name: "" # blog_name will be displayed in your blog page; blog can be disabled on _config.yml by leaving the blog_name as empty string
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: a simple whitespace theme for academics
 permalink: /blog/:year/:title/
