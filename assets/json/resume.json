@@ -73,4 +73,15 @@
   ],
   "interests": [],
   "references": [],
-  "projects":[] 
+  "projects":
+  [
+    {
+      "name": "bbbbb",
+      "description": "",
+      "url": "",
+      "keywords": [
+        ""
+      ]
+    }
+  ],
+  }
