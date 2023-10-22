@@ -30,6 +30,10 @@ $grey-900:            #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+$inkblue-color: #006B88 !default;
+$inkblue-color-dark: darken($inkblue-color, 15%);
+$inkblue-color-light: lighten($inkblue-color, 15%);
+
 // Theme colors
 
 $code-bg-color-light:     rgba($purple-color, 0.05);
