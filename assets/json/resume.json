@@ -35,6 +35,7 @@
       ]
     }
   ],
+<<<<<<< HEAD
   "volunteer": [
     {
       "organization": "People's Climate March",
@@ -51,12 +52,22 @@
     {
       "institution": "University of Zurich, Zurich, Switzerland",
       "location": "Zurich, Switzerland",
+=======
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University of Zurich, Zurich, Switzerland",
+>>>>>>> 7f6fbbdf (Initial commit)
       "url": "https://www.uzh.ch/",
       "area": "Software Development",
       "studyType": "PhD",
       "startDate": "1905-01-01",
       "endDate": "1905-01-01",
+<<<<<<< HEAD
       "score": "10",
+=======
+      "score": "",
+>>>>>>> 7f6fbbdf (Initial commit)
       "courses": [
         "Theory of Relativity"
       ]
@@ -67,6 +78,7 @@
       "title": "Nobel Prize in Physics",
       "date": "1921-11-01",
       "awarder": "Royal Swedish Academy of Sciences",
+<<<<<<< HEAD
       "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
       "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
     }
@@ -148,15 +160,27 @@
       ]
     }
   ],
+=======
+      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+    }
+  ],
+  "certificates": [],
+  "publications": [],
+  "skills": [],
+>>>>>>> 7f6fbbdf (Initial commit)
   "languages": [
     {
       "language": "German",
       "fluency": "Native speaker"
+<<<<<<< HEAD
       "icon":""
+=======
+>>>>>>> 7f6fbbdf (Initial commit)
     },
     {
       "language": "English",
       "fluency": "Fluent"
+<<<<<<< HEAD
       "icon":""
     }
   ],
@@ -195,3 +219,11 @@
     }
   ]
 }
+=======
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": []
+}
+>>>>>>> 7f6fbbdf (Initial commit)
