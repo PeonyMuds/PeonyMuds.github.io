@@ -21,6 +21,14 @@
       institution: <a href="https://www.buct.edu.cn/">Beijing University of Chemical Technology</a>, Beijing, China
       year: Aug. 2016 – Jul. 2020
 
+- title: conference presentations
+  type: list
+  contents:
+    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element method, <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
+    - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023"
+    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element analysis, <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
+    - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022"
+
 - title: ongoing projects
   type: nested_list
   contents:
@@ -48,12 +56,5 @@
       items: 
         - This study explores hydrogels, a type of biomaterial with excellent biocompatibility and easy preparation, as potential carriers for cell therapy and 3D cell culture scaffolds. We used a hydrogel made from dibenzaldehyde-terminated poly (ethylene-glycol) (DF-PEG) and glycol chitosan (GC), which is self-healing, injectable, and quickly prepared. The hydrogel’s adaptability as a 3D cell culture medium was tested by adjusting its mechanical strength to find ideal conditions for different tissue cells. This research contributes to the development of universal theories for 3D culture based on hydrogels.
 
-- title: conference presentations
-  type: list
-  contents:
-    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element method, <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
-    - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023"
-    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element analysis, <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
-    - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022"
 
 
