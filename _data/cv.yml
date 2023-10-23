@@ -1,18 +1,24 @@
 - title: basics
   type: map
   contents:
-    - name: Name
+    - name: Full Name
       value: WEI Shengnan
-    - name: E-mail
-      value: wei.shengnan@connect.umac.mo; SWei.BioMed@outlook.com
+    - name: Languages
+      value: Mandarin Chinese, English
 
-- title: education
+- title: Education
   type: time_table
   contents:
-    - title: Ph.D. student in Biomedical Science.
-      institution: <a href="https://www.um.edu.mo/">The University of Macau</a>, Macau SAR, China
-      year: Aug.2020 - present
-
+    - title: PhD
+      institution: University of Zurich, Zurich, Switzerland
+      year: 1905
+      description:
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
     - title: Federal teaching diploma
       institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
       year: 1900
@@ -20,37 +26,70 @@
         - Description 1.
         - Description 2.
 
-- title: ongoing projects
+- title: Experience
+  type: time_table
+  contents:
+    - title: Professor of Theoretical Physics
+      institution: Institute for Advanced Study, Princeton University
+      year: 1933 - 1955
+      description:
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
+    - title: Visiting Professor
+      institution: California Institute of Technology, Pasadena, California, US
+      year: 1933
+      description:
+        - Description 1.
+        - Description 2.
+
+    - title: Director
+      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
+      year: 1917-1933
+
+    - title: Professor of Theoretical Physics
+      institution: Karl-Ferdinand University, Prague, Czechoslovakia
+      year: 1911 - 1917
+      description:
+
+    - title: Associate Professor of Theoretical Physics
+      institution: University of Zurich, Zurich, Switzerland
+      year: 1909 - 1911
+
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
+      year: 2015-now
+      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 1921
+      items: 
+        - Nobel Prize in Physics 
+        - Matteucci Medal
+    - year: 2029
+      items: 
+        - Max Planck Medal
+
+- title: Academic Interests
   type: nested_list
   contents:
-    - title: Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells.
+    - title: Topic 1.
       items: 
-        - Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
-      
-    - title: Research on Key Pathways of <i>In Vitro</i> Induction and <i>In Vivo</i> Genesis of MSCs
+        - Description 1.
+        - Description 2.
+    - title: Topic 2.
       items:
-        - This study aims to develop a chemically defined method for obtaining mesenchymal stem cells (MSCs) from pluripotent stem cells (PSCs) through different germ layers and investigates the key components in the traditional serum culture medium that are essential for <i>in vitro</i> induction of MSCs.
+        - Description 1.
+        - Description 2.
 
-    - title: Effect of Culture Conditions on Therapeutic Immunomodulation Ability of MSCs: A QC Study
-      items:
-        - We want to explore what pathways and regulatory mechanisms ultimately affect the therapeutic efficacy of MSCs, especially their immune regulatory ability and <i>in vivo</i> survival after transplantation.<br>
-        This research is part of the project under the National Key R&D Program led by Prof. Xu Ren-he.
-
-    - title: FEA Insights Into the Mechanics of hPSC Colonies
-      items:
-        -  Human PSC colonies exhibit a unique epithelial-mesenchymal gradient of morphology from the periphery to the centre, which reflects a complex interplay of the microenvironment, signalling pathways, cell adhesion, and mechanisms. We aim to employ finite element analysis to establish an <i>in silico</i> platform that can overcome the limitations of traditionally used and technically challenged traction force microscopy, in order to investigate the mechanical properties of pluripotent stem cell colonies and understand the reasons for such interesting morphology.
-
-- title: finished projects
-  type: nested_list
-  contents:
-    - title: Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells.
-      items: 
-        - Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
-
-- title: conference presentations
+- title: Other Interests
   type: list
   contents:
-    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element method", <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023  
-    - <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023
-    - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element analysis", <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
-    - <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022
+    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
