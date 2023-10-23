@@ -6,19 +6,13 @@
     - name: E-mail
       value: wei.shengnan@connect.umac.mo; SWei.BioMed@outlook.com
 
-- title: Education
+- title: education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+    - title: Ph.D. student in Biomedical Science.
+      institution: <a href="https://www.um.edu.mo/">The University of Macau</a>, Macau SAR, China
+      year: Aug.2020 - present
+
     - title: Federal teaching diploma
       institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
       year: 1900
