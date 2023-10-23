@@ -1,10 +1,10 @@
 - title: basics
   type: map
   contents:
-    - name: Full Name
+    - name: Name
       value: WEI Shengnan
-    - name: Languages
-      value: Mandarin Chinese, English
+    - name: E-mail
+      value: wei.shengnan@connect.umac.mo; SWei.BioMed@outlook.com
 
 - title: Education
   type: time_table
