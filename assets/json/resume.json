@@ -76,6 +76,7 @@
   "projects": [
     {
       "name": "PSCs"
+      "position": "" # this is a wrong line used here to disable this json cv file without modifying the layout file.
     }
   ]
   }
