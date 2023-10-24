@@ -6,12 +6,12 @@
     - name: E-mail
       value: wei.shengnan@connect.umac.mo; SWei.BioMed@outlook.com
 
-- title: education
+- title: Education
   type: time_table
   contents:
     - title: Ph.D. student in Biomedical Sciences
       institution: <a href="https://www.um.edu.mo/">The University of Macau</a>, Macau SAR, China
-      year: 2022 - present
+      year: 2022 – ongoing
       
     - title: M.Eng. in Biomedical Engineering
       institution: <a href="https://www.sydney.edu.au/">The University of Sydney</a>, Sydney, NSW, Australia
@@ -21,7 +21,7 @@
       institution: <a href="https://www.buct.edu.cn/">Beijing University of Chemical Technology</a>, Beijing, China
       year: 2016 – 2020
 
-- title: conference presentations
+- title: Conference Presentations
   type: list
   contents:
     - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element method, <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
@@ -29,7 +29,7 @@
     - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element analysis, <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
     - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022"
 
-- title: ongoing projects
+- title: Ongoing Projects
   type: nested_list
   contents:
     - title: Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells.
@@ -46,7 +46,7 @@
       items:
         -  Human PSC colonies exhibit a unique epithelial-mesenchymal gradient of morphology from the periphery to the centre, which reflects a complex interplay of the microenvironment, signalling pathways, cell adhesion, and mechanisms. We aim to employ finite element analysis to establish an <i>in silico</i> platform that can overcome the limitations of traditionally used and technically challenged traction force microscopy, in order to investigate the mechanical properties of pluripotent stem cell colonies and understand the reasons for such interesting morphology.
 
-- title: finished projects
+- title: Finished Projects
   type: nested_list
   contents:
     - title: "Design Optimization of Porous Total Knee Arthroplasty Prostheses: An FEA Study."
