@@ -8,6 +8,6 @@ children:
     - title: tipart
       permalink: /tipart/
     - title: divider
-    - title: tiluhelper
+    - title: diluhelper
       permalink: /diluhelper/
 ---
