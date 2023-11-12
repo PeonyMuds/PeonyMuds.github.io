@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /diluhelper/
-title: Diluhelper
+title: DiluHelper
 description: A small tool that helps quickly calculate how much stock solution of chemicals and drugs is needed during dilution.
 nav: false # change this to make this present or absent on navbar
 nav_order: 99

@@ -1,0 +1,8 @@
+About: \_pages\about.md
+
+CV: \_data\cv.yml
+    PDF CV File: \assets\pdf\CV.pdf
+
+Tools (Dropdown meneu): \_pages\Tools.md
+    Tipart:\_pages\tipart.md
+    DiluHelper: \_pages\diluhelper.md
