@@ -2,20 +2,14 @@
 layout: page
 permalink: /tipart/
 title: Tipart
-description: 1111
+description: A rather clumsy but funny gadget that helps to design the patterns formed by yellow and white 200 µL pipette tips.
 nav: false # change this to make this present or absent on navbar
 nav_order: 99
 ---
 
-<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="shortcut icon" href="assets/icon.ico"/>
-    <title>WEI Shengnan: Project TipArt</title>
- 
     <style>
       html {
-        font-size: 20px;
       }
 
       table {
@@ -74,20 +68,7 @@ nav_order: 99
       .container {
         display: flex;
       }
-      .left-column {
-        flex: 1;
-        width: auto;
-        padding: 0px 20px;
-        justify-content: right;
-        }
-
-      .right-column {
-        flex: 3;
-        margin-left: flex;
-        padding: 0px 50px;
-        background-color: #ccc;
-      }
-           
+               
       .navbar-container {
         display: flex;
         justify-content: center;
@@ -140,9 +121,7 @@ nav_order: 99
         background-color: #f0f0f0;
       }
       
-      
-
-          
+                
     </style>
   </head>
 
@@ -181,47 +160,6 @@ nav_order: 99
 
 
 <body>
-    <nav>
-      <ul class="navbar">
-        <top><a href="./index.html">Home</a></top>
-        <top><a href="./research.html">Research</a></top>
-        <top><a href="./illustrations.html">Illustrations</a></top>
-        <top><a href="./methods.html">Open Methods</a></top>
-        <top><a href="./faqs.html">FAQs</a></top>
-        <top><a href="./tools.html">Tools</a></top>
-        <top><a href="./acknowledgement.html">Acknowledgement</a></top>
-      </ul>
-    
-    <div class="container">
-      <div class="left-column">
-
-		<div>
-        <h2>What is this?</h2>
-        <p style="font-size: 20px">When it comes to 200 µL tips, which are not as hideous as those 10 µL ones but indeed are able to cause both mental and physical damage, they have two colours: white and yellow. Naturally, or maybe not so naturally, one would think that it would be so much better if someone could create some art from these tips, especially when the brand of these tips is called ART TIPs.</p>
-        
-        <div style="padding-top: 20px;">
-            <footer>
-              <div style="text-align:center;">
-                <img src="assets/headerfooter/boat.png" alt="Boat" style="width:68px;height:34px;>
-              </div>
-              <div style="text-align:center;">
-                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">风休住，蓬舟吹取三山去.</p>
-              </div>
-              <div style="text-align:center;">
-                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">Let the wind elevate me to the moon.</p>
-              </div>
-              <div style="text-align:center;">
-                <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">&copy; 2023 WEI Shengnan</p>
-              </div>
-            </footer>
-  		</div>
-        
-        
-</div>
-
-      </div>
-      <div class="right-column">
-        <h2>The Tool</h2>
         Click to insert or change the color of the tips.<br>
         Change the types/brands of tip boxes:
         <select onchange="changeSquareColor(this.value)">
