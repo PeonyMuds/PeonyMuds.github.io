@@ -46,11 +46,6 @@ nav_order: 99
         display: flex;
       }
                
-      .navbar-container {
-        display: flex;
-        justify-content: center;
-      }
-	    
       .gallery {
         display: flex;
         flex-wrap: wrap;

@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Tools
+title: tools
 nav: true
 nav_order: 3
 dropdown: true
 children:
-    - title: Tipart
+    - title: tipart
       permalink: /tipart/
     - title: divider
-    - title: Diluhelper
+    - title: tiluhelper
       permalink: /diluhelper/
 ---
