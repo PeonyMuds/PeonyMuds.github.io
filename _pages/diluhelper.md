@@ -130,10 +130,9 @@ nav_order: 99
   <body>
  		  <!-- HTML for calculator -->
 
-                  <!DOCTYPE html>
                   <html>
                   <body>
-                      <h2>DiluHelper (Molar Version)</h2>
+                      <h2>DiluHelper Molar Version</h2>
                       <form id="calculator1">
                           <label for="stockConcentration1">Stock Concentration:</label><br>
                           <input type="number" id="stockConcentration1" name="stockConcentration" step="any">
@@ -173,7 +172,7 @@ nav_order: 99
                       </form>
                       <p id="result1"></p>
                   
-                      <h2>DiluHelper (<i>Mass</i> Per <i>Volume</i> Version)</h2>
+                      <h2>DiluHelper <i>Mass</i> Per <i>Volume</i> Version</h2>
                       <form id="calculator2">
                           <label for="stockConcentration2">Stock Concentration:</label><br>
                           <input type="number" id="stockConcentration2" name="stockConcentration" step="any">
@@ -367,7 +366,5 @@ nav_order: 99
                   </html>
   <!-- End of HTML for calculator -->                 
                             
-        </div>
-      </div>
   </body>
 </html>

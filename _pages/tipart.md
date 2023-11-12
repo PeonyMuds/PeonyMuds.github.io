@@ -8,7 +8,7 @@ nav_order: 99
 ---
 
 <html>
-    <style>
+<style>
       html {
       }
 
@@ -41,30 +41,7 @@ nav_order: 99
       body {
         caret-color: transparent;
       }
-        
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-      }
-      
-      ul.navbar top {
-        float: left;
-        text-decoration: none;
-      }
-      ul.navbar top a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      ul.navbar top a:hover {
-        background-color: #111;
-      }     
-  
+            
       .container {
         display: flex;
       }
@@ -121,9 +98,7 @@ nav_order: 99
         background-color: #f0f0f0;
       }
       
-                
-    </style>
-  </head>
+</style>
 
 <script>
   function changeColor(dot) {
@@ -167,7 +142,6 @@ nav_order: 99
           <option value="#3A6CBC">Thermo Scientific™ ART™ Blue</option>
           <option value="#90508C">Thermo Scientific™ QSP™ Purple</option>
         </select>
-        <br>
         <br>
         
         <div class="square">
@@ -286,6 +260,9 @@ nav_order: 99
             <tr>
             </table>
         </div>
+        </div>
+
+
         <br>
           <div>
           	<button onclick="alldotsyellow()">Yellow tips. Let's Go!</button>
