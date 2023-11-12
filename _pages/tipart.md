@@ -231,9 +231,9 @@ nav_order: 99
               <td><span class="dot" onclick="changeColor(this)"></span></td>
               <td><span class="dot" onclick="changeColor(this)"></span></td>
             <tr>
-            </table>
-    </div>
-    </div>
+    </table>
+</div>
+</div>
 <br>
      <div>
         <button onclick="alldotsyellow()">Yellow tips. Let's Go!</button> 
