@@ -10,11 +10,11 @@ nav_order: 99
 <style>
   table {
     border-collapse: separate;
-    border-spacing: 15px 0px;
+    border-spacing: 4px 4px;
   }
 
   td {
-    padding: 4px 0px;
+    padding: 2px 6px;
   }
 
   .square {
@@ -116,9 +116,7 @@ nav_order: 99
   }
 </script>
 
-<body>
-
-  <h2>The Tool</h2>
+<h2>The Tool</h2>
   Click to insert or change the color of the tips.<br>
   Change the types/brands of tip boxes:
   <select onchange="changeSquareColor(this.value)">
