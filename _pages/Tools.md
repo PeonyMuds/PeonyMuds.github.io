@@ -9,5 +9,5 @@ children:
       permalink: /diluhelper/
     - title: divider
     - title: FAQs
-      permalink: /faq/
+      permalink: /faqs/
 ---

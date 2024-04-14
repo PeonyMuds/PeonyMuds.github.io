@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /faq/
-title: FAQ
-description: A simple troubleshooting page for problems I met.
+permalink: /faqs/
+title: FAQs
+description: This page serves as a personal reference for swiftly troubleshooting and resolving frequently encountered issues and problems.
 nav: false # change this to make this present or absent on navbar
 nav_order: 99
 ---
@@ -71,9 +71,10 @@ nav_order: 99
     </style>
 
   <body>
+  <!--↓This is the code for a list↓*/-->
 	<details> 
-            	<summary>EndNote</summary> 
-           <content>
+        <summary>EndNote</summary> 
+          <content>
             <details> 
             	<summary>CWYW: Add-in missing in MS Office (Especially Word)</summary> 
                 <content>Fundamentally, this issue is probably due to the incompatibility between CWYW and other add-ins or third-party software that calls the functionality of any software in the MS Office suite and EndNote's CWYW add-ins.
@@ -84,15 +85,40 @@ nav_order: 99
                 <li style="margin:0px 20px">If the above step did not solve the problem, I suggest that you reconfigure the CWYW add-in. Enter the directory where you installed EndNote (typically this would be X:\Program Files (x86)\EndNote 20 and X is the disk you chose to install EndNote 20), you would see an executable file called Configure EndNote.exe. Run it and you could reconfigure Cite While You Write for Microsoft Office as instructed. After doing so, start MS Word and see if the add-in is back on the ribbon. If not, repeat step 1 and see what happens.</li>
                 <li style="margin:0px 20px">If you could see the "EndNote Cite While You Write" in the COM Add-in list and no matter how you try to tick and activate this add-in, it will be unticked when you re-open this list, there are probably issues with administrator permissions. Go to the installation directory for the MS Office suite on your computer (typically this would be C:\Program Files\Microsoft Office\root\Office16), find "WINWORD.exe", right click and choose "Run as Administrator". Now repeat step 1 and see if this fixes the problem.</li>
                 </ol>
-                
                 In my experience, going through these steps would fix this issue.
                 </content>
             </details>             
-           </content>
-        </details>
-          
-        </div>
-      </div>
+    </details>
+   <!--↑This is the code for a list↑-->    
+ 
+  <!--↓This is the code for a list↓*/-->
+	<details> 
+        <summary>R and RStudio</summary> 
+          <content>
+            <details> 
+            	<summary>Seurat</summary>
+                	<details> 
+            			<summary>Subset(): layer "data" is not found in the object</summary>
+                          <content>For example:<br>
+                          	<pre>
+                              <code>
+> mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | Cer1 >= 1 | Foxa2 >= 1))
+Warning: No layers found matching search pattern provided:
+layer "data" is not found in the object
+                              </code>
+                            </pre>
+                          This is caused by differences in the strucutre of objects in different versions of Seurat. in versions prior to V4, there would be a layer called data in Seurat that stored the original counts of genes. However, in V5, this layer was renamed to conts. as a result, some of the functions would mismatch and no results could be found.
+                          <br>For this issue, add a new arguement <code>slot="counts"</code> here so that it would search not under date but under counts. For the previous example, this would work:
+                          	<pre>
+                              <code>
+mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | Cer1 >= 1 | Foxa2 >= 1), slot="counts")
+                              </code>
+                            </pre>
+                          </content>
+                </details>             
+    </details>
+   <!--↑This is the code for a list↑-->    
+
+
   </body>
 </html>
-
