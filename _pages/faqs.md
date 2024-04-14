@@ -106,8 +106,8 @@ Warning: No layers found matching search pattern provided:
 layer "data" is not found in the object
                               </code>
                             </pre>
-                          This is caused by differences in the strucutre of objects in different versions of Seurat. in versions prior to V4, there would be a layer called data in Seurat that stored the original counts of genes. However, in V5, this layer was renamed to conts. as a result, some of the functions would mismatch and no results could be found.
-                          <br>For this issue, add a new arguement <code>slot="counts"</code> here so that it would search not under date but under counts. For the previous example, this would work:
+                          This is caused by differences in the structure of objects in different versions of Seurat. in versions prior to V4, there would be a layer called data in Seurat that stored the original counts of genes. However, in V5, this layer was renamed to counts. as a result, some of the functions would mismatch and no results could be found.  
+                          <br>For this issue, add a new argument <code>slot="counts"</code> here so that it would search not under date but under counts. For the previous example, this would work:
                           	<pre>
                               <code>
 mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | Cer1 >= 1 | Foxa2 >= 1), slot="counts")
