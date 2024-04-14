@@ -10,4 +10,7 @@ children:
     - title: divider
     - title: diluhelper
       permalink: /diluhelper/
+    - title: divider
+    - title: FAQs
+      permalink: /faq/
 ---

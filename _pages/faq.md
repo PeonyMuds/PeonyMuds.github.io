@@ -1,0 +1,199 @@
+---
+layout: page
+permalink: /faq/
+title: FAQ
+description: A simple troubleshooting page for problems I met.
+nav: false # change this to make this present or absent on navbar
+nav_order: 99
+---
+
+<!DOCTYPE html>
+<html>
+    <style>
+      html {
+        font-size: 20px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 15px 0px;
+      }
+
+      td {
+        padding: 4px 0px;
+      }
+
+      body {
+        caret-color: transparent;
+      }
+        
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+      }
+      
+      ul.navbar top {
+        float: left;
+        text-decoration: none;
+      }
+      ul.navbar top a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      ul.navbar top a:hover {
+        background-color: #111;
+      }     
+  
+      .container {
+        display: flex;
+      }
+      .left-column {
+        flex: 1;
+        width: auto;
+        padding: 0px 20px;
+        justify-content: right;
+        }
+
+      .right-column {
+        flex: 3;
+        margin-left: flex;
+        padding: 0px 50px;
+        background-color: #ccc;
+      }
+           
+      .navbar-container {
+        display: flex;
+        justify-content: center;
+      }
+	    
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .gallery-item {
+        position: relative;
+        width: 300px;
+        margin: 10px;
+        overflow: hidden;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-item .comment {
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+      }
+      
+      button {
+        display: inline-block;
+        background-color: white;
+        padding: 5px;
+        width: 270px;
+        color: black;
+        text-align: center;
+        border: 5px #bbbbbb;
+        border-radius: 3px;
+        font-family: Times New Roman;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 5px;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      
+      button:hover {
+        background-color: #f0f0f0;
+      }
+      
+      /* 实现折叠文字功能*/
+      
+      details {
+        font: 20x "Times New Roman","STZhongsong";
+         padding: 5px 20px;
+         margin-bottom: 10px;
+         
+        }                        
+     
+      summary {
+      	padding: 5px 0px;
+        cursor: pointer;
+      	-webkit-user-select: none; 
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
+        }
+              
+               
+    </style>
+  </head>
+
+  <script>
+
+      <div class="container">
+        <div class="left-column">
+
+          <div>
+          <h2>FAQs</h2>
+          <p style="font-size: 20px">This page serves as a personal reference for swiftly troubleshooting and resolving frequently encountered issues and problems.</p>
+
+          <div style="padding-top: 20px;">
+              <footer>
+                <div style="text-align:center;">
+                  <img src="assets/headerfooter/boat.png" alt="Boat" style="width:68px;height:34px;">
+                </div>
+                <div style="text-align:center;">
+                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">风休住，蓬舟吹取三山去.</p>
+                </div>
+                <div style="text-align:center;">
+                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">Let the wind elevate me to the moon.</p>
+                </div>
+                <div style="text-align:center;">
+                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">&copy; 2023 WEI Shengnan</p>
+                </div>
+              </footer>
+          </div>
+        </div>
+
+        </div>
+        <div class="right-column">
+          <h2>Lists</h2>
+		
+	<details> 
+            	<summary>EndNote</summary> 
+           <content>
+            <details> 
+            	<summary>CWYW: Add-in missing in MS Office (Especially Word)</summary> 
+                <content>Fundamentally, this issue is probably due to the incompatibility between CWYW and other add-ins or third-party software that calls the functionality of any software in the MS Office suite and EndNote's CWYW add-ins.
+                <br>For example, I often encounter this issue when running Wondershare PDF to merge multiple Word documents into a single. pdf file.
+                <br>For this issue, I recommended the following steps to fix it.
+                <ol type=1>
+                <li style="margin:0px 20px">In MS Word 2021/365: "File" → "Options" → The "Add-ins" Tab → Find "COM Add-ins" in the "Manage" drop menu, which should be the default option, by the way, → Click "Go..." → Make sure the box in front of "EndNote Cite While You Write" is ticked → "OK" → Close these windows and restart MS Word to see if the problem is fixed.</li>
+                <li style="margin:0px 20px">If the above step did not solve the problem, I suggest that you reconfigure the CWYW add-in. Enter the directory where you installed EndNote (typically this would be X:\Program Files (x86)\EndNote 20 and X is the disk you chose to install EndNote 20), you would see an executable file called Configure EndNote.exe. Run it and you could reconfigure Cite While You Write for Microsoft Office as instructed. After doing so, start MS Word and see if the add-in is back on the ribbon. If not, repeat step 1 and see what happens.</li>
+                <li style="margin:0px 20px">If you could see the "EndNote Cite While You Write" in the COM Add-in list and no matter how you try to tick and activate this add-in, it will be unticked when you re-open this list, there are probably issues with administrator permissions. Go to the installation directory for the MS Office suite on your computer (typically this would be C:\Program Files\Microsoft Office\root\Office16), find "WINWORD.exe", right click and choose "Run as Administrator". Now repeat step 1 and see if this fixes the problem.</li>
+                </ol>
+                
+                In my experience, going through these steps would fix this issue.
+                </content>
+            </details>             
+           </content>
+        </details>
+          
+        </div>
+      </div>
+  </body>
+</html>
+
