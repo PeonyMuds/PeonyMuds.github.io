@@ -6,8 +6,6 @@ description: A simple troubleshooting page for problems I met.
 nav: false # change this to make this present or absent on navbar
 nav_order: 99
 ---
-
-<!DOCTYPE html>
 <html>
     <style>
       html {
@@ -26,52 +24,7 @@ nav_order: 99
       body {
         caret-color: transparent;
       }
-        
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-      }
-      
-      ul.navbar top {
-        float: left;
-        text-decoration: none;
-      }
-      ul.navbar top a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      ul.navbar top a:hover {
-        background-color: #111;
-      }     
   
-      .container {
-        display: flex;
-      }
-      .left-column {
-        flex: 1;
-        width: auto;
-        padding: 0px 20px;
-        justify-content: right;
-        }
-
-      .right-column {
-        flex: 3;
-        margin-left: flex;
-        padding: 0px 50px;
-        background-color: #ccc;
-      }
-           
-      .navbar-container {
-        display: flex;
-        justify-content: center;
-      }
-	    
       .gallery {
         display: flex;
         flex-wrap: wrap;
@@ -95,30 +48,7 @@ nav_order: 99
         font-style: italic;
         margin-top: 10px;
       }
-      
-      button {
-        display: inline-block;
-        background-color: white;
-        padding: 5px;
-        width: 270px;
-        color: black;
-        text-align: center;
-        border: 5px #bbbbbb;
-        border-radius: 3px;
-        font-family: Times New Roman;
-        font-size: 16px;
-        cursor: pointer;
-        margin: 5px;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-      }
-      
-      button:hover {
-        background-color: #f0f0f0;
-      }
-      
+            
       /* 实现折叠文字功能*/
       
       details {
@@ -139,39 +69,8 @@ nav_order: 99
               
                
     </style>
-  </head>
 
-  <script>
-
-      <div class="container">
-        <div class="left-column">
-
-          <div>
-          <h2>FAQs</h2>
-          <p style="font-size: 20px">This page serves as a personal reference for swiftly troubleshooting and resolving frequently encountered issues and problems.</p>
-
-          <div style="padding-top: 20px;">
-              <footer>
-                <div style="text-align:center;">
-                  <img src="assets/headerfooter/boat.png" alt="Boat" style="width:68px;height:34px;">
-                </div>
-                <div style="text-align:center;">
-                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">风休住，蓬舟吹取三山去.</p>
-                </div>
-                <div style="text-align:center;">
-                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">Let the wind elevate me to the moon.</p>
-                </div>
-                <div style="text-align:center;">
-                  <p style="font-size: 14px; font-family:'Times New Roman','STZhongsong';">&copy; 2023 WEI Shengnan</p>
-                </div>
-              </footer>
-          </div>
-        </div>
-
-        </div>
-        <div class="right-column">
-          <h2>Lists</h2>
-		
+  <body>
 	<details> 
             	<summary>EndNote</summary> 
            <content>
