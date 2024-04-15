@@ -85,7 +85,8 @@ nav_order: 99
 </ol>
 In my experience, going through these steps would fix this issue.
 </content>
-</details>             
+</details>
+</content>             
 </details>
 </details>
 <!--↓This is the code for a list↓*/-->
@@ -113,6 +114,7 @@ mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | 
 </pre>
 </content>
 </details>
+</content>
 </details>             
 </details>
 </body>
