@@ -87,7 +87,6 @@ nav_order: 99
           </content>
       </details>
     </content>             
-  </details>
 </details>
 <!--↓This is the code for a list↓*/-->
 <details> 
