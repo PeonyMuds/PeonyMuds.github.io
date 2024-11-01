@@ -4,7 +4,7 @@
     - name: Name
       value: WEI Shengnan
     - name: E-mail
-      value: wei.shengnan@connect.umac.mo; SWei.BioMed@outlook.com
+      value: <a href="mailto:wei.shengnan@connect.umac.mo">wei.shengnan@connect.umac.mo; <a href="mailto:SWei.BioMed@outlook.com">SWei.BioMed@outlook.com
 
 # !!!!! Use a quatation mark if the content or value has symblos like colons or hypens such as title:"Good: this will work" or - "hold on, let be add this quatation-mark" 
 
@@ -23,6 +23,16 @@
     - title: B.Eng. in Biomedical Engineering
       institution: <a href="https://www.buct.edu.cn/">Beijing University of Chemical Technology</a>, Beijing, China
       year: 2016 – 2020
+
+- title: Work Experience
+  type: time_table
+  contents:
+    - title: Co-founder, project coordinator
+      Firm: MacOrigin Technology Limited (Macau) 麥肯原科技有限公司 (澳門), Macau SAR, China
+      year: 2024 – ongoing
+      description: 
+        - Developed an MSC-defined medium as part of strategic research and development initiatives. Drove innovation and advanced product development while fostering collaboration with the university to ensure alignment with academic and industry standards.
+
 
 - title: Publications
   type: list
