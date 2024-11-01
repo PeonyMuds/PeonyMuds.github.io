@@ -42,6 +42,8 @@
 - title: Conference Presentations
   type: list
   contents:
+    - "<u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 10th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2024"\
+    - "<u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 8th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Mar. 2024
     - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element method, <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
     - "<u><b>S. Wei</b></u>, A. Entezari, Design optimization of total knee arthroplasty prostheses: an FEA study, <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023"
     - <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, Qualitative analysis of hPSC colony mechanics with finite element analysis, <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
@@ -61,7 +63,7 @@
       items:
         - We want to explore what pathways and regulatory mechanisms ultimately affect the therapeutic efficacy of MSCs, especially their immune regulatory ability and <i>in vivo</i> survival after transplantation.
         - Based on the current knowledge of the composition and role of serum and serum substitutes, we would also like to explore the possibility of manufacturing MSC preparations at the cell therapy product level in a chemically defined manner.
-        - This research is part of the project under the National Key R&D Program led by Prof. Xu Ren-he.
+        - This research is part of the project under the National Key Research and Development Program of China led by Prof. Xu Ren-he (2022YFA1105000).
     - title: FEA Insights into the Mechanics of hPSC Colonies
       items:
         -  Human PSC colonies exhibit a unique epithelial-mesenchymal gradient of morphology from the periphery to the centre, which reflects a complex interplay of the microenvironment, signalling pathways, cell adhesion, and mechanisms. We aim to employ finite element analysis to establish an <i>in silico</i> platform that can overcome the limitations of traditionally used and technically challenged traction force microscopy, in order to investigate the mechanical properties of pluripotent stem cell colonies and understand the reasons for such interesting morphology.
