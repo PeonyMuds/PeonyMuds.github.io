@@ -128,7 +128,16 @@
 
 
   <body>
-      <iframe src="elements/nav.html"></iframe>
+      <script>
+        function loadNav() {
+            fetch('/elements/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+        }
+        window.onload = loadNav;
+      </script>
 
       <div class="container">
         <div class="left-column">
@@ -138,7 +147,16 @@
           <p style="font-size: 20px">I am dedicated to creating reliable illustrations for use in my logbook, presentations, and publications.</p>
 
           <div style="padding-top: 20px;">
-            <iframe src="elements/footer.html"></iframe>
+            <script>
+              function loadFooter() {
+                  fetch('/elements/footer.html')
+                      .then(response => response.text())
+                      .then(data => {
+                          document.getElementById('header-container').innerHTML = data;
+                      });
+              }
+              window.onload = loadFooter;
+            </script>
           </div>
         </div>
 
