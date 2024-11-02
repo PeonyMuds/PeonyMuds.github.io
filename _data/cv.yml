@@ -53,13 +53,13 @@
 - title: Ongoing Projects
   type: nested_list
   contents:
-    - title: Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells.
+    - title: Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells
       items: 
-        - Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
-    - title: Research on Key Pathways of <i>In Vitro</i> Induction and <i>In Vivo</i> Genesis of MSCs.
+        - Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> and <i>SNAIL1</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
+    - title: Research on Key Pathways of <i>In Vitro</i> Induction and <i>In Vivo</i> Genesis of MSCs
       items:
         - This study aims to develop a chemically defined method for obtaining mesenchymal stem cells (MSCs) from pluripotent stem cells (PSCs) through different germ layers and investigates the key components in the traditional serum culture medium that are essential for <i>in vitro</i> induction of MSCs.
-    - title: "Effect of Culture Conditions on Therapeutic Immunomodulation Ability of MSCs."
+    - title: "Effect of Culture Conditions on Therapeutic Immunomodulation Ability of MSCs"
       items:
         - We want to explore what pathways and regulatory mechanisms ultimately affect the therapeutic efficacy of MSCs, especially their immune regulatory ability and <i>in vivo</i> survival after transplantation.
         - Based on the current knowledge of the composition and role of serum and serum substitutes, we would also like to explore the possibility of manufacturing MSC preparations at the cell therapy product level in a chemically defined manner.
@@ -71,7 +71,7 @@
 - title: Finished Projects
   type: nested_list
   contents:
-    - title: "Design Optimization of Porous Total Knee Arthroplasty Prostheses: An FEA Study."
+    - title: "Design Optimization of Porous Total Knee Arthroplasty Prostheses: An FEA Study"
       items: 
         - Additive manufacturing offers great potential to fabricate more effective prostheses used for total knee arthroplasty (TKA). While porous implants could provide better osseointegration and avoid stress shielding, a porous structure could compromise the mechanical strength of these prostheses. Therefore, it is necessary to optimize the design of these structures to achieve a balance between osseointegration and mechanical functions. In this project, finite element analysis (FEA) will be employed to investigate the correlation between peak stress and pore size in TKA prostheses made of Biolox® delta ceramic and tantalum, thereby optimizing the design of these prostheses for enhanced strength and osseointegration.
     - title: "Adaptability Study of a Chitosan/PEG Hydrogel as Novel 3D Cell Culture Matrices"
