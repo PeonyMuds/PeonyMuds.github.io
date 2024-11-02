@@ -76,9 +76,9 @@
         width: 300px;
         margin: 10px;
         overflow: hidden;
-	      border: 4px solid #000; 
+	border: 4px solid #000; 
         border-radius: 15px; /* Rounded corners */
-  	    box-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Shadow effect */
+  	box-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Shadow effect */
       }
 	    
       .gallery-item img {
@@ -128,16 +128,27 @@
 
 
   <body>
-      <iframe src="elements/nav.html" style="width: 100%; height: auto; display:block; border:none;"></iframe>
+    <nav>
+      <ul class="navbar">
+        <top><a href="./index.html">Home</a></top>
+        <top><a href="./research.html">Research</a></top>
+        <top><a href="./illustrations.html">Illustrations</a></top>
+        <top><a href="./methods.html">Open Methods</a></top>
+        <top><a href="./faqs.html">FAQs</a></top>
+        <top><a href="./tools.html">Tools</a></top>
+        <top><a href="./acknowledgement.html">Acknowledgement</a></top>
+      </ul>
+
       <div class="container">
         <div class="left-column">
 
           <div>
           <h2>Illustrations</h2>
           <p style="font-size: 20px">I am dedicated to creating reliable illustrations for use in my logbook, presentations, and publications.</p>
+
           <div style="padding-top: 20px;">
-              <div id="content"></div>
-              <script src="/scripts/loadfooter.js"></script>
+            <script src="scripts/loadContent.js">
+          </div>
         </div>
 
         </div>
