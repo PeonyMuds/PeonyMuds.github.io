@@ -1,25 +1,172 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-</head>
-<body>
+  <head>
+    <link rel="shortcut icon" href="assets/icon.ico"/>
+    <title>WEI Shengnan: Illustrations</title>
+ 
+    <style>
+      html {
+        font-size: 20px;
+      }
 
-<h2>Take a Screenshot</h2>
+      table {
+        border-collapse: separate;
+        border-spacing: 15px 0px;
+      }
 
-<button onclick="myFunction()">Save Screenshot</button>
+      td {
+        padding: 4px 0px;
+      }
 
-<script>
-function myFunction() {
-  window.scrollTo(0, 0);
-  html2canvas(document.body).then(function(canvas) {
-    var link = document.createElement('a');
-    link.download = 'screenshot.png';
-    link.href = canvas.toDataURL();
-    link.click();
-  });
-}
-</script>
+      body {
+        caret-color: transparent;
+      }
+        
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #444;
+      }
+      
+      ul.navbar top {
+        float: left;
+        text-decoration: none;
+      }
+      ul.navbar top a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      ul.navbar top a:hover {
+        background-color: #111;
+      }     
+  
+      .container {
+        display: flex;
+      }
+      .left-column {
+        flex: 1;
+        width: auto;
+        padding: 0px 20px;
+        justify-content: right;
+        }
 
-</body>
+      .right-column {
+        flex: 3;
+        margin-left: flex;
+        padding: 0px 50px;
+        background-color: #ccc;
+      }
+           
+      .navbar-container {
+        display: flex;
+        justify-content: center;
+      }
+	    
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .gallery-item {
+        position: relative;
+        width: 300px;
+        margin: 10px;
+        overflow: hidden;
+	border: 4px solid #000; 
+        border-radius: 15px; /* Rounded corners */
+  	box-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Shadow effect */
+      }
+	    
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-item .comment {
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+      }
+      
+      button {
+        display: inline-block;
+        background-color: white;
+        padding: 5px;
+        width: 270px;
+        color: black;
+        text-align: center;
+        border: 5px #bbbbbb;
+        border-radius: 3px;
+        font-family: Times New Roman;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 5px;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      
+      button:hover {
+        background-color: #f0f0f0;
+      }
+               
+    </style>
+  </head>
+
+  <script>
+
+
+  </script>
+
+
+  <body>
+      <iframe src="elements/nav.html"></iframe>
+
+      <div class="container">
+        <div class="left-column">
+
+          <div>
+          <h2>Illustrations</h2>
+          <p style="font-size: 20px">I am dedicated to creating reliable illustrations for use in my logbook, presentations, and publications.</p>
+
+          <div style="padding-top: 20px;">
+            <iframe src="elements/footer.html"></iframe>
+          </div>
+        </div>
+
+        </div>
+        <div class="right-column">
+          <h2>Gallery</h2>
+          
+      		<h3> Tracking and Recording Cell-Cell Contact </h3>
+          
+              <div class="gallery">
+                                                    
+                      <div class="gallery-item">
+                        <img src="assets/illustrations/Tracking.png" alt="Tracking cell-cell communications.">
+                      </div>
+
+                      <div class="gallery-item">
+                        <img src="assets/illustrations/Recording.png" alt="Recording cell-cell communications.">
+                     </div>
+		      
+                      <div class="gallery-item">
+                        <img src="assets/illustrations/Expansion - Multiple Sender.png" alt="Recording cell-cell communications with multiple sender types.">
+                     </div>
+
+		      <div class="gallery-item">
+                        <img src="assets/illustrations/Expansion - Multiple Receiver.png" alt="Recording cell-cell communications with multiple receiver types.">
+                     </div>
+		</div>
+        </div>
+      </div>
+  </body>
 </html>
