@@ -61,12 +61,13 @@ ul.navbar top a:hover {
 
 .right-column {
   flex: 3;
-  padding: 0.5rem  0.85rem;
+  padding: 0.5rem 0.85rem;
   background-color: #e4e4e4;
 }
 
 /* Footer */
-#jsfooter, #jsfooter-small {
+#jsfooter,
+#jsfooter-small {
   background-color: white;
   color: black;
   text-align: center;
@@ -75,7 +76,8 @@ ul.navbar top a:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .left-column, .right-column {
+  .left-column,
+  .right-column {
     flex: 100%;
     max-width: 100%;
   }
@@ -109,20 +111,20 @@ ul.navbar top a:hover {
   justify-content: center;
 }
 
-  /* 相册 图片 展示*/
-
+/* 相册 图片 展示 */
 .gallery {
   display: flex;
   flex-wrap: wrap;
 }
+
 .gallery-item {
   position: relative;
   width: 19rem;
   margin: 0.5rem;
   overflow: hidden;
-  border: 0.3rem solid #000; 
+  border: 0.3rem solid #000;
   border-radius: 0.5rem; /* Rounded corners */
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Shadow effect */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 .gallery-item img {
@@ -130,39 +132,43 @@ ul.navbar top a:hover {
   height: 100%;
   transition: transform 0.3s;
 }
+
 .gallery-item:hover img {
   transform: scale(1.1);
 }
+
 .gallery-item .comment {
   text-align: center;
   font-style: italic;
   margin-top: 10px;
 }
 
- /* 带标题的图片*/
-
- .image-container {
+/* 带标题的图片 */
+.image-container {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .image-container img {
   border: 2px solid black;
   margin-right: 10px;
   transition: transform 0.2s;
 }
+
 .image-container a {
   color: black;
   text-decoration: none;
 }
+
 .image-container a:hover img {
-  border-color: #006B88;
+  border-color: #006b88;
   transform: scale(1.1);
 }
+
 .comment-title {
   font-weight: bold;
 }
-
 
 button {
   display: inline-block;
@@ -174,7 +180,7 @@ button {
   border: 5px #bbbbbb;
   border-radius: 3px;
   font-family: Times New Roman;
-  font-size: 1 rem;
+  font-size: 1rem;
   cursor: pointer;
   margin: 5px;
   -webkit-transition: all 0.4s;
@@ -187,52 +193,52 @@ button:hover {
   background-color: #f0f0f0;
 }
 
-/* 实现折叠文字功能*/
-
+/* 实现折叠文字功能 */
 details {
-  font: "Times New Roman","STZhongsong";
-    padding: 5px 20px;
-    margin-bottom: 10px;
-    
-  }                        
+  font: "Times New Roman", "STZhongsong";
+  padding: 5px 20px;
+  margin-bottom: 10px;
+}
 
 summary {
   padding: 5px 0px;
   cursor: pointer;
-  -webkit-user-select: none; 
-  -moz-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-  }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-/* 页内 nav*/
-
+/* 页内 nav */
 ul.navbar2 {
   list-style-type: none;
   margin: 20px;
   padding: 20px;
   overflow: hidden;
-  background-color: #33;
+  background-color: #333;
 }
+
 ul.navbar2 inpage {
   float: none;
   text-decoration: none;
 }
+
 ul.navbar2 inpage a {
-  display:block;
+  display: block;
   text-align: center;
   padding: 14px px;
   text-decoration: none;
 }
+
 ul.navbar2 inpage a:link {
-  color:black;
-  }
+  color: black;
+}
 
 ul.navbar2 inpage a:hover {
   text-decoration: underline;
   text-decoration-color: black;
-  }
-  
+}
+
 ul.navbar2 inpage a:visited {
-  color:black;
-  }
+  color: black;
+}
