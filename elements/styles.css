@@ -1,5 +1,5 @@
     html {
-      font-size: 2.5rem; /* 基准字体大小 */
+      font-size: 1.5rem; /* 基准字体大小 */
       }
 
     .smaller-font {
@@ -98,7 +98,7 @@
         border: 5px #bbbbbb;
         border-radius: 3px;
         font-family: Times New Roman;
-        font-size: 16px;
+        font-size: 1 rem;
         cursor: pointer;
         margin: 5px;
         -webkit-transition: all 0.4s;
