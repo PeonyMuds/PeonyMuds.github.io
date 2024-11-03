@@ -161,19 +161,51 @@ button:hover {
 
   /* 实现折叠文字功能*/
 
-  details {
-    font: "Times New Roman","STZhongsong";
-      padding: 5px 20px;
-      margin-bottom: 10px;
-      
-    }                        
+details {
+  font: "Times New Roman","STZhongsong";
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    
+  }                        
+
+summary {
+  padding: 5px 0px;
+  cursor: pointer;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  }
+
+  /* 页内 nav*/
+
+ul.navbar2 {
+  list-style-type: none;
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #33;
+}
+ul.navbar2 inpage {
+  float: none;
+  text-decoration: none;
+}
+ul.navbar2 inpage a {
+  display:block;
+  text-align: center;
+  padding: 14px px;
+  text-decoration: none;
+}
+ul.navbar2 inpage a:link {
+  color:black;
+  }
+
+ul.navbar2 inpage a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+  }
   
-  summary {
-    padding: 5px 0px;
-    cursor: pointer;
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-    }
+ul.navbar2 inpage a:visited {
+  color:black;
+  }
           
