@@ -28,11 +28,12 @@ ul.navbar {
   background-color: #444;
 }
 
-ul.navbar li {
+ul.navbar top {
   float: left;
+  text-decoration: none;
 }
 
-ul.navbar li a {
+ul.navbar top a {
   display: block;
   color: white;
   text-align: center;
@@ -40,16 +41,8 @@ ul.navbar li a {
   text-decoration: none;
 }
 
-ul.navbar li a:hover {
+ul.navbar top a:hover {
   background-color: #111;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  padding: 14px 16px;
 }
 
 /* container */
@@ -82,36 +75,6 @@ ul.navbar li a:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  ul.navbar {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #444; /* Ensure background color is applied */
-  }
-
-  ul.navbar li {
-    float: none;
-  }
-
-  ul.navbar li a {
-    padding: 10px 15px; /* Adjust padding for smaller screens */
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .navbar-container {
-    position: relative;
-  }
-
-  .navbar-container.active ul.navbar {
-    display: flex;
-  }
-
   .left-column, .right-column {
     flex: 100%;
     max-width: 100%;
