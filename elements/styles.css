@@ -69,6 +69,15 @@
           flex: 100%;
           max-width: 100%;
         }
+
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #jsfooter {
+          order: 1; /* Ensure footer is at the bottom */
+        }
       }
 
       .navbar-container {
