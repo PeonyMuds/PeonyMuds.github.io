@@ -1,5 +1,9 @@
     html {
-        font-size: 20px;
+      font-size: 20px; /* 基准字体大小 */
+      }
+
+    .smaller-font {
+        font-size: 0.8em; /* 相对于父元素字体大小的 80% */
       }
 
       table {
@@ -14,8 +18,6 @@
       body {
         caret-color: transparent;
       }
-
-    
 
       ul.navbar {
         list-style-type: none;
