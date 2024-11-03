@@ -61,7 +61,7 @@ ul.navbar top a:hover {
 
 .right-column {
   flex: 3;
-  padding: 0px 1rem;
+  padding: 0px 0.6rem;
   background-color: #ccc;
 }
 
@@ -117,8 +117,8 @@ ul.navbar top a:hover {
 }
 .gallery-item {
   position: relative;
-  width: 25rem;
-  margin: 0.8rem;
+  width: 20rem;
+  margin: 0.5rem;
   overflow: hidden;
   border: 0.3rem solid #000; 
   border-radius: 0.5rem; /* Rounded corners */
@@ -164,19 +164,18 @@ button:hover {
 
   /* 实现折叠文字功能*/
 
-  details {
-    font: "Times New Roman","STZhongsong";
-      padding: 5px 20px;
-      margin-bottom: 10px;
-      
-    }                        
-  
-  summary {
-    padding: 5px 0px;
-    cursor: pointer;
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-    }
-          
+details {
+  font: "Times New Roman","STZhongsong";
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    
+  }                        
+
+summary {
+  padding: 5px 0px;
+  cursor: pointer;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  }
