@@ -97,6 +97,7 @@ ul.navbar top a:hover {
 @media (min-width: 769px) {
   .footer-large-screen {
     display: block;
+    order: 1; /* Ensure footer is at the bottom */
   }
 
   .footer-small-screen {
