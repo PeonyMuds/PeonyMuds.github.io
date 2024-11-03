@@ -1,183 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="shortcut icon" href="assets/icon.ico"/>
-    <title>WEI Shengnan: Tools</title>
- 
-    <style>
-      html {
-        font-size: 20px;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lab Tools by WEI Shengnan">
+  <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
+  <title>WEI Shengnan: Tools</title>
+  <link rel="stylesheet" type="text/css" href="elements/styles.css">
+  <script src="scripts/reponsivefontsize.js" defer></script>
+</head>
+<body>
+  <!-- js load nav bar -->
+  <div id="jsnav"></div>
+  <script src="scripts/loadnav.js" defer></script>
 
-      table {
-        border-collapse: separate;
-        border-spacing: 15px 0px;
-      }
-
-      td {
-        padding: 4px 0px;
-      }
-
-      body {
-        caret-color: transparent;
-      }
-        
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-      }
-      
-      ul.navbar top {
-        float: left;
-        text-decoration: none;
-      }
-      ul.navbar top a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      ul.navbar top a:hover {
-        background-color: #111;
-      }     
-  
-      .container {
-        display: flex;
-      }
-      .left-column {
-        flex: 1;
-        width: auto;
-        padding: 0px 20px;
-        justify-content: right;
-        }
-
-      .right-column {
-        flex: 3;
-        margin-left: flex;
-        padding: 0px 50px;
-        background-color: #ccc;
-      }
-           
-      .navbar-container {
-        display: flex;
-        justify-content: center;
-      }
-      
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .gallery-item {
-        position: relative;
-        width: 300px;
-        margin: 10px;
-        overflow: hidden;
-      }
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s;
-      }
-      .gallery-item:hover img {
-        transform: scale(1.1);
-      }
-      .gallery-item .comment {
-        text-align: center;
-        font-style: italic;
-        margin-top: 10px;
-      }
-      
-      button {
-        display: inline-block;
-        background-color: white;
-        padding: 5px;
-        width: 270px;
-        color: black;
-        text-align: center;
-        border: 5px #bbbbbb;
-        border-radius: 3px;
-        font-family: Times New Roman;
-        font-size: 16px;
-        cursor: pointer;
-        margin: 5px;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-      }
-      
-      button:hover {
-        background-color: #f0f0f0;
-      }
-      
-      .image-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      .image-container img {
-        border: 2px solid black;
-        margin-right: 10px;
-        transition: transform 0.2s;
-      }
-      .image-container a {
-        color: black;
-        text-decoration: none;
-      }
-      .image-container a:hover img {
-        border-color: red;
-        transform: scale(1.1);
-      }
-      .comment-title {
-        font-weight: bold;
-      }
-               
-    </style>
-  </head>
-
-  <script>
-
-
-  </script>
-
-
-  <body>
-    <!-- js load nav bar -->
-    <div id="jsnav"></div>
-    <script src="scripts/loadnav.js"></script>
-
-      <div class="container">
-        <div class="left-column">
-
-          <div>
-          <h2>Tools and Gadgets</h2>
-          <p>I created some gadgets for my own convenience and I published some of them here.</p>
-
-          <div style="padding-top: 20px;">
-            <!-- js load footer -->
-            <div id="jsfooter"></div>
-            <script src="scripts/loadfooter.js"></script>
-          </div>
-        </div>
-
-        </div>
-        <div class="right-column">
-          <h2>Tool List</h2>
-          <div class="image-container">
-            <a href="./dilution.html">
-              <img src="assets/tools/Dlhp.png" alt="Dilution Calculator: DiluHelper" width="300">
-            </a>
-            <a href="./dilution.html">
-              <p><span class="comment-title">DiluHelper:</span> A small tool that helps quickly calculate how much stock solution of chemicals and drugs is needed during dilution.</p>
-            </a>
-          </div>
-        </div>
+  <div class="container">
+    <div class="left-column">
+      <div>
+        <h2>Tools and Gadgets</h2>
+        <p>I created some gadgets for my own convenience and I published some of them here.</p>
       </div>
-  </body>
+      <!-- js load footer for large screens -->
+      <div id="jsfooter" class="footer-large-screen"></div>
+    </div>
+    <div class="right-column">
+      <h2>Tool List</h2>
+      <div class="image-container">
+        <a href="./dilution.html">
+          <img src="assets/tools/Dlhp.png" alt="Dilution Calculator: DiluHelper" width="300">
+        </a>
+        <a href="./dilution.html">
+          <p><span class="comment-title">DiluHelper:</span> A small tool that helps quickly calculate how much stock solution of chemicals and drugs is needed during dilution.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- js load footer for small screens -->
+  <div id="jsfooter-small" class="footer-small-screen"></div>
+  <script src="scripts/loadfooter.js" defer></script>
+</body>
 </html>
-
-
