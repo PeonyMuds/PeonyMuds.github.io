@@ -117,7 +117,7 @@ ul.navbar top a:hover {
 }
 .gallery-item {
   position: relative;
-  width: 20rem;
+  width: 19rem;
   margin: 0.5rem;
   overflow: hidden;
   border: 0.3rem solid #000; 
