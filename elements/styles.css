@@ -25,7 +25,7 @@ ul.navbar {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #006B88;
+  background-color: #444;
 }
 
 ul.navbar top {
@@ -42,7 +42,7 @@ ul.navbar top a {
 }
 
 ul.navbar top a:hover {
-  background-color: #003A4A;
+  background-color: #111;
 }
 
 /* container */
@@ -56,12 +56,12 @@ ul.navbar top a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.85rem;
 }
 
 .right-column {
   flex: 3;
-  padding: 0.5rem  0.7rem;
+  padding: 0.5rem  0.85rem;
   background-color: #e4e4e4;
 }
 
