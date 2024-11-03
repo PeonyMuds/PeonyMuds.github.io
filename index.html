@@ -1,127 +1,34 @@
-<html>
-  <head>
-    <link rel="shortcut icon" href="assets/icon.ico"/>
-    <title>WEI Shengnan</title>
- 
-    <style>
-    html {
-      font-size: 20px;
-    }
-    
-    table {
-      border-collapse: separate;
-      border-spacing: 15px 0;
-    }
-    body {
-      caret-color: transparent;
-    }
-   
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-      }
-      
-      ul.navbar top {
-        float: left;
-        text-decoration: none;
-      }
-      ul.navbar top a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      ul.navbar top a:hover {
-        background-color: #111;
-      }     
-      ul.navbar2 {
-        list-style-type: none;
-        margin: 20px;
-        padding: 20px;
-        overflow: hidden;
-        background-color: #333;
-      }
-      ul.navbar2 inpage {
-        float: none;
-        text-decoration: none;
-      }
-      ul.navbar2 inpage a {
-        display:block;
-        text-align: center;
-        padding: 14px px;
-        text-decoration: none;
-      }
-      ul.navbar2 inpage a:link {
-      	color:black;
-        }
-      
-      ul.navbar2 inpage a:hover {
-        text-decoration: underline;
-        text-decoration-color: black;
-        }
-        
-      ul.navbar2 inpage a:visited {
-      	color:black;
-        }
-      .container {
-        display: flex;
-      }
-      .left-column {
-        flex: 1;
-        display: flex;
-        padding: 0px 20px;
-        justify-content: center;
-        }
-      .right-column {
-        flex: 3;
-        padding: 0px 50px;
-        background-color: #ccc;
-      }
-           
-      .navbar-container {
-        display: flex;
-        justify-content: center;
-      }
-
-      summary {
-      	padding: 5px 0px;
-        cursor: pointer;
-      	-webkit-user-select: none; 
-        -moz-user-select: none; 
-        -ms-user-select: none; 
-        user-select: none; 
-        }
-    
-    </style>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homepage for WEI Shengnan's Website">
+  <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
+  <title>WEI Shengnan</title>
+  <link rel="stylesheet" type="text/css" href="elements/styles.css">
+  <script src="scripts/reponsivefontsize.js" defer></script>
+</head>
 <body>
-    <!-- js load nav bar -->
-    <div id="jsnav"></div>
-    <script src="scripts/loadnav.js"></script>
+  <!-- js load nav bar -->
+  <div id="jsnav"></div>
+  <script src="scripts/loadnav.js" defer></script>
 
-    
-    <div class="container">
-      <div class="left-column">
-          <nav>
-            <ul class="navbar2">
-              <inpage><a href="#about">About</a></inpage><br>
-              <inpage><a href="#education">Education</a></inpage><br>
-              <inpage><a href="#research">Research</a></inpage><br>
-            </ul>
-
-            <div style="padding-top: 20px;">
-              <!-- js load footer -->
-              <div id="jsfooter"></div>
-              <script src="scripts/loadfooter.js"></script>
-            </div>
-            </nav>
+  <div class="container">
+    <div class="left-column">
+      <div>
+        <ul class="navbar2">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#research">Research</a></li>
+        </ul>
       </div>
-      <div class="right-column">
-        <h1>WEI Shengnan</h1>
+      <!-- js load footer for large screens -->
+      <div id="jsfooter" class="footer-large-screen"></div>
+    </div>
+    <div class="right-column">
+      
+      <h1>WEI Shengnan</h1>
       <p>Welcome to my website!</p>
       <h2 id="about">About Me</h2>
       <p>
@@ -181,6 +88,12 @@
         
      </ul>
       </div>
+    </div>      
+
     </div>
+  </div>
+  <!-- js load footer for small screens -->
+  <div id="jsfooter-small" class="footer-small-screen"></div>
+  <script src="scripts/loadfooter.js" defer></script>
 </body>
 </html>
