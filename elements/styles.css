@@ -215,30 +215,23 @@ ul.navbar2 {
   margin: 20px;
   padding: 20px;
   overflow: hidden;
-  background-color: #333;
+  text-align: center; /* Center the text */
 }
 
-ul.navbar2 inpage {
-  float: none;
-  text-decoration: none;
+ul.navbar2 li {
+  display: block; /* Display list items as block */
+  margin-bottom: 10px; /* Add some space between items */
 }
 
-ul.navbar2 inpage a {
+ul.navbar2 li a {
   display: block;
+  color: black; /* Set text color to black */
   text-align: center;
-  padding: 14px px;
-  text-decoration: none;
+  padding: 14px 16px;
+  text-decoration: none; /* Remove underline */
 }
 
-ul.navbar2 inpage a:link {
-  color: black;
-}
-
-ul.navbar2 inpage a:hover {
+ul.navbar2 li a:hover {
   text-decoration: underline;
   text-decoration-color: black;
-}
-
-ul.navbar2 inpage a:visited {
-  color: black;
 }
