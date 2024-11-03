@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,248 +6,7 @@
   <meta name="description" content="Homepage for WEI Shengnan's Website">
   <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
   <title>WEI Shengnan</title>
-  <style>
-  html {
-  font-size: 1.5rem; /* 基准字体大小 */
-}
-
-.smaller-font {
-  font-size: 0.8em; /* 相对于父元素字体大小的 80% */
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 15px 0px;
-}
-
-td {
-  padding: 4px 0px;
-}
-
-body {
-  caret-color: transparent;
-}
-
-/* nav bar */
-ul.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #444;
-}
-
-ul.navbar top {
-  float: left;
-  text-decoration: none;
-}
-
-ul.navbar top a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul.navbar top a:hover {
-  background-color: #111;
-}
-
-/* container */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.left-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.5rem 0.85rem;
-}
-
-.right-column {
-  flex: 3;
-  padding: 0.5rem 0.85rem;
-  background-color: #e4e4e4;
-}
-
-/* Footer */
-#jsfooter,
-#jsfooter-small {
-  background-color: white;
-  color: black;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .left-column,
-  .right-column {
-    flex: 100%;
-    max-width: 100%;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer-large-screen {
-    display: none;
-  }
-
-  .footer-small-screen {
-    display: block;
-  }
-}
-
-@media (min-width: 769px) {
-  .footer-large-screen {
-    display: block;
-  }
-
-  .footer-small-screen {
-    display: none;
-  }
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* 相册 图片 展示 */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.gallery-item {
-  position: relative;
-  width: 19rem;
-  margin: 0.5rem;
-  overflow: hidden;
-  border: 0.3rem solid #000;
-  border-radius: 0.5rem; /* Rounded corners */
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.gallery-item .comment {
-  text-align: center;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-/* 带标题的图片 */
-.image-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.image-container img {
-  border: 2px solid black;
-  margin-right: 10px;
-  transition: transform 0.2s;
-}
-
-.image-container a {
-  color: black;
-  text-decoration: none;
-}
-
-.image-container a:hover img {
-  border-color: #006b88;
-  transform: scale(1.1);
-}
-
-.comment-title {
-  font-weight: bold;
-}
-
-button {
-  display: inline-block;
-  background-color: white;
-  padding: 5px;
-  width: 270px;
-  color: black;
-  text-align: center;
-  border: 5px #bbbbbb;
-  border-radius: 3px;
-  font-family: Times New Roman;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 5px;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-button:hover {
-  background-color: #f0f0f0;
-}
-
-/* 实现折叠文字功能 */
-details {
-  font: "Times New Roman", "STZhongsong";
-  padding: 5px 20px;
-  margin-bottom: 10px;
-}
-
-summary {
-  padding: 5px 0px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* 页内 nav */
-      ul.navbar2 {
-        list-style-type: none;
-        margin: 20px;
-        padding: 20px;
-        overflow: hidden;
-      }
-      ul.navbar2 inpage {
-        float: none;
-        text-decoration: none;
-      }
-      ul.navbar2 inpage a {
-        display:block;
-        text-align: center;
-        padding: 14px px;
-        text-decoration: none;
-      }
-      ul.navbar2 inpage a:link {
-      	color:black;
-        }
-      
-      ul.navbar2 inpage a:hover {
-        text-decoration: underline;
-        text-decoration-color: black;
-        }
-        
-      ul.navbar2 inpage a:visited {
-      	color:black;
-        }
-  </style>
+  <link rel="stylesheet" type="text/css" href="elements/styles.css">
   <script src="scripts/reponsivefontsize.js" defer></script>
 </head>
 <body>
@@ -260,64 +18,78 @@ summary {
     <div class="left-column">
       <div>
         <ul class="navbar2">
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#research">Research</a></li>
+          <inpage><a href="#about">About</a></inpage><br>
+          <inpage><a href="#education">Education</a></inpage><br>
+          <inpage><a href="#research">Research</a></inpage><br>
         </ul>
       </div>
       <!-- js load footer for large screens -->
       <div id="jsfooter" class="footer-large-screen"></div>
     </div>
     <div class="right-column">
+      
       <h1>WEI Shengnan</h1>
       <p>Welcome to my website!</p>
       <h2 id="about">About Me</h2>
       <p>
-        I am a biomedical engineer who is interested in tissue engineering and regenerative medicine.<br>
-        My previous work mainly involved biomaterials such as hydrogels. 
-        With a multidisciplinary background, I also carried out experiments about fermentation engineering and finite element analysis as well. 
-        My current project focused on the early fate determination of human pluripotent stem cells (PSCs) and the immunomodulatory properties and quality control of mesenchymal stem cells (MSCs).
+      I am a biomedical engineer who is interested in tissue engineering and regenerative medicine.<br>
+      My previous work mainly involved biomaterials such as hydrogels. 
+      With a multidisciplinary background, I also carried out experiments about fermentation engineering and finite element analysis as well. 
+      My current project focused on the early fate determination of human pluripotent stem cells (PSCs) and the immunomodulatory properties and quality control of mesenchymal stem cells (MSCs).
       </p>
       <h2 id="education">Education</h2>
-      <table>
-        <tr>
+      
+        <table>
           <td><p style="font-size: 20px; font-weight: bold">Aug. 2022 – present</p></td>
           <td><p style="font-size: 20px; font-weight: bold">The University of Macau</p></td>
           <td><p style="font-size: 20px; font-weight: bold">Macau SAR, China</p></td>
-        </tr>
-        <tr>
+          <tr>
           <td></td>
           <td>Ph.D. student in Biomedical Sciences</td>
           <td></td>
-        </tr>
-        <tr>
+          <tr>
           <td><p style="font-size: 20px; font-weight: bold">Aug. 2020 – Feb. 2022</p></td>
           <td><p style="font-size: 20px; font-weight: bold">The University of Sydney</p></td>
           <td><p style="font-size: 20px; font-weight: bold">NSW, Australia</p></td>
-        </tr>
-        <tr>
+          <tr>
           <td></td>
           <td>M. Eng. in Biomedical Engineering</td>
           <td></td>
-        </tr>
-        <tr>
+          <tr>
           <td><p style="font-size: 20px; font-weight: bold">Aug. 2016 – Jul. 2020</p></td>
           <td><p style="font-size: 20px; font-weight: bold">Beijing University of Chemical Technology</p></td>
           <td><p style="font-size: 20px; font-weight: bold">Beijing, China</p></td>
-        </tr>
-        <tr>
+          <tr>
           <td></td>
           <td>B. Eng. in Biomedical Engineering</td>
           <td></td>
-        </tr>
-      </table>
-      <h2 id="research">Research</h2>
+          
+        </table>
+      
+ <h2 id="research">Research</h2>
       <ul>
-        <li>Regulation of the early fate determination of pluripotent stem cells and its impact on the functions of the specialized descendants.</li>
-        <li>Quality control of immunomodulation abilities of MSCs.</li>
-        <li>Tissue-engineering-oriented applications of biomaterials.</li>
-        <li>Finite element analysis as a useful tool to investigate micro- and macro-scopic biomechanics and biophysics.</li>
-      </ul>
+
+<li>
+  Regulation of the early fate determination of pluripotent stem cells and its impact on the functions of the specialized descendants.
+</li>
+        <br>
+<li>
+  Quality control of immunomodulation abilities of MSCs.
+</li>
+        <br>
+<li>
+  Tissue-engineering-oriented applications of biomaterials.
+</li>
+         <br>
+<li>
+  Finite element analysis as a useful tool to investigate micro- and macro-scopic biomechanics and biophysics.
+</li>
+        <br>
+        
+     </ul>
+      </div>
+    </div>      
+
     </div>
   </div>
   <!-- js load footer for small screens -->
