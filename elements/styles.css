@@ -51,14 +51,14 @@
       
       .left-column {
         flex: 1;
-        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 0px 20px;
-        justify-content: right;
-        }
+      }
 
       .right-column {
         flex: 3;
-        margin-left: flex;
         padding: 0px 50px;
         background-color: #ccc;
       }
