@@ -1,257 +1,111 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="shortcut icon" href="assets/icon.ico"/>
-    <title>WEI Shengnan: Research</title>
- 
-    <style>
-      html {
-        font-size: 20px;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research page for WEI Shengnan">
+  <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
+  <title>WEI Shengnan: Research</title>
+  <link rel="stylesheet" type="text/css" href="elements/styles.css">
+  <script src="scripts/reponsivefontsize.js" defer></script>
+</head>
+<body>
+  <!-- js load nav bar -->
+  <div id="jsnav"></div>
+  <script src="scripts/loadnav.js" defer></script>
 
-      table {
-        border-collapse: separate;
-        border-spacing: 15px 0px;
-      }
-
-      td {
-        padding: 4px 0px;
-      }
-
-      body {
-        caret-color: transparent;
-      }
-        
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #444;
-      }
-      
-      ul.navbar top {
-        float: left;
-        text-decoration: none;
-      }
-      ul.navbar top a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      ul.navbar top a:hover {
-        background-color: #111;
-      }     
-  
-      .container {
-        display: flex;
-      }
-      .left-column {
-        flex: 1;
-        width: auto;
-        padding: 0px 20px;
-        justify-content: right;
-        }
-
-      .right-column {
-        flex: 3;
-        margin-left: flex;
-        padding: 0px 50px;
-        background-color: #ccc;
-      }
-           
-      .navbar-container {
-        display: flex;
-        justify-content: center;
-      }
-
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .gallery-item {
-        position: relative;
-        width: 300px;
-        margin: 10px;
-        overflow: hidden;
-      }
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s;
-      }
-      .gallery-item:hover img {
-        transform: scale(1.1);
-      }
-      .gallery-item .comment {
-        text-align: center;
-        font-style: italic;
-        margin-top: 10px;
-      }
-      
-      button {
-        display: inline-block;
-        background-color: white;
-        padding: 5px;
-        width: 270px;
-        color: black;
-        text-align: center;
-        border: 5px #bbbbbb;
-        border-radius: 3px;
-        font-family: Times New Roman;
-        font-size: 16px;
-        cursor: pointer;
-        margin: 5px;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-      }
-      
-      button:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* 实现折叠文字功能*/
-
-      details {
-        font: 20x "Times New Roman","STZhongsong";
-         padding: 5px 20px;
-         margin-bottom: 10px;
-         
-        }                        
-     
-      summary {
-      	padding: 5px 0px;
-        cursor: pointer;
-      	-webkit-user-select: none; 
-        -moz-user-select: none; 
-        -ms-user-select: none; 
-        user-select: none; 
-        }
-               
-    </style>
-  </head>
-
-  <script>
-
-
-  </script>
-
-
-  <body>
-    <!-- js load nav bar -->
-    <div id="jsnav"></div>
-    <script src="scripts/loadnav.js"></script>
-
-      <div class="container">
-        <div class="left-column">
-
-          <div>
-          <h2>Research</h2>
-          <p style="font-size: 20px">Research areas and outputs.</p>
-
-          <div style="padding-top: 20px;">
-            <!-- js load footer -->
-            <div id="jsfooter"></div>
-            <script src="scripts/loadfooter.js"></script>
-          </div>
-        </div>
-
+  <div class="container">
+    <div class="left-column">
+      <div>
+        <h2>Research</h2>
+        <p style="font-size: 20px">Research areas and outputs.</p>
       </div>
-        <div class="right-column">
-
-<h2>Ongoing Projects</h2>
+      <!-- js load footer for large screens -->
+      <div id="jsfooter" class="footer-large-screen"></div>
+    </div>
+    <div class="right-column">
+      <h2>Ongoing Projects</h2>
       <ul>
-        
-        <details> 
-          <summary><b>Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells</b></summary> 
-                   <content>
-                    Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> and <i>SNAIL1</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
-                   </content>
-                             
+        <details>
+          <summary><b>Potential Impact of Early Fate Decision of hPSCs on the Tendency and Function of Offspring Cells</b></summary>
+          <div>
+            Germ-layer cells obtained through different paths exhibit distinct transcriptional profiles during differentiation, such as the noteworthily high expression of <i>TBXT</i> and <i>SNAIL1</i> during CHIR/Activin A-induced definitive endodermal differentiation but not in BMP4-initiated induction. Based on such observations, we want to investigate whether functional cells obtained via different induction routes with different have different functions and therapeutic potential in the context of the endodermal lineage.
+          </div>
         </details>
         <br>
-        
-        <details> 
-          <summary><b>Research on Key Pathways of <i>In Vitro</i> Induction and <i>In Vivo</i> Genesis of MSCs</b></summary> 
-                   <content>
-                    This study aims to develop a chemically defined method for obtaining mesenchymal stem cells (MSCs) from pluripotent stem cells (PSCs) through different germ layers and investigates the key components in the traditional serum culture medium that are essential for <i>in vitro</i> induction of MSCs.
-                   </content>
+        <details>
+          <summary><b>Research on Key Pathways of <i>In Vitro</i> Induction and <i>In Vivo</i> Genesis of MSCs</b></summary>
+          <div>
+            This study aims to develop a chemically defined method for obtaining mesenchymal stem cells (MSCs) from pluripotent stem cells (PSCs) through different germ layers and investigates the key components in the traditional serum culture medium that are essential for <i>in vitro</i> induction of MSCs.
+          </div>
         </details>
         <br>
-        <details> 
-          <summary><b>Effect of Culture Conditions on Therapeutic Immunomodulation Ability of MSCs: A QC Study</b></summary> 
-                   <content>
-                    - We want to explore what pathways and regulatory mechanisms ultimately affect the therapeutic efficacy of MSCs, especially their immune regulatory ability and <i>in vivo</i> survival after transplantation.<br>
-                    - Based on the current knowledge of the composition and role of serum and serum substitutes, we would also like to explore the possibility of manufacturing MSC preparations at the cell therapy product level in a chemically defined manner.<br>
-                    - This research is part of the project under the National Key Research and Development Program of China led by Prof. Xu Ren-he (2022YFA1105000).
-                   </content>
+        <details>
+          <summary><b>Effect of Culture Conditions on Therapeutic Immunomodulation Ability of MSCs: A QC Study</b></summary>
+          <div>
+            - We want to explore what pathways and regulatory mechanisms ultimately affect the therapeutic efficacy of MSCs, especially their immune regulatory ability and <i>in vivo</i> survival after transplantation.<br>
+            - Based on the current knowledge of the composition and role of serum and serum substitutes, we would also like to explore the possibility of manufacturing MSC preparations at the cell therapy product level in a chemically defined manner.<br>
+            - This research is part of the project under the National Key Research and Development Program of China led by Prof. Xu Ren-he (2022YFA1105000).
+          </div>
         </details>
         <br>
-        <details> 
-          <summary><b>FEA Insights Into the Mechanics of hPSC Colonies</b></summary> 
-                   <content>
-        Human PSC colonies exhibit a unique epithelial-mesenchymal gradient of morphology from the periphery to the centre, which reflects a complex interplay of the microenvironment, signalling pathways, cell adhesion, and mechanisms. We aim to employ finite element analysis to establish an <i>in silico</i> platform that can overcome the limitations of traditionally used and technically challenged traction force microscopy, in order to investigate the mechanical properties of pluripotent stem cell colonies and understand the reasons for such interesting morphology.
-                   </content>
+        <details>
+          <summary><b>FEA Insights Into the Mechanics of hPSC Colonies</b></summary>
+          <div>
+            Human PSC colonies exhibit a unique epithelial-mesenchymal gradient of morphology from the periphery to the centre, which reflects a complex interplay of the microenvironment, signalling pathways, cell adhesion, and mechanisms. We aim to employ finite element analysis to establish an <i>in silico</i> platform that can overcome the limitations of traditionally used and technically challenged traction force microscopy, in order to investigate the mechanical properties of pluripotent stem cell colonies and understand the reasons for such interesting morphology.
+          </div>
         </details>
         <br>
-                
-     </ul>
-
-<h2>Finished Projects</h2>
-      <ul>
-        <details> 
-          <summary><b>Design Optimization of Porous Total Knee Arthroplasty Prostheses: An FEA Study</b></summary> 
-                   <content>
-        Additive manufacturing offers great potential to fabricate more effective prostheses used for total knee arthroplasty (TKA). While porous implants could provide better osseointegration and avoid stress shielding, a porous structure could compromise the mechanical strength of these prostheses. Therefore, it is necessary to optimize the design of these structures to achieve a balance between osseointegration and mechanical functions. In this project, finite element analysis (FEA) will be employed to investigate the correlation between peak stress and pore size in TKA prostheses made of Biolox® delta ceramic and tantalum, thereby optimizing the design of these prostheses for enhanced strength and osseointegration. 
-                   </content>
-                             
-        </details>
-        <br>
-        
-        <details> 
-          <summary><b>Adaptability Study of a Chitosan/Peg Hydrogel as Novel 3D Cell Culture Matrices</b></summary> 
-                   <content>
-       This study explores hydrogels, a type of biomaterial with excellent biocompatibility and easy preparation, as potential carriers for cell therapy and 3D cell culture scaffolds. We used a hydrogel made from dibenzaldehyde-terminated poly (ethylene-glycol) (DF-PEG) and glycol chitosan (GC), which is self-healing, injectable, and quickly prepared. The hydrogel’s adaptability as a 3D cell culture medium was tested by adjusting its mechanical strength to find ideal conditions for different tissue cells. This research contributes to the development of universal theories for 3D culture based on hydrogels.
-                   </content>
-        </details>
-        <br>
-        
       </ul>
 
-          
-<h2>Conference Presentations</h2>
+      <h2>Finished Projects</h2>
       <ul>
-          <li>
-            <u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 10th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2024
-          </li>
-          </br>  
-          <li>
-            <u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 8th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Mar. 2024
-          </li>
-          </br>
-          <li>
-            <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element method", <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
-          </li>
-          </br>      
-          <li>
-            <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023
-          </li>
-          </br>      
-          <li>
-            <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element analysis", <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
-          </li>
-          </br>          
-          <li>
-            <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022
-          </li>
-        
-      </ul>                           
-        </div>
-      </div>
-  </body>
-</html>
+        <details>
+          <summary><b>Design Optimization of Porous Total Knee Arthroplasty Prostheses: An FEA Study</b></summary>
+          <content>
+            Additive manufacturing offers great potential to fabricate more effective prostheses used for total knee arthroplasty (TKA). While porous implants could provide better osseointegration and avoid stress shielding, a porous structure could compromise the mechanical strength of these prostheses. Therefore, it is necessary to optimize the design of these structures to achieve a balance between osseointegration and mechanical functions. In this project, finite element analysis (FEA) will be employed to investigate the correlation between peak stress and pore size in TKA prostheses made of Biolox® delta ceramic and tantalum, thereby optimizing the design of these prostheses for enhanced strength and osseointegration.
+          </content>
+        </details>
+        <br>
+        <details>
+          <summary><b>Adaptability Study of a Chitosan/Peg Hydrogel as Novel 3D Cell Culture Matrices</b></summary>
+          <content>
+            This study explores hydrogels, a type of biomaterial with excellent biocompatibility and easy preparation, as potential carriers for cell therapy and 3D cell culture scaffolds. We used a hydrogel made from dibenzaldehyde-terminated poly (ethylene-glycol) (DF-PEG) and glycol chitosan (GC), which is self-healing, injectable, and quickly prepared. The hydrogel’s adaptability as a 3D cell culture medium was tested by adjusting its mechanical strength to find ideal conditions for different tissue cells. This research contributes to the development of universal theories for 3D culture based on hydrogels.
+          </content>
+        </details>
+        <br>
+      </ul>
 
+      <h2>Conference Presentations</h2>
+      <ul>
+        <li>
+          <u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 10th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2024
+        </li>
+        <br>
+        <li>
+          <u><b>S. Wei</b></u>, G. Chen, Signalling Pathways During the Journey Towards Definitive Endoderm: Those Who Can and Those Who Cannot, <b>Poster</b>, 8th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Mar. 2024
+        </li>
+        <br>
+        <li>
+          <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element method", <b>Poster</b>, 9th Macau Symposium on Biomedical Sciences (MSBS), Jun. 2023
+        </li>
+        <br>
+        <li>
+          <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 7th Symposium on Biomedical Sciences for Students, Postdoctoral Fellows and Research Assistants, Apr. 2023
+        </li>
+        <br>
+        <li>
+          <u><b>S. Wei</b></u>, Z. Zhang, G. Chen, "Qualitative analysis of hPSC colony mechanics with finite element analysis", <b>Poster</b>, 2nd International Guangdong-Hong Kong-Macau Greater Bay Area Conference in Regenerative Medicine (GBRM), Apr. 2023
+        </li>
+        <br>
+        <li>
+          <u><b>S. Wei</b></u>, A. Entezari, "Design optimization of total knee arthroplasty prostheses: an FEA study", <b>Poster</b>, 8th Macau Symposium on Biomedical Sciences (MSBS), Oct. 2022
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- js load footer for small screens -->
+  <div id="jsfooter-small" class="footer-small-screen"></div>
+  <script src="scripts/loadfooter.js" defer></script>
+</body>
+</html>
