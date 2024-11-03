@@ -15,9 +15,9 @@
             fn = function() {
                 var width = docEle.clientWidth;
                 if (width) {
-                    var fontSize = 20 * (width / 320);
-                    fontSize = Math.max(2, Math.min(fontSize, 22)); // 设置最小字体为12px，最大字体为22px
-                    docEle.style.fontSize = fontSize + "px";
+                    var fontSize = 2 * (width / 1240);
+                    fontSize = Math.max(1, Math.min(fontSize, 1.6)); // 设置最小字体为 1 rem，最大字体为 1.6 rem
+                    docEle.style.fontSize = fontSize + "rem";
                 }
             };
 
@@ -37,7 +37,7 @@
 
           <div>
           <h2>Research</h2>
-          <p style="font-size: 20px">Research areas and outputs.</p>
+          <p>Research areas and outputs.</p>
 
           <div style="padding-top: 20px;">
             <!-- js load footer -->
