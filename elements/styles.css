@@ -235,3 +235,115 @@ ul.navbar2 li a:hover {
   text-decoration: underline;
   text-decoration-color: black;
 }
+
+/* Education section */
+.education-section {
+  margin-top: 20px;
+}
+
+.education-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.education-date {
+  flex: 1;
+  font-weight: bold;
+}
+
+.education-details {
+  flex: 3;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.education-institution {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.education-location {
+  font-size: 1rem;
+  color: #666;
+}
+
+.education-degree {
+  font-size: 1rem;
+  color: #333;
+}
+
+.education-remarks {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Work section */
+.work-section {
+  margin-top: 20px;
+}
+
+.work-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.work-date {
+  flex: 1;
+  font-weight: bold;
+}
+
+.work-details {
+  flex: 3;
+}
+
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.work-logo {
+  margin-right: 10px;
+}
+
+.work-logo img {
+  width: 1rem;
+  height: auto;
+}
+
+.work-company {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.work-location {
+  font-size: 1rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.work-position {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.work-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.work-highlights {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.work-highlights li {
+  margin-bottom: 5px;
+}
