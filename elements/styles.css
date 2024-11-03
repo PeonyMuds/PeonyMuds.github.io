@@ -56,12 +56,12 @@ ul.navbar top a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px 20px;
+  padding: 0px 0.8rem;
 }
 
 .right-column {
   flex: 3;
-  padding: 0px 50px;
+  padding: 0px 1.6rem;
   background-color: #ccc;
 }
 
@@ -117,11 +117,11 @@ ul.navbar top a:hover {
 }
 .gallery-item {
   position: relative;
-  width: 31rem;
+  width: 25rem;
   margin: 0.8rem;
   overflow: hidden;
   border: 0.3rem solid #000; 
-  border-radius: 0.3rem; /* Rounded corners */
+  border-radius: 0.5rem; /* Rounded corners */
   box-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Shadow effect */
 }
 
