@@ -109,13 +109,15 @@ ul.navbar top a:hover {
   justify-content: center;
 }
 
+  /* 相册 图片 展示*/
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
 }
 .gallery-item {
   position: relative;
-  width: 300px;
+  width: 500px;
   margin: 10px;
   overflow: hidden;
   border: 4px solid #000; 
