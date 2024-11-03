@@ -56,12 +56,12 @@ ul.navbar top a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px 0.8rem;
+  padding: 0px 0.7rem;
 }
 
 .right-column {
   flex: 3;
-  padding: 0px 0.6rem;
+  padding: 0px 0.7rem;
   background-color: #ccc;
 }
 
