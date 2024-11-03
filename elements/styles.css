@@ -108,4 +108,22 @@
       button:hover {
         background-color: #f0f0f0;
       }
+
+        /* 实现折叠文字功能*/
+
+        details {
+          font: 20x "Times New Roman","STZhongsong";
+            padding: 5px 20px;
+            margin-bottom: 10px;
+            
+          }                        
+        
+        summary {
+          padding: 5px 0px;
+          cursor: pointer;
+          -webkit-user-select: none; 
+          -moz-user-select: none; 
+          -ms-user-select: none; 
+          user-select: none; 
+          }
                

@@ -1,4 +1,4 @@
-<!-- responsively adjusting font size -->
+  /* responsively adjusting font size*/
   (function(doc, win) {
     var docEle = doc.documentElement,
         evt = "onorientationchange" in window ? "orientationchange" : "resize",
