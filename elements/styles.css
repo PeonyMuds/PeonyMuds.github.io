@@ -46,7 +46,9 @@
   
       .container {
         display: flex;
+        flex-wrap: wrap;
       }
+      
       .left-column {
         flex: 1;
         width: auto;
@@ -60,7 +62,15 @@
         padding: 0px 50px;
         background-color: #ccc;
       }
-           
+    
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .left-column, .right-column {
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
       .navbar-container {
         display: flex;
         justify-content: center;
