@@ -261,7 +261,7 @@ ul.navbar2 li a:hover {
 }
 
 .education-institution {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
@@ -310,12 +310,12 @@ ul.navbar2 li a:hover {
 }
 
 .work-logo img {
-  width: 1rem;
+  width: 2.4rem;
   height: auto;
 }
 
 .work-company {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
@@ -326,7 +326,7 @@ ul.navbar2 li a:hover {
 }
 
 .work-position {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 10px;
 }
