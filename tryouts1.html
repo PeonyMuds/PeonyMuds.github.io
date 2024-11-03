@@ -5,27 +5,13 @@
     <title>WEI Shengnan: Research</title>
  
     <link rel="stylesheet" type="text/css" href="elements/styles.css">
+    
+    <style>
+      html {
+        font-size: 1.5rem; /* 基准字体大小, here 1rem = 16px */
+      }
+    </style>
   </head>
-
-  <script>
-      /* responsively adjusting font size*/
-      (function(doc, win) {
-        var docEle = doc.documentElement,
-            evt = "onorientationchange" in window ? "orientationchange" : "resize",
-            fn = function() {
-                var width = docEle.clientWidth;
-                if (width) {
-                    var fontSize = 2 * (width / 1240);
-                    fontSize = Math.max(1, Math.min(fontSize, 1.6)); // 设置最小字体为 1 rem，最大字体为 1.6 rem
-                    docEle.style.fontSize = fontSize + "rem";
-                }
-            };
-
-        win.addEventListener(evt, fn, false);
-        doc.addEventListener("DOMContentLoaded", fn, false);
-      }(document, window));  
-  </script>
-
 
   <body>
     <!-- js load nav bar -->
