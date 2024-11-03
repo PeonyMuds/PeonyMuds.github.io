@@ -1,8 +1,8 @@
-    html {
-      font-size: 1.5rem; /* 基准字体大小 */
+      html {
+        font-size: 1.5rem; /* 基准字体大小 */
       }
 
-    .smaller-font {
+      .smaller-font {
         font-size: 0.8em; /* 相对于父元素字体大小的 80% */
       }
 
@@ -19,8 +19,7 @@
         caret-color: transparent;
       }
 
-    /* nav bar */
-
+      /* nav bar */
       ul.navbar {
         list-style-type: none;
         margin: 0;
@@ -28,11 +27,12 @@
         overflow: hidden;
         background-color: #444;
       }
-      
+
       ul.navbar top {
         float: left;
         text-decoration: none;
       }
+
       ul.navbar top a {
         display: block;
         color: white;
@@ -40,17 +40,22 @@
         padding: 14px 16px;
         text-decoration: none;
       }
+
       ul.navbar top a:hover {
         background-color: #111;
-      }     
-  
-      .container {
-        display: flex;
-        flex-wrap: wrap;
       }
-      
+
+      /* container */
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+      }
+
       .left-column {
-        flex: 1;
+        grid-column: 1;
+        grid-row: 1 / span 2;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -58,21 +63,32 @@
       }
 
       .right-column {
-        flex: 3;
+        grid-column: 2;
+        grid-row: 1 / span 2;
         padding: 0px 50px;
         background-color: #ccc;
       }
-    
+
+      /* Footer */
+      #jsfooter {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        padding: 20px;
+        background-color: #444;
+        color: white;
+        text-align: center;
+      }
+
       /* Responsive styles */
       @media (max-width: 768px) {
-        .left-column, .right-column {
-          flex: 100%;
-          max-width: 100%;
-        }
-
         .container {
           display: flex;
           flex-direction: column;
+        }
+
+        .left-column, .right-column {
+          flex: 100%;
+          max-width: 100%;
         }
 
         #jsfooter {
@@ -89,17 +105,20 @@
         display: flex;
         flex-wrap: wrap;
       }
+
       .gallery-item {
         position: relative;
         width: 300px;
         margin: 10px;
         overflow: hidden;
       }
+
       .gallery-item img {
         width: 100%;
         height: auto;
         transition: transform 0.3s;
       }
+
       .gallery-item:hover img {
         transform: scale(1.1);
       }
