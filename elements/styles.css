@@ -143,6 +143,39 @@ ul.navbar top a:hover {
   margin-top: 10px;
 }
 
+/* 相册 图片 展示 */
+.gallery2x {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery2x-item {
+  position: relative;
+  width: 17rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  border: 0.3rem solid #000;
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.gallery2x-item img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.gallery2x-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery2x-item .comment {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+
 /* 带标题的图片 */
 .image-container {
   display: flex;
