@@ -38,8 +38,13 @@
       const markdownLinks = document.getElementById('markdown-links');
 
       // Fetch the list of Markdown files from the JSON file
-      fetch('markdown/markdown-files.json')
-        .then(response => response.json())
+      fetch('markdown-files.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+        })
         .then(data => {
           const markdownFiles = data.files;
 
