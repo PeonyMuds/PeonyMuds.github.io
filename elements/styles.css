@@ -74,7 +74,7 @@ ul.navbar top a:hover {
   padding: 20px;
 }
 
-/* Responsive styles */
+/* Responsive styles For footer */
 @media (max-width: 768px) {
   .left-column,
   .right-column {
@@ -119,7 +119,7 @@ ul.navbar top a:hover {
 
 .gallery-item {
   position: relative;
-  width: 18rem;
+  width: 17rem;
   margin: 0.5rem;
   overflow: hidden;
   border: 0.3rem solid #000;
@@ -168,6 +168,30 @@ ul.navbar top a:hover {
 
 .comment-title {
   font-weight: bold;
+}
+
+/* Responsive styles for image-container */
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .image-container {
+    flex-direction: row;
+  }
+
+  .image-container img {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
 }
 
 button {
