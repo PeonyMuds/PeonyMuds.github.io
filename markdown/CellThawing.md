@@ -21,6 +21,3 @@
 5. Transfer the cell suspension to the well and mix.
 6. Inspect the cells under a microscope and place the plate in the incubator.
 7. Store remaining materials and clean up the workspace.
-
-## Appendix 1 Numbering System of Cell Storage Room:
-- Refer to the instruction figure/map on tank no. 4 for rack locations.
