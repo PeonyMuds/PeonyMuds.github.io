@@ -8,6 +8,7 @@
   <title>WEI Shengnan: Open Methods</title>
   <link rel="stylesheet" type="text/css" href="elements/styles.css">
   <script src="scripts/reponsivefontsize.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
 </head>
 <body>
   <!-- js load nav bar -->
@@ -25,9 +26,11 @@
     </div>
     <div class="right-column">
       <h2>Lists</h2>
-      <ul id="markdown-links">
-        <!-- Links to Markdown files will be generated here -->
-      </ul>
+      <select id="markdown-dropdown">
+        <option value="">Select a file</option>
+        <!-- Options will be generated here -->
+      </select>
+      <div id="content"></div>
     </div>
   </div>
   <!-- js load footer for small screens -->
@@ -35,10 +38,22 @@
   <script src="scripts/loadfooter.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const markdownLinks = document.getElementById('markdown-links');
+      const dropdown = document.getElementById('markdown-dropdown');
+      const contentDiv = document.getElementById('content');
+      const converter = new showdown.Converter();
+
+      function loadMarkdown(file) {
+        fetch(file)
+          .then(response => response.text())
+          .then(text => {
+            const html = converter.makeHtml(text);
+            contentDiv.innerHTML = html;
+          })
+          .catch(error => console.error('Error loading markdown file:', error));
+      }
 
       // Fetch the list of Markdown files from the JSON file
-      fetch('markdown-files.json')
+      fetch('markdown/markdown-files.json')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -48,18 +63,26 @@
         .then(data => {
           const markdownFiles = data.files;
 
-          // Generate links to Markdown files
+          // Generate options for the dropdown menu
           markdownFiles.forEach(file => {
             const fileName = file.split('/').pop().replace('.md', '');
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = `markdown-viewer.html?file=${file}`;
-            link.textContent = fileName;
-            listItem.appendChild(link);
-            markdownLinks.appendChild(listItem);
+            const option = document.createElement('option');
+            option.value = file;
+            option.textContent = fileName;
+            dropdown.appendChild(option);
           });
         })
         .catch(error => console.error('Error loading markdown files:', error));
+
+      // Add event listener to the dropdown menu
+      dropdown.addEventListener('change', function() {
+        const file = this.value;
+        if (file) {
+          loadMarkdown(file);
+        } else {
+          contentDiv.innerHTML = '';
+        }
+      });
     });
   </script>
 </body>
