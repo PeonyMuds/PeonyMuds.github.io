@@ -8,7 +8,6 @@
   <title>WEI Shengnan: Open Methods</title>
   <link rel="stylesheet" type="text/css" href="elements/styles.css">
   <script src="scripts/reponsivefontsize.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
 </head>
 <body>
   <!-- js load nav bar -->
@@ -29,7 +28,6 @@
       <ul id="markdown-links">
         <!-- Links to Markdown files will be generated here -->
       </ul>
-      <div id="content"></div>
     </div>
   </div>
   <!-- js load footer for small screens -->
@@ -37,8 +35,6 @@
   <script src="scripts/loadfooter.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const converter = new showdown.Converter();
-      const contentDiv = document.getElementById('content');
       const markdownLinks = document.getElementById('markdown-links');
 
       const markdownFiles = [
@@ -46,42 +42,15 @@
         // Add more Markdown files as needed
       ];
 
-      function loadMarkdown(file) {
-        fetch(file)
-          .then(response => response.text())
-          .then(text => {
-            const html = converter.makeHtml(text);
-            contentDiv.innerHTML = html;
-          })
-          .catch(error => console.error('Error loading markdown file:', error));
-      }
-
       // Generate links to Markdown files
       markdownFiles.forEach(file => {
         const fileName = file.split('/').pop().replace('.md', '');
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        link.href = '#';
+        link.href = `markdown-viewer.html?file=${file}`;
         link.textContent = fileName;
-        link.setAttribute('data-file', file);
-        link.classList.add('markdown-link');
         listItem.appendChild(link);
         markdownLinks.appendChild(listItem);
-      });
-
-      // Load the first markdown file by default
-      if (markdownFiles.length > 0) {
-        loadMarkdown(markdownFiles[0]);
-      }
-
-      // Add event listeners to the links
-      const links = document.querySelectorAll('.markdown-link');
-      links.forEach(link => {
-        link.addEventListener('click', function(event) {
-          event.preventDefault();
-          const file = this.getAttribute('data-file');
-          loadMarkdown(file);
-        });
       });
     });
   </script>
