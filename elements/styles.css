@@ -175,6 +175,13 @@ ul.navbar top a:hover {
   margin-top: 10px;
 }
 
+/* 相册 图片 展示 bigger */
+@media (max-width: 768px) {
+  .gallery2x-item {
+    width: 17rem;
+  }
+}
+
 
 /* 带标题的图片 */
 .image-container {
