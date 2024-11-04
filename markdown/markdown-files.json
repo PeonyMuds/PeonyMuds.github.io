@@ -1,8 +1,5 @@
 {
   "files": [
-    "markdown/CellThawing.md",
-    "markdown/AnotherFile.md",
-    "markdown/YetAnotherFile.md"
-    // Add more Markdown files as needed
+    "markdown/CellThawing.md"
   ]
 }
