@@ -40,8 +40,28 @@
           <p>In my experience, going through these steps would fix this issue.</p>
         </details>
       </details>
-    </div>
-  </div>
+
+  <details>
+    <summary>R and RStudio</summary>
+    <details>
+      <summary>Seurat</summary>
+      <details>
+        <summary>Subset(): layer "data" is not found in the object</summary>
+        <p>For example:</p>
+        <pre><code>
+  > mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | Cer1 >= 1 | Foxa2 >= 1))
+  Warning: No layers found matching search pattern provided:
+  layer "data" is not found in the object
+        </code></pre>
+        <p>This is caused by differences in the structure of objects in different versions of Seurat. In versions prior to V4, there would be a layer called data in Seurat that stored the original counts of genes. However, in V5, this layer was renamed to counts. As a result, some of the functions would mismatch and no results could be found.</p>
+        <p>For this issue, add a new argument <code>slot="counts"</code> here so that it would search not under data but under counts. For the previous example, this would work:</p>
+        <pre><code>
+  mm_gasE7.25_Sox17Cer1Foxa2Pos <- subset(x = mm_gasE7.25, subset = (Sox17 >= 1 | Cer1 >= 1 | Foxa2 >= 1), slot="counts")
+        </code></pre>
+      </details>
+    </details>
+  </details>
+
   <!-- js load footer for small screens -->
   <div id="jsfooter-small" class="footer-small-screen"></div>
   <script src="scripts/loadfooter.js" defer></script>
