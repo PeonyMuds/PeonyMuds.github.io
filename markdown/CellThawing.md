@@ -1,4 +1,4 @@
-## Protocol
+## Protocol to Thaw hESCs
 ### Preparation:
 1. Prepare a beaker of warm water (~37 °C) and set up the hood.
 2. Sterilize E8 medium and Y27632 (ROCKi) from the 4°C freezer and place them in the hood.
