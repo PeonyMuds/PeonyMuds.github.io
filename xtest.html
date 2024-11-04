@@ -37,21 +37,24 @@
     document.addEventListener('DOMContentLoaded', function() {
       const markdownLinks = document.getElementById('markdown-links');
 
-      const markdownFiles = [
-        'markdown/CellThawing.md',
-        // Add more Markdown files as needed
-      ];
+      // Fetch the list of Markdown files from the JSON file
+      fetch('markdown-files.json')
+        .then(response => response.json())
+        .then(data => {
+          const markdownFiles = data.files;
 
-      // Generate links to Markdown files
-      markdownFiles.forEach(file => {
-        const fileName = file.split('/').pop().replace('.md', '');
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = `markdown-viewer.html?file=${file}`;
-        link.textContent = fileName;
-        listItem.appendChild(link);
-        markdownLinks.appendChild(listItem);
-      });
+          // Generate links to Markdown files
+          markdownFiles.forEach(file => {
+            const fileName = file.split('/').pop().replace('.md', '');
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `markdown-viewer.html?file=${file}`;
+            link.textContent = fileName;
+            listItem.appendChild(link);
+            markdownLinks.appendChild(listItem);
+          });
+        })
+        .catch(error => console.error('Error loading markdown files:', error));
     });
   </script>
 </body>
