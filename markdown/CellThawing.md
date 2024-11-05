@@ -5,9 +5,9 @@
 3. Retrieve the coated plate from the incubator and place it in the hood.
 
 ### Fetching Frozen Cells:
-1. Gather necessary equipment (foam box, tweezer, knitted gloves) and head to the cell storage room.
-2. Retrieve the desired cell rack from the tank using PPE gloves and place it in the foam box.
-3. Locate and extract the desired cryovial of cells using the coordinates from the Dropbox file.
+1. Gather necessary equipment (foam box, tweezer, knitted gloves).
+2. Properly using PPE gloves, retrieve the desired cryovials of cells from the rack and place the vials in the foam box.
+   - *Note*: place the rack in the foam box to collect liquid nitrogen for later use to short-termly store the retrieved cryovials. Alternatively, if your cells aren't stored in liquid nitrogen, use a beaker of warm water with foam floats for the cryovials.
 
 ### Thawing
 1. Thaw the cryovial of cells in the prepared warm water bath.
@@ -15,9 +15,9 @@
 
 ### Plating
 1. Pipette cells from the cryovial into the 15 mL centrifuge tube with 5 mL medium dropwise.
-2. Centrifuge the tube for 5 min at 300 g.
-3. Prepare the well with fresh medium and Y27632 during centrifugation.
-4. After centrifugation, remove the supernatant and resuspend the cells in fresh medium.
-5. Transfer the cell suspension to the well and mix.
+2. Centrifuge the tube for 5 min at 300 xg.
+3. Prepare the well with fresh medium and 5-10 µM Y27632 during centrifugation.
+   - *Note*: Rock inhibitor Y27632 is useful to prevent dissociation-caused apoptosis.
+4. After centrifugation, remove the supernatant and resuspend the cells in the fresh medium.
+5. Transfer the cell suspension to the wells and shake the plate in "↑↓↑↓←→←→" manner.
 6. Inspect the cells under a microscope and place the plate in the incubator.
-7. Store remaining materials and clean up the workspace.
