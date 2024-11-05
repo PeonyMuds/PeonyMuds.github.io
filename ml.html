@@ -98,7 +98,7 @@
       const monkeyEmojis = ['🐵', '🙈', '🙉', '🙊'];
       const pumpkinEmoji = '🎃';
       const lipsEmoji = '💋';
-      const emojiCount = 5; // Number of each type of emoji
+      const emojiCount = 6; // Number of each type of emoji
       const emojis = [];
 
       function createEmojiElement(emoji, index) {
@@ -107,7 +107,7 @@
         emojiElement.textContent = emoji;
         emojiElement.style.left = `${Math.random() * 90}vw`; // Keep emojis within the viewport
         emojiElement.style.top = `${Math.random() * 90}vh`; // Keep emojis within the viewport
-        emojiElement.style.fontSize = `${Math.random() * 1.5 + 1.5}rem`; // Ensure emojis are not too small
+        emojiElement.style.fontSize = `${Math.random() * 1 + 1.5}rem`; // Ensure emojis are not too small
         emojiElement.style.animationDuration = `${Math.random() * 10 + 10}s`; // Slower movement
         emojiElement.style.animationDelay = `${Math.random() * 5}s`;
 
