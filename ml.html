@@ -1,0 +1,198 @@
+<!-- 
+
+    This HTML file creates a web page with flying emojis that interact with each other.
+    The page includes heart, monkey, and pumpkin emojis that move randomly across the screen.
+    When a pumpkin emoji collides with a monkey emoji, they pause, and a lips emoji appears at the collision point and flies away.
+
+    Structure:
+    - <head>: Contains meta information, title, and styles.
+    - <body>: Contains the emoji container and JavaScript to generate and animate emojis.
+
+    Styles:
+    - body: Sets up the page layout and background.
+    - .emoji-container: Container for emojis.
+    - .emoji: Base style for emojis with animation.
+    - @keyframes fly: Defines the fly animation for emojis.
+    - .lips: Style for the lips emoji with fade-in, fade-out, and fly animation.
+    - @keyframes fadeInOutAndFly: Defines the animation for the lips emoji.
+
+    JavaScript:
+    - Adds event listener for DOMContentLoaded to initialize the page.
+    - Defines emojis and their counts.
+    - createEmojiElement: Function to create and style emoji elements.
+    - Generates random keyframes for each emoji's fly animation.
+    - Appends emojis to the emoji container.
+    - checkCollision: Function to detect collisions between emojis.
+    - pauseEmojis: Function to pause emojis on collision and display the lips emoji.
+    - Sets an interval to check for collisions every 100ms.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flying Emojis Page">
+  <title>Flying Emojis</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Prevent scrollbars */
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .emoji-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .emoji {
+      position: absolute;
+      animation: fly linear infinite;
+    }
+    @keyframes fly {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(100vw, 100vh);
+      }
+    }
+    .lips {
+      position: absolute;
+      font-size: 0;
+      opacity: 0.3; /* More transparent */
+      animation: fadeInOutAndFly 2s forwards;
+    }
+    @keyframes fadeInOutAndFly {
+      0% {
+        font-size: 0;
+        opacity: 0.3;
+        transform: translate(0, 0);
+      }
+      50% {
+        font-size: 3rem;
+        opacity: 0.5;
+      }
+      100% {
+        font-size: 3rem;
+        opacity: 0;
+        transform: translate(var(--fly-x), var(--fly-y)); /* Fly in random direction */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="emoji-container">
+    <!-- Emojis will be generated here by JavaScript -->
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const emojiContainer = document.querySelector('.emoji-container');
+      const heartEmoji = '❤️';
+      const monkeyEmojis = ['🐵', '🙈', '🙉', '🙊'];
+      const pumpkinEmoji = '🎃';
+      const lipsEmoji = '💋';
+      const emojiCount = 5; // Number of each type of emoji
+      const emojis = [];
+
+      function createEmojiElement(emoji, index) {
+        const emojiElement = document.createElement('div');
+        emojiElement.classList.add('emoji');
+        emojiElement.textContent = emoji;
+        emojiElement.style.left = `${Math.random() * 90}vw`; // Keep emojis within the viewport
+        emojiElement.style.top = `${Math.random() * 90}vh`; // Keep emojis within the viewport
+        emojiElement.style.fontSize = `${Math.random() * 1.5 + 1.5}rem`; // Ensure emojis are not too small
+        emojiElement.style.animationDuration = `${Math.random() * 10 + 10}s`; // Slower movement
+        emojiElement.style.animationDelay = `${Math.random() * 5}s`;
+
+        // Generate random keyframes for the fly animation
+        const keyframes = `
+          @keyframes fly${index} {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(${Math.random() * 80 - 40}vw, ${Math.random() * 80 - 40}vh); }
+            50% { transform: translate(${Math.random() * 80 - 40}vw, ${Math.random() * 80 - 40}vh); }
+            75% { transform: translate(${Math.random() * 80 - 40}vw, ${Math.random() * 80 - 40}vh); }
+            100% { transform: translate(${Math.random() * 80 - 40}vw, ${Math.random() * 80 - 40}vh); }
+          }
+        `;
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+        emojiElement.style.animationName = `fly${index}`;
+
+        emojiContainer.appendChild(emojiElement);
+        emojis.push(emojiElement);
+      }
+
+      // Create heart emojis
+      for (let i = 0; i < emojiCount; i++) {
+        createEmojiElement(heartEmoji, i);
+      }
+
+      // Create monkey emojis
+      for (let i = 0; i < emojiCount; i++) {
+        const monkeyEmoji = monkeyEmojis[i % monkeyEmojis.length];
+        createEmojiElement(monkeyEmoji, emojiCount + i);
+      }
+
+      // Create pumpkin emojis
+      for (let i = 0; i < emojiCount; i++) {
+        createEmojiElement(pumpkinEmoji, emojiCount * 2 + i);
+      }
+
+      function checkCollision() {
+        for (let i = 0; i < emojis.length; i++) {
+          for (let j = i + 1; j < emojis.length; j++) {
+            const rect1 = emojis[i].getBoundingClientRect();
+            const rect2 = emojis[j].getBoundingClientRect();
+
+            if (
+              rect1.left < rect2.right &&
+              rect1.right > rect2.left &&
+              rect1.top < rect2.bottom &&
+              rect1.bottom > rect2.top
+            ) {
+              if (
+                (emojis[i].textContent === pumpkinEmoji && monkeyEmojis.includes(emojis[j].textContent)) ||
+                (emojis[j].textContent === pumpkinEmoji && monkeyEmojis.includes(emojis[i].textContent))
+              ) {
+                pauseEmojis(emojis[i], emojis[j], rect1, rect2);
+              }
+            }
+          }
+        }
+      }
+
+      function pauseEmojis(emoji1, emoji2, rect1, rect2) {
+        emoji1.style.animationPlayState = 'paused';
+        emoji2.style.animationPlayState = 'paused';
+
+        const lipsElement = document.createElement('div');
+        lipsElement.classList.add('lips');
+        lipsElement.textContent = lipsEmoji;
+        lipsElement.style.left = `${(rect1.left + rect2.left + rect1.width / 2 + rect2.width / 2) / 2}px`;
+        lipsElement.style.top = `${(rect1.top + rect2.top + rect1.height / 2 + rect2.height / 2) / 2}px`;
+
+        // Set random direction for flying
+        lipsElement.style.setProperty('--fly-x', `${Math.random() * 200 - 100}px`);
+        lipsElement.style.setProperty('--fly-y', `${Math.random() * 200 - 100}px`);
+
+        emojiContainer.appendChild(lipsElement);
+
+        lipsElement.addEventListener('animationend', function() {
+          lipsElement.remove();
+          emoji1.style.animationPlayState = 'running';
+          emoji2.style.animationPlayState = 'running';
+        });
+      }
+
+      setInterval(checkCollision, 100);
+    });
+  </script>
+</body>
+</html>
