@@ -25,7 +25,7 @@ HemaEZ is a **cell counting calculator** designed to assist researchers in deter
 
 ## 📌 Overview
 
-LayoutEZ is a **384-well plate layout management tool** designed for Roche LightCycle480II users. It helps researchers efficiently organize and export sample information in TSV format, optimizing workflow within Roche’s legacy software.
+LayoutEZ is a **384-well plate layout management tool** designed for Roche LightCycler 480II users. It helps researchers efficiently organize and export sample information in TSV format, optimizing workflow within Roche’s legacy software.
 
 ### 🔹 Features:
 - **Automated Plate Layout Generation**: Generate TSV files for import in Roche's LC480II software.
