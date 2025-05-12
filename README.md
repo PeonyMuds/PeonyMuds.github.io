@@ -12,7 +12,7 @@ HemaEZ is a **cell counting calculator** designed to assist researchers in deter
 - **Automated Concentration Calculation After Manual Cell Counting**: Simplifies lab work
 
 🔗 **Try HemaEZ Here**  
-- [GitHub Page](path/to/github-page)  
+- [GitHub Page](https://peonymuds.github.io/hemaez.html)
 - [My Website](http://swei.website/hemaez.html)
 
 ---
@@ -33,7 +33,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 - **Quick and Intuiative Editing**
 
 🔗 **Try LayoutEZ Here**  
-- [GitHub Page](path/to/github-page)  
+- [GitHub Page](https://peonymuds.github.io/lc480iiez.html)  
 - [Website](http://swei.website/lc480ez.html)
 
 ---
