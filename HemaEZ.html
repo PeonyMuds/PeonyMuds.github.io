@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemaEZ - Cell Counting Calculator</title>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: transparent;
+            margin: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: linear-gradient(135deg, #f0f4f8, #e0e7f0);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        select, input {
+            padding: 8px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        select:focus, input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+        }
+        select:hover, input:hover {
+            border-color: #4a90e2;
+        }
+        canvas {
+            border: 2px solid #ccc;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
+        .formula-section, .interactive-section, .dilution-info {
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .interactive-section input {
+            width: 120px;
+            margin: 0 10px;
+        }
+        .result {
+            font-weight: bold;
+            color: #2ecc71;
+            margin-top: 10px;
+        }
+        .inline-formula {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .dilution-info {
+            margin-left: 20px;
+            flex: 0 0 200px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        button:active {
+            background-color: #2c5282;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HemaEZ - Cell Counting Calculator</h1>
+        <div>
+            <div>
+                <label for="cell-type">Select Cell Type:</label>
+                <select id="cell-type">
+                    <option value="cultured">Cultured Human Cells</option>
+                    <option value="rbc">Red Blood Cells</option>
+                    <option value="wbc">White Blood Cells</option>
+                    <option value="platelet">Platelets</option>
+                </select>
+            </div>
+            <div>
+                <label for="chamber-type">Select Counting Chamber:</label>
+                <select id="chamber-type">
+                    <option value="neubauer">Neubauer</option>
+                    <option value="thoma">Thoma</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <canvas id="counting-chamber" width="400" height="400"></canvas>
+            <div class="dilution-info">
+                <h3>Recommended Dilution</h3>
+                <p id="dilution-text"></p>
+            </div>
+        </div>
+        <div class="formula-section">
+            <h2>Concentration Formula</h2>
+            <p id="formula-text"></p>
+            <h3>Input Explanations:</h3>
+            <ul id="input-explanations"></ul>
+        </div>
+        <div class="interactive-section">
+            <h2>Interactive Concentration Calculator</h2>
+            <div class="inline-formula">
+                <span>Concentration (cells/mL) = </span>
+                <input type="number" id="cell-count" min="0" step="1" value="0" placeholder="Enter cell count" title="Enter total number of cells counted">
+                <span id="multiplier-text"></span>
+                <input type="number" id="dilution-factor" min="1" step="0.1" value="1" placeholder="Enter dilution factor" title="Enter dilution factor (e.g., 200 for 1:200)">
+            </div>
+            <button onclick="calculateConcentration()">Calculate</button>
+            <p id="concentration-result" class="result"></p>
+        </div>
+        <div class="copyright">
+            &copy; 2025 WEI Shengnan. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('counting-chamber');
+        const ctx = canvas.getContext('2d');
+        const cellTypeSelect = document.getElementById('cell-type');
+        const chamberTypeSelect = document.getElementById('chamber-type');
+        const formulaText = document.getElementById('formula-text');
+        const inputExplanations = document.getElementById('input-explanations');
+        const cellCountInput = document.getElementById('cell-count');
+        const dilutionFactorInput = document.getElementById('dilution-factor');
+        const concentrationResult = document.getElementById('concentration-result');
+        const multiplierText = document.getElementById('multiplier-text');
+        const dilutionText = document.getElementById('dilution-text');
+
+        function drawNeubauer() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'black';
+
+            // Draw 3x3 large grid (thick lines, 2px)
+            const largeScale = 100; // 1mm = 100 pixels
+            ctx.lineWidth = 2;
+            for (let i = 0; i <= 3; i++) {
+                ctx.beginPath();
+                ctx.moveTo(50 + i * largeScale, 50);
+                ctx.lineTo(50 + i * largeScale, 350);
+                ctx.moveTo(50, 50 + i * largeScale);
+                ctx.lineTo(350, 50 + i * largeScale);
+                ctx.stroke();
+            }
+
+            // Draw 4x4 medium grid in all large squares (medium lines, 1.5px)
+            ctx.lineWidth = 1.5;
+            const mediumScale = largeScale / 4;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    const x = 50 + j * largeScale;
+                    const y = 50 + i * largeScale;
+                    if (!(i === 1 && j === 1)) { // Skip central square for special handling
+                        for (let mi = 0; mi <= 4; mi++) {
+                            ctx.beginPath();
+                            ctx.moveTo(x + mi * mediumScale, y);
+                            ctx.lineTo(x + mi * mediumScale, y + largeScale);
+                            ctx.moveTo(x, y + mi * mediumScale);
+                            ctx.lineTo(x + largeScale, y + mi * mediumScale);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Draw 4x4 medium grid in central square (2,2)
+            const centralX = 150; // (2,2) at x: 150-250
+            const centralY = 150; // y: 150-250
+            for (let i = 0; i <= 4; i++) {
+                ctx.beginPath();
+                ctx.moveTo(centralX + i * mediumScale, centralY);
+                ctx.lineTo(centralX + i * mediumScale, centralY + largeScale);
+                ctx.moveTo(centralX, centralY + i * mediumScale);
+                ctx.lineTo(centralX + largeScale, centralY + i * mediumScale);
+                ctx.stroke();
+            }
+
+            // Draw 5x5 small grid in each medium square of central (2,2) (thin lines, 1px)
+            ctx.lineWidth = 1;
+            const smallScale = mediumScale / 5;
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    const x = centralX + i * mediumScale;
+                    const y = centralY + j * mediumScale;
+                    for (let si = 0; si <= 5; si++) {
+                        ctx.beginPath();
+                        ctx.moveTo(x + si * smallScale, y);
+                        ctx.lineTo(x + si * smallScale, y + mediumScale);
+                        ctx.moveTo(x, y + si * smallScale);
+                        ctx.lineTo(x + mediumScale, y + si * smallScale);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw tiny grids in (1,2), (3,2), (2,1), (2,3)
+            const tinyScale = largeScale / 20;
+
+            // (1,2) and (3,2): 4x4 medium, vertical tiny lines only
+            const secondColumn = [[150, 50], [150, 250]];
+            secondColumn.forEach(([x, y]) => {
+                for (let i = 0; i < 4; i++) {
+                    for (let j = 0; j < 4; j++) {
+                        for (let ti = 0; ti <= 4; ti++) {
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * mediumScale + ti * (mediumScale / 5), y + j * mediumScale);
+                            ctx.lineTo(x + i * mediumScale + ti * (mediumScale / 5), y + (j + 1) * mediumScale);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            });
+
+            // (2,1) and (2,3): 4x4 medium, horizontal tiny lines only
+            const secondRow = [[50, 150], [250, 150]];
+            secondRow.forEach(([x, y]) => {
+                for (let i = 0; i < 4; i++) {
+                    for (let j = 0; j < 4; j++) {
+                        for (let ti = 0; ti <= 4; ti++) {
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * mediumScale, y + j * mediumScale + ti * (mediumScale / 5));
+                            ctx.lineTo(x + (i + 1) * mediumScale, y + j * mediumScale + ti * (mediumScale / 5));
+                            ctx.stroke();
+                        }
+                    }
+                }
+            });
+
+            // Highlight squares based on cell type and chamber
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+            const cellType = cellTypeSelect.value;
+            if (cellType === 'cultured') {
+                // Highlight 4 corner large squares
+                ctx.fillRect(50, 50, 100, 100); // (1,1)
+                ctx.fillRect(250, 50, 100, 100); // (1,3)
+                ctx.fillRect(50, 250, 100, 100); // (3,1)
+                ctx.fillRect(250, 250, 100, 100); // (3,3)
+            } else if (cellType === 'wbc') {
+                // Highlight 4 corner large squares
+                ctx.fillRect(50, 50, 100, 100); // (1,1)
+                ctx.fillRect(250, 50, 100, 100); // (1,3)
+                ctx.fillRect(50, 250, 100, 100); // (3,1)
+                ctx.fillRect(250, 250, 100, 100); // (3,3)
+            } else if (cellType === 'rbc' || cellType === 'platelet') {
+                // Highlight 4 corner medium squares in central (2,2)
+                ctx.fillRect(150, 150, 25, 25); // Top-left
+                ctx.fillRect(225, 150, 25, 25); // Top-right
+                ctx.fillRect(150, 225, 25, 25); // Bottom-left
+                ctx.fillRect(225, 225, 25, 25); // Bottom-right
+            }
+        }
+
+        function drawThoma() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'black';
+
+            // Draw 3x3 large grid (thick lines, 2px)
+            const largeScale = 100; // 1mm = 100 pixels
+            ctx.lineWidth = 2;
+            for (let i = 0; i <= 3; i++) {
+                ctx.beginPath();
+                ctx.moveTo(50 + i * largeScale, 50);
+                ctx.lineTo(50 + i * largeScale, 350);
+                ctx.moveTo(50, 50 + i * largeScale);
+                ctx.lineTo(350, 50 + i * largeScale);
+                ctx.stroke();
+            }
+
+            // Draw 4x4 medium grid in corner large squares (medium lines, 1.5px)
+            ctx.lineWidth = 1.5;
+            const mediumScale = largeScale / 4;
+            const corners = [[50, 50], [250, 50], [50, 250], [250, 250]]; // (1,1), (1,3), (3,1), (3,3)
+            corners.forEach(([x, y]) => {
+                for (let i = 0; i <= 4; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(x + i * mediumScale, y);
+                    ctx.lineTo(x + i * mediumScale, y + largeScale);
+                    ctx.moveTo(x, y + i * mediumScale);
+                    ctx.lineTo(x + largeScale, y + i * mediumScale);
+                    ctx.stroke();
+                }
+            });
+
+            // Draw 5x4 medium grid in second column large squares (1,2) and (3,2)
+            ctx.lineWidth = 1.5;
+            const secondColumn = [[150, 50], [150, 250]]; // (1,2), (3,2)
+            secondColumn.forEach(([x, y]) => {
+                // 5 medium columns
+                for (let i = 0; i <= 5; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(x + i * (largeScale / 5), y);
+                    ctx.lineTo(x + i * (largeScale / 5), y + largeScale);
+                    ctx.stroke();
+                }
+                // 4 medium rows (aligned with corner squares)
+                for (let i = 0; i <= 4; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y + i * mediumScale);
+                    ctx.lineTo(x + largeScale, y + i * mediumScale);
+                    ctx.stroke();
+                }
+            });
+
+            // Draw 4x5 medium grid in second row large squares (2,1) and (2,3)
+            const secondRow = [[50, 150], [250, 150]]; // (2,1), (2,3)
+            secondRow.forEach(([x, y]) => {
+                // 4 medium columns (aligned with corner squares)
+                for (let i = 0; i <= 4; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(x + i * mediumScale, y);
+                    ctx.lineTo(x + i * mediumScale, y + largeScale);
+                    ctx.stroke();
+                }
+                // 5 medium rows
+                for (let i = 0; i <= 5; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y + i * (largeScale / 5));
+                    ctx.lineTo(x + largeScale, y + i * (largeScale / 5));
+                    ctx.stroke();
+                }
+            });
+
+            // Draw 5x5 medium grid in central square (2,2)
+            const centralSquare = [150, 150]; // (2,2)
+            const [cx, cy] = centralSquare;
+            for (let i = 0; i <= 5; i++) {
+                ctx.beginPath();
+                ctx.moveTo(cx + i * (largeScale / 5), cy);
+                ctx.lineTo(cx + i * (largeScale / 5), cy + largeScale);
+                ctx.moveTo(cx, cy + i * (largeScale / 5));
+                ctx.lineTo(cx + largeScale, cy + i * (largeScale / 5));
+                ctx.stroke();
+            }
+
+            // Draw tiny grids (1px lines)
+            ctx.lineWidth = 1;
+            const tinyScale = largeScale / 20;
+
+            // Tiny grid for (1,2) and (3,2): 5 columns x 4 rows, vertical lines only
+            secondColumn.forEach(([x, y]) => {
+                for (let i = 0; i < 5; i++) { // 5 medium columns
+                    for (let j = 0; j < 4; j++) { // 4 medium rows
+                        for (let ti = 0; ti <= 4; ti++) { // 4 tiny vertical divisions
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * (largeScale / 5) + ti * (largeScale / 20), y + j * mediumScale);
+                            ctx.lineTo(x + i * (largeScale / 5) + ti * (largeScale / 20), y + (j + 1) * mediumScale);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            });
+
+            // Tiny grid for (2,1) and (2,3): 4 columns x 5 rows, horizontal lines only
+            secondRow.forEach(([x, y]) => {
+                for (let i = 0; i < 4; i++) { // 4 medium columns
+                    for (let j = 0; j < 5; j++) { // 5 medium rows
+                        for (let ti = 0; ti <= 4; ti++) { // 4 tiny horizontal divisions
+                            ctx.beginPath();
+                            ctx.moveTo(x + i * mediumScale, y + j * (largeScale / 5) + ti * (largeScale / 20));
+                            ctx.lineTo(x + (i + 1) * mediumScale, y + j * (largeScale / 5) + ti * (largeScale / 20));
+                            ctx.stroke();
+                        }
+                    }
+                }
+            });
+
+            // Tiny grid for (2,2): 5x5 medium, each into 4x4 tiny
+            for (let i = 0; i < 5; i++) { // 5 medium columns
+                for (let j = 0; j < 5; j++) { // 5 medium rows
+                    for (let ti = 0; ti <= 4; ti++) { // 4 tiny divisions
+                        ctx.beginPath();
+                        ctx.moveTo(cx + i * (largeScale / 5) + ti * (largeScale / 20), cy + j * (largeScale / 5));
+                        ctx.lineTo(cx + i * (largeScale / 5) + ti * (largeScale / 20), cy + (j + 1) * (largeScale / 5));
+                        ctx.moveTo(cx + i * (largeScale / 5), cy + j * (largeScale / 5) + ti * (largeScale / 20));
+                        ctx.lineTo(cx + (i + 1) * (largeScale / 5), cy + j * (largeScale / 5) + ti * (largeScale / 20));
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Highlight squares based on cell type and chamber
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+            const cellType = cellTypeSelect.value;
+            if (cellType === 'cultured') {
+                // Highlight 4 corner large squares
+                ctx.fillRect(50, 50, 100, 100); // (1,1)
+                ctx.fillRect(250, 50, 100, 100); // (1,3)
+                ctx.fillRect(50, 250, 100, 100); // (3,1)
+                ctx.fillRect(250, 250, 100, 100); // (3,3)
+            } else if (cellType === 'wbc') {
+                // Highlight 4 corner large squares
+                ctx.fillRect(50, 50, 100, 100); // (1,1)
+                ctx.fillRect(250, 50, 100, 100); // (1,3)
+                ctx.fillRect(50, 250, 100, 100); // (3,1)
+                ctx.fillRect(250, 250, 100, 100); // (3,3)
+            } else if (cellType === 'rbc') {
+                // Highlight 5 medium squares in (2,2)
+                ctx.fillRect(150, 150, 20, 20); // Top-left
+                ctx.fillRect(230, 150, 20, 20); // Top-right
+                ctx.fillRect(150, 230, 20, 20); // Bottom-left
+                ctx.fillRect(230, 230, 20, 20); // Bottom-right
+                ctx.fillRect(190, 190, 20, 20); // Central
+            } else if (cellType === 'platelet') {
+                // Highlight 5 medium squares in (2,2)
+                ctx.fillRect(150, 150, 20, 20); // Top-left
+                ctx.fillRect(230, 150, 20, 20); // Top-right
+                ctx.fillRect(150, 230, 20, 20); // Bottom-left
+                ctx.fillRect(230, 230, 20, 20); // Bottom-right
+                ctx.fillRect(190, 190, 20, 20); // Central
+            }
+        }
+
+        function updateFormula() {
+            const cellType = cellTypeSelect.value;
+            const chamberType = chamberTypeSelect.value;
+            let formula = '';
+            let volume = 0;
+            let multiplier = 0;
+            let squares = '';
+            let explanations = [];
+
+            if (chamberType === 'neubauer') {
+                if (cellType === 'cultured') {
+                    volume = 0.4; // 4 corner large squares
+                    multiplier = 2500;
+                    squares = '4 corner large squares (each 1mm²)';
+                    formula = 'Concentration (cells/mL) = N × 2500 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner large squares.',
+                        'D: Dilution factor (e.g., 10 to 100 to achieve ~100+ cells).',
+                        '2500: Derived from 1000 ÷ 0.4 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'wbc') {
+                    volume = 0.4; // 4 corner large squares
+                    multiplier = 2500;
+                    squares = '4 corner large squares (each 1mm²)';
+                    formula = 'Concentration (cells/mL) = N × 2500 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner large squares.',
+                        'D: Dilution factor (e.g., ~1:20).',
+                        '2500: Derived from 1000 ÷ 0.4 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'rbc') {
+                    volume = 0.008; // 4 corner medium squares in central
+                    multiplier = 125000;
+                    squares = '4 corner medium squares in central large square (each 0.002mm²)';
+                    formula = 'Concentration (cells/mL) = N × 125,000 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner medium squares.',
+                        'D: Dilution factor (e.g., ~1:200).',
+                        '125,000: Derived from 1000 ÷ 0.008 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'platelet') {
+                    volume = 0.008; // 4 corner medium squares in central
+                    multiplier = 125000;
+                    squares = '4 corner medium squares in central large square (each 0.002mm²)';
+                    formula = 'Concentration (cells/mL) = N × 125,000 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner medium squares.',
+                        'D: Dilution factor (e.g., ~1:100).',
+                        '125,000: Derived from 1000 ÷ 0.008 (volume in μL), converting μL to mL.'
+                    ];
+                }
+            } else if (chamberType === 'thoma') {
+                if (cellType === 'cultured') {
+                    volume = 0.4; // 4 corner large squares
+                    multiplier = 2500;
+                    squares = '4 corner large squares (each 1mm²)';
+                    formula = 'Concentration (cells/mL) = N × 2500 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner large squares.',
+                        'D: Dilution factor (e.g., 10 to 100 to achieve ~100+ cells).',
+                        '2500: Derived from 1000 ÷ 0.4 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'wbc') {
+                    volume = 0.4; // 4 corner large squares
+                    multiplier = 2500;
+                    squares = '4 corner large squares (each 1mm²)';
+                    formula = 'Concentration (cells/mL) = N × 2500 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 4 corner large squares.',
+                        'D: Dilution factor (e.g., ~1:20).',
+                        '2500: Derived from 1000 ÷ 0.4 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'rbc') {
+                    volume = 0.1; // 5 medium squares in (2,2)
+                    multiplier = 10000;
+                    squares = '5 medium squares in central large square (4 corners + center)';
+                    formula = 'Concentration (cells/mL) = N × 10,000 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 5 medium squares.',
+                        'D: Dilution factor (e.g., ~1:200).',
+                        '10,000: Derived from 1000 ÷ 0.1 (volume in μL), converting μL to mL.'
+                    ];
+                } else if (cellType === 'platelet') {
+                    volume = 0.1; // 5 medium squares in (2,2)
+                    multiplier = 10000;
+                    squares = '5 medium squares in central large square (4 corners + center)';
+                    formula = 'Concentration (cells/mL) = N × 10,000 × D';
+                    explanations = [
+                        'N: Total number of cells counted in the 5 medium squares.',
+                        'D: Dilution factor (e.g., ~1:100).',
+                        '10,000: Derived from 1000 ÷ 0.1 (volume in μL), converting μL to mL.'
+                    ];
+                }
+            }
+
+            formulaText.textContent = `Formula: ${formula} (based on ${squares}, volume ${volume} μL)`;
+            inputExplanations.innerHTML = explanations.map(exp => `<li>${exp}</li>`).join('');
+            multiplierText.textContent = ` × ${multiplier} × `;
+
+            // Update recommended dilution
+            let dilution = '';
+            if (chamberType === 'neubauer') {
+                if (cellType === 'cultured') dilution = '~1:10 to 1:100 (adjust to ~100+ cells)';
+                else if (cellType === 'wbc') dilution = '~1:20';
+                else if (cellType === 'rbc') dilution = '~1:200';
+                else if (cellType === 'platelet') dilution = '~1:100';
+            } else if (chamberType === 'thoma') {
+                if (cellType === 'cultured') dilution = '~1:10 to 1:100 (adjust to ~100+ cells)';
+                else if (cellType === 'wbc') dilution = '~1:20';
+                else if (cellType === 'rbc') dilution = '~1:200';
+                else if (cellType === 'platelet') dilution = '~1:100';
+            }
+            dilutionText.textContent = `Recommended Dilution: ${dilution}`;
+        }
+
+        function calculateConcentration() {
+            const cellCount = parseInt(cellCountInput.value) || 0;
+            const dilutionFactor = parseFloat(dilutionFactorInput.value) || 1;
+            const chamberType = chamberTypeSelect.value;
+            const cellType = cellTypeSelect.value;
+            let concentration = 0;
+
+            if (chamberType === 'neubauer') {
+                if (cellType === 'cultured' || cellType === 'wbc') {
+                    concentration = cellCount * 2500 * dilutionFactor;
+                } else if (cellType === 'rbc' || cellType === 'platelet') {
+                    concentration = cellCount * 125000 * dilutionFactor;
+                }
+            } else if (chamberType === 'thoma') {
+                if (cellType === 'cultured' || cellType === 'wbc') {
+                    concentration = cellCount * 2500 * dilutionFactor;
+                } else if (cellType === 'rbc' || cellType === 'platelet') {
+                    concentration = cellCount * 10000 * dilutionFactor;
+                }
+            }
+
+            concentrationResult.textContent = `Concentration: ${concentration.toLocaleString()} cells/mL`;
+        }
+
+        function updateDisplay() {
+            if (chamberTypeSelect.value === 'neubauer') {
+                drawNeubauer();
+            } else {
+                drawThoma();
+            }
+            updateFormula();
+        }
+
+        cellTypeSelect.addEventListener('change', updateDisplay);
+        chamberTypeSelect.addEventListener('change', updateDisplay);
+
+        // Initial draw and formula
+        updateDisplay();
+    </script>
+</body>
+</html>
