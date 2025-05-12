@@ -1,7 +1,7 @@
 # HemaEZ
 
 <p align="center">
-  <img src=".assets/hemaEZLOGO.png" width="150">
+  <img src=".assets/hemaEZLOGO.png" width="400">
 </p>
 
 ## 📌 Overview
@@ -20,7 +20,7 @@ HemaEZ is a **cell counting calculator** designed to assist researchers in deter
 # LayoutEZ
 
 <p align="center">
-  <img src=".assets/layoutEZlogo.png" width="150">
+  <img src=".assets/layoutEZlogo.png" width="400">
 </p>
 
 ## 📌 Overview
