@@ -22,7 +22,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 # ExpressEZ
 
 <p align="center">
-  <img src=".assets/expressezlogo.png" width="400">
+  <img src=".assets/expressEZlogo.png" width="400">
 </p>
 
 ## 📌 Overview
