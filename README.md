@@ -13,7 +13,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 - **Load Previously Exported TSV Files**
 - **Quick and Intuitive Editing**
 
-🔗 **Try LayoutEZ Here**  
+🔗 **Try LayoutEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/lc480iiez.html)  
 - [Website](http://swei.website/lc480ez.html)
 
@@ -35,7 +35,7 @@ ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480I
 - **Calculate ΔCt and 2^-ΔCt.**
 - **Export results to TSV.**
 
-🔗 **Try HemaEZ Here**  
+🔗 **Try ExpressEZ Here:**  
 - [My Website](http://swei.website/expressez.html)
 
 ---
@@ -54,7 +54,7 @@ A small tool that helps quickly calculate how much stock solution of chemicals a
 - **Swiftly calculate the dilution ratio based on stock, aliquot and working concentrations.**
 - **Support conversion between molar and mass units.**
 
-🔗 **Try HemaEZ Here**  
+🔗 **Try DiluHelper Here:**  
 - [My Website](http://swei.website/diluhelper.html)
 
 ---
@@ -72,7 +72,7 @@ HemaEZ is a **cell counting calculator** designed to assist researchers in deter
 ### ✨ Features:
 - **Automated Concentration Calculation After Manual Cell Counting**: Simplifies lab work
 
-🔗 **Try HemaEZ Here**  
+🔗 **Try HemaEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/hemaez.html)
 - [My Website](http://swei.website/hemaez.html)
 
