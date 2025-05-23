@@ -27,7 +27,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 
 ## 📌 Overview
 
-ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480II, QuantStudio 7, Bio-Rad CFX384, and custom formats. Upload data files (.xlsx, .xls, .tsv, .csv, .txt), configure column mappings, visualise 384-well plate layouts, edit sample details, and perform ΔCt and 2^-ΔCt calculations in Analysis Mode. Export results to TSV for further analysis.
+ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480II, QuantStudio 7, and Bio-Rad CFX384. Upload data files (.xlsx, .xls, .tsv, .csv, .txt), configure column mappings, visualise 384-well plate layouts, edit sample details, and perform ΔCt and 2^-ΔCt calculations in Analysis Mode. Export results to TSV for further analysis.
 
 ### ✨ Features:
 - **Read the data files based on instrument preset or custom formats.**
