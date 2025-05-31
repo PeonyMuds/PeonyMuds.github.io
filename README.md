@@ -59,6 +59,25 @@ A small tool that helps quickly calculate how much stock solution of chemicals a
 
 ---
 
+# WellMarker
+
+<p align="center">
+  <img src=".assets/wellmarker_logo.png" width="500">
+</p>
+
+## 📌 Overview
+
+WellMarker is a straightforward and practical well plate layout management tool for easy labelling and sample organisation. Coming with a label management system, Wellmarker enables efficient data recording for lab work.
+
+### ✨ Features:
+- **Arrange sample or treatment info for 6-, 12-, 24-, 48-, 96-, and 384-well plates** with as many as 24 labels.
+- **Export as TSV files.**
+
+🔗 **Try DiluHelper Here:**  
+- [My Website](http://swei.website/wellmarker.html)
+
+---
+
 # HemaEZ
 
 <p align="center">
