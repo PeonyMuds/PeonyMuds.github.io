@@ -10,7 +10,7 @@ Scan no more, mon ami! Just use your favourite web browser to check in and check
 
 
 🔗 **Try EC-Book System Fast Portal Here:**  
-- [GitHub Page](https://peonymuds.github.io/ecbookfastporta))  
+- [GitHub Page](https://peonymuds.github.io/ecbookfastporta)
 - [Website](http://swei.website/ecbookfastportal.html)
 
 ---
