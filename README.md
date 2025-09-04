@@ -1,7 +1,7 @@
 # UM FHS EC-Book System Fast Portal
 
 <p align="center">
-  <img src=".assets/layoutEZlogo.png" width="400">
+  <img src=".assets/portal.png" width="400">
 </p>
 
 ## 📌 Overview
