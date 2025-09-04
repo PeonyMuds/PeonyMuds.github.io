@@ -1,3 +1,20 @@
+# UM FHS EC-Book System Fast Portal
+
+<p align="center">
+  <img src=".assets/layoutEZlogo.png" width="400">
+</p>
+
+## 📌 Overview
+
+Scan no more, mon ami! Just use your favourite web browser to check in and check out in the EC-Book System.
+
+
+🔗 **Try EC-Book System Fast Portal Here:**  
+- [GitHub Page]([https://peonymuds.github.io/lc480iiez.html](https://peonymuds.github.io/ecbookfastportal))  
+- [Website]([http://swei.website/lc480ez.html](http://swei.website/ecbookfastportal.html))
+
+---
+
 # LayoutEZ
 
 <p align="center">
