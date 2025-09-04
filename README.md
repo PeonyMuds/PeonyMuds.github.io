@@ -10,8 +10,8 @@ Scan no more, mon ami! Just use your favourite web browser to check in and check
 
 
 🔗 **Try EC-Book System Fast Portal Here:**  
-- [GitHub Page](https://peonymuds.github.io/ecbookfastporta)
-- [Website](http://swei.website/ecbookfastportal.html)
+- [GitHub Page](https://peonymuds.github.io/ecbookfastportal.html)
+- [My Website](http://swei.website/ecbookfastportal.html)
 
 ---
 
@@ -32,7 +32,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 
 🔗 **Try LayoutEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/lc480iiez.html)  
-- [Website](http://swei.website/lc480ez.html)
+- [My Website](http://swei.website/lc480ez.html)
 
 ---
 
