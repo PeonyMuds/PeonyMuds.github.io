@@ -10,8 +10,8 @@ Scan no more, mon ami! Just use your favourite web browser to check in and check
 
 
 🔗 **Try EC-Book System Fast Portal Here:**  
-- [GitHub Page]([https://peonymuds.github.io/lc480iiez.html](https://peonymuds.github.io/ecbookfastportal))  
-- [Website]([http://swei.website/lc480ez.html](http://swei.website/ecbookfastportal.html))
+- [GitHub Page](https://peonymuds.github.io/ecbookfastporta))  
+- [Website](http://swei.website/ecbookfastportal.html)
 
 ---
 
