@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EC-Book System FastPortal">
+    <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
+    <title>WEI Shengnan: EC-Book System FastPortal</title>
+    <link rel="stylesheet" type="text/css" href="elements/styles.css">
+    <script src="scripts/reponsivefontsize.js" defer></script>
+    <style>
+      /* Right column as positioning context and no overflow */
+      .right-column {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        height: 100%;
+        overflow: hidden; /* Prevent child elements from overflowing */
+      }
+
+      /* Glassmorphism container fills right-column but stays inside */
+      .ec-container {
+        width: 95%;
+        height: 100%;
+        min-height: 60vh;
+        max-width: 100%;
+        box-sizing: border-box;
+        border-radius: 28px;
+        overflow: hidden;
+        padding: 2vw 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        --mouse-x: 50%;
+        --mouse-y: 50%;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(18px) saturate(140%);
+        border: 1.5px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+        position: relative;
+      }
+
+      /* Animated gradient overlay */
+      .ec-container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: radial-gradient(
+          circle at var(--mouse-x) var(--mouse-y),
+          rgba(255,255,255,0.22) 0%,
+          rgba(200,220,255,0.13) 40%,
+          rgba(180,200,220,0.16) 100%
+        );
+        opacity: 0.9;
+        animation: ec-glassmove 8s ease-in-out infinite alternate;
+        pointer-events: none;
+        filter: blur(12px) brightness(1.08);
+        transition: background 0.3s, filter 0.3s;
+      }
+
+      @keyframes ec-glassmove {
+        0% {
+          background-position: 0% 50%;
+          filter: blur(12px) brightness(1.08);
+        }
+        50% {
+          background-position: 100% 50%;
+          filter: blur(18px) brightness(1.13);
+        }
+        100% {
+          background-position: 0% 50%;
+          filter: blur(12px) brightness(1.08);
+        }
+      }
+
+      /* Ensure content is above the animated background */
+      .ec-container > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Uniform square icons */
+      .ec-icon-box {
+        width: 10vw;
+        height: 10vw;
+        max-width: 80px;
+        max-height: 80px;
+        min-width: 60px;
+        min-height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 14px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Hover effect with circular glow */
+      .ec-icon-container:hover .ec-icon-box {
+        transform: scale(1.15);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        animation: ec-pulse 1.5s infinite;
+      }
+
+      @keyframes ec-pulse {
+        0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+        50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+      }
+
+      /* No-logo icon styles */
+      .ec-no-logo-icon {
+        width: 60%;
+        height: 60%;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.4);
+        transition: background 0.3s ease;
+      }
+      .ec-icon-container:hover .ec-no-logo-icon {
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      /* SVG icon styles */
+      .ec-svg-icon {
+        width: 50%;
+        height: 50%;
+        max-width: 30px;
+        max-height: 30px;
+      }
+
+      /* Icon text styles */
+      .ec-icon-text {
+        font-family: 'Noto Sans', Arial, sans-serif;
+        font-size: clamp(6px, 1.4vw, 15px);
+        font-weight: 600;
+        color: #ffffff !important;
+        text-align: center;
+        letter-spacing: 0.5px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        width: 100%;
+        height: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+      }
+
+      /* Subtle entrance animation for categories */
+      .ec-category {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: ec-slideIn 0.5s ease forwards;
+      }
+      @keyframes ec-slideIn {
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .ec-category:nth-child(1) { animation-delay: 0.1s; }
+      .ec-category:nth-child(2) { animation-delay: 0.2s; }
+      .ec-category:nth-child(3) { animation-delay: 0.3s; }
+
+      /* Grid layout for 7 icons per row */
+      .ec-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2vw;
+        justify-items: center;
+        align-items: start; /* Key: align content to the top of each column */
+      }
+
+      /* Typography */
+      .cattitle {
+        color: #374151;
+        font-size: clamp(16px, 3vw, 20px);
+        font-weight: 30000;
+        letter-spacing: 0.5px;
+      }
+      .ec-icon-container > span {
+        color: #374151;
+        font-size: clamp(10px, 2vw, 12px);
+        font-weight: 400;
+        margin-top: 1vw;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        line-height: 1.2;
+        display: block;
+        align-self: flex-start;
+      }
+
+      /* Make icons and text in each column top-aligned */
+      .ec-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2vw;
+        justify-items: center;
+        align-items: start; /* Key: align content to the top of each column */
+      }
+
+      /* Icon and text vertically arranged, both top-aligned */
+      .ec-icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        width: 100%;
+        text-decoration: none; /* Remove underline */
+        color: inherit;        /* Keep text color unchanged */
+      }
+
+      /* Icon centered horizontally and vertically */
+      .ec-icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+        height: 10vw;
+        max-width: 80px;
+        max-height: 80px;
+        min-width: 60px;
+        min-height: 60px;
+        border-radius: 14px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Ensure icon content is centered */
+      }
+
+      /* Text below icon top-aligned and centered */
+      .ec-icon-container > span {
+        margin-top: 1vw;
+        width: 100%;
+        text-align: center;
+        align-self: flex-start;
+        display: block;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .ec-container {
+          max-width: 90vw;
+          padding: 4vw;
+        }
+        .ec-icon-box {
+          width: 10vw;
+          height: 10vw;
+          min-width: 36px;
+          min-height: 36px;
+        }
+        .ec-grid {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 3vw;
+          align-items: start;
+        }
+      }
+      @media (max-width: 400px) {
+        .ec-icon-box {
+          width: 12vw;
+          height: 12vw;
+          min-width: 32px;
+          min-height: 32px;
+        }
+        .ec-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 4vw;
+          align-items: start;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- Icon Templates for Copy-Pasting -->
+    <!--
+      Uploaded Icon Template:
+      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
+        <div class="ec-icon-box" style="background: linear-gradient(135deg, #e0e0e0, #bdbdbd);">
+          <img src="[YOUR_SERVER_PATH]" alt="[ICON_ALT]" class="ec-logo-img">
+        </div>
+        <span>[LABEL]</span>
+      </a>
+
+      Online Icon Template (SVG):
+      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
+        <div class="ec-icon-box" style="background: linear-gradient(135deg, #424242, #212121);">
+          <svg class="ec-logo-img" viewBox="0 0 24 24" fill="white">
+            <path d="[SVG_PATH]"/>
+          </svg>
+        </div>
+        <span>[LABEL]</span>
+      </a>
+
+      Text Icon Template:
+      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
+        <div class="ec-icon-box" style="background: linear-gradient(135deg, #1a1a1a, #000000);">
+          <span class="ec-icon-text">[ABBREVIATION]</span>
+        </div>
+        <span>[LABEL]</span>
+      </a>
+
+      Usage Instructions:
+      - Replace [URL] with the link (e.g., https://example.com).
+      - For Uploaded Icon: Replace [YOUR_SERVER_PATH] with your image URL (e.g., https://yourserver.com/logos/icon.png) and [ICON_ALT] with alt text.
+      - For Online Icon: Replace [SVG_PATH] with the SVG path data or use an <img> with a trusted external URL.
+      - For Text Icon: Replace [ABBREVIATION] with a 2-4 character abbreviation (e.g., TFE, IG).
+      - Replace [LABEL] with the display name (e.g., Microscope).
+      - Choose a monochrome gradient: #e0e0e0 to #bdbdbd, #424242 to #212121, or #1a1a1a to #000000.
+    -->
+    <!-- js load nav bar -->
+    <div id="jsnav"></div>
+    <script src="scripts/loadnav.js" defer></script>
+
+    <div class="container">
+      <div class="left-column">
+        <div>
+          <h2>EC-Book System Check In/Out FastPortal</h2>
+          <p>
+            This will only work if you connect to a UM intranet.
+          </p>
+        </div>
+        <!-- js load footer for large screens -->
+        <div id="jsfooter" class="footer-large-screen"></div>
+      </div>
+      <div class="right-column">
+        <div class="ec-container">
+          <!-- Category: Microscopy and Cell Imaging -->
+          <div class="ec-category">
+            <h2 class="cattitle">Microscopy and Cell Imaging</h2>
+            <div class="ec-grid">
+            
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3244" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(135deg, #440303, #424242);">
+                  <span class="ec-icon-text">Thermo Fisher EVOS</span>
+                </div>
+                <span>N22-2010 EVOS</span>
+              </a>
+              
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1479" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(215deg, #440303, #424242);">
+                  <span class="ec-icon-text">Lecia DMi8</span>
+                </div>
+                <span>N22-2028aa DMi8</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1217" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(215deg, #08562e, #1a1a1a);">
+                  <span class="ec-icon-text">Zeiss 880</span>
+                </div>
+                <span>N22-4030a Carl Zeiss LSM880 Confocal</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5817" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(215deg, #592304, #242424);">
+                  <span class="ec-icon-text">Nikon TiE</span>
+                </div>
+                <span>N22-4030 Nikon TiE</span>
+              </a>
+              
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2620" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(255deg, #2e3e85, #1e2020);">
+                  <span class="ec-icon-text">Cytell</span>
+                </div>
+                <span>N22-2008 GE Cytell</span>
+              </a> 
+
+              <div class="ec-icon-container flex flex-col items-center"></div>
+              <div class="ec-icon-container flex flex-col items-center"></div>
+            </div>
+          </div>
+
+          <!-- Category: Flow Cytometry -->
+          <div class="ec-category">
+            <h2 class="cattitle">Flow Cytometry</h2>
+            <div class="ec-grid">
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5805" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(135deg, #0a213d, #5c4d6b);">
+                  <span class="ec-icon-text">Beckman Coulter CytoFlex</span>
+                </div>
+                <span>N22-2008 CytoFlex</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1387" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(230deg, #0a213d, #4c4749);">
+                  <span class="ec-icon-text">Beckman Coulter CytoFlex</span>
+                </div>
+                <span>E12-2076 CytoFlex</span>
+              </a>
+
+              <div class="ec-icon-container flex flex-col items-center"></div>
+              <div class="ec-icon-container flex flex-col items-center"></div>
+            </div>
+          </div>
+
+          <!-- Category: Real-time PCR -->
+          <div class="ec-category">
+            <h2 class="cattitle">PCR and Reat-time PCR</h2>
+            <div class="ec-grid">
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4992" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(75deg,  #072723, #1b3305);">
+                  <span class="ec-icon-text">Roche LC480II</span>
+                </div>
+                <span>N22-2028 LC480II</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4989" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(75deg,  #041e3d, #2b023b);">
+                  <span class="ec-icon-text">Quant-studio 7</span>
+                </div>
+                <span>E12-2076 ABI Quantstudio 7 Flex</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3121" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(150deg,  #065836, #075673);">
+                  <span class="ec-icon-text">XXL Quant-studio 7</span>
+                </div>
+                <span>N22-4005a ABI Quantstudio 7 Flex</span>
+              </a>
+
+              <div class="ec-icon-container flex flex-col items-center"></div>
+              <div class="ec-icon-container flex flex-col items-center"></div>
+            </div>
+          </div>
+
+          <!-- Category: Others -->
+          <div class="ec-category">
+            <h2 class="cattitle">Others</h2>
+            <div class="ec-grid">
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2796" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(135deg, #5c5c5c, rgb(38, 41, 43));">
+                  <span class="ec-icon-text">Chemi Doc</span>
+                </div>
+                <span>N22-2008 ChemiDoc</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3520" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(195deg, #5c5c5c, rgb(38, 41, 43));">
+                  <span class="ec-icon-text">TECAN Plate Reader</span>
+                </div>
+                <span>N22-2028 TECAN Platereader</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2624" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(235deg, #404747, rgb(16, 14, 46));">
+                  <span class="ec-icon-text">BioFlo Bio-reactor</span>
+                </div>
+                <span>N22-2017 BioFlo 120 Bioreactor</span>
+              </a>
+
+              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2443" target="_blank" class="ec-icon-container flex flex-col items-center">
+                <div class="ec-icon-box" style="background: linear-gradient(195deg, #09080a, rgb(173, 157, 189));">
+                  <span class="ec-icon-text">BioComp Gradient Maker</span>
+                </div>
+                <span> N22-2010 Gradient Master & Fractionator</span>
+              </a>
+              
+              <div class="ec-icon-container flex flex-col items-center"></div>
+              <div class="ec-icon-container flex flex-col items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- js load footer for small screens -->
+      <div id="jsfooter-small" class="footer-small-screen"></div>
+    </div>
+    <script src="scripts/loadfooter.js" defer></script>
+    <script>
+      // When the mouse moves inside right-column, dynamically set highlight position
+      const rightCol = document.querySelector('.right-column');
+      const glass = document.querySelector('.ec-container');
+      rightCol.addEventListener('mousemove', e => {
+        const rect = rightCol.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        glass.style.setProperty('--mouse-x', `${x}%`);
+        glass.style.setProperty('--mouse-y', `${y}%`);
+      });
+      // Restore center when mouse leaves
+      rightCol.addEventListener('mouseleave', () => {
+        glass.style.setProperty('--mouse-x', `50%`);
+        glass.style.setProperty('--mouse-y', `50%`);
+      });
+    </script>
+  </body>
+</html>
