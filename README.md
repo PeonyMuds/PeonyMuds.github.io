@@ -11,7 +11,7 @@ Scan no more, mon ami! Just use your favourite web browser to check in and check
 
 🔗 **Try EC-Book System Fast Portal Here:**  
 - [GitHub Page](https://peonymuds.github.io/ecbookfastportal.html)
-- [My Website](http://swei.website/ecbookfastportal.html)
+- [My Website](http://swei.website/tools/ecbookfastportal.html)
 
 ---
 
@@ -32,7 +32,7 @@ LayoutEZ is a **384-well plate layout management tool** designed for Roche Light
 
 🔗 **Try LayoutEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/lc480iiez.html)  
-- [My Website](http://swei.website/lc480ez.html)
+- [My Website](http://swei.website/tools/lc480ez.html)
 
 ---
 
@@ -53,7 +53,7 @@ ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480I
 - **Export results to TSV.**
 
 🔗 **Try ExpressEZ Here:**  
-- [My Website](http://swei.website/expressez.html)
+- [My Website](http://swei.website/tools/expressez.html)
 
 ---
 
@@ -72,7 +72,7 @@ A small tool that helps quickly calculate how much stock solution of chemicals a
 - **Support conversion between molar and mass units.**
 
 🔗 **Try DiluHelper Here:**  
-- [My Website](http://swei.website/diluhelper.html)
+- [My Website](http://swei.website/tools/diluhelper.html)
 
 ---
 
@@ -91,7 +91,7 @@ WellMarker is a straightforward and practical well plate layout management tool 
 - **Export as TSV files.**
 
 🔗 **Try DiluHelper Here:**  
-- [My Website](http://swei.website/wellmarker.html)
+- [My Website](http://swei.website/tools/wellmarker.html)
 
 ---
 
@@ -110,7 +110,7 @@ HemaEZ is a **cell counting calculator** designed to assist researchers in deter
 
 🔗 **Try HemaEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/hemaez.html)
-- [My Website](http://swei.website/hemaez.html)
+- [My Website](http://swei.website/tools/hemaez.html)
 
 ---
 
