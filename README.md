@@ -95,22 +95,22 @@ WellMarker is a straightforward and practical well plate layout management tool 
 
 ---
 
-# HemaEZ
+# HemoEZ
 
 <p align="center">
-  <img src=".assets/hemaEZLOGO.png" width="400">
+  <img src=".assets/hemoEZLOGO.png" width="400">
 </p>
 
 ## 📌 Overview
 
-HemaEZ is a **cell counting calculator** designed to assist researchers in determining cell concentrations using a Neubauer counting chamber. This tool eliminates manual calculations by providing an intuitive interface for precise measurements.
+HemoEZ is a **cell counting calculator** designed to assist researchers in determining cell concentrations using a Neubauer counting chamber. This tool eliminates manual calculations by providing an intuitive interface for precise measurements.
 
 ### ✨ Features:
 - **Automated Concentration Calculation After Manual Cell Counting**: Simplifies lab work
 
-🔗 **Try HemaEZ Here:**  
-- [GitHub Page](https://peonymuds.github.io/hemaez.html)
-- [My Website](http://swei.website/tools/hemaez.html)
+🔗 **Try hemoEZ Here:**  
+- [GitHub Page](https://peonymuds.github.io/hemoez.html)
+- [My Website](http://swei.website/tools/hemoez.html)
 
 ---
 
