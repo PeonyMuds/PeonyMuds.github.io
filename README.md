@@ -1,3 +1,4 @@
+
 # UM FHS EC-Book System Fast Portal
 
 <p align="center">
@@ -54,6 +55,22 @@ ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480I
 
 🔗 **Try ExpressEZ Here:**  
 - [My Website](http://swei.website/tools/expressez.html)
+
+---
+
+# 简 · CharcoalEZ
+
+<p align="center">
+  <img src=".assets/charcoalez_cover.png" width="400">
+</p>
+
+## 📌 Overview
+
+A minimal and standalone code archiver and viewer.
+
+
+🔗 **Try CharcoalEZ Here:**  
+- [My Website](http://swei.website/tools/code/charcoalez.html)
 
 ---
 
