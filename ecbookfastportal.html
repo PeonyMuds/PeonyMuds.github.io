@@ -1,522 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EC-Book System FastPortal">
-    <link rel="shortcut icon" href="assets/icon.ico" alt="Site Icon"/>
-    <title>WEI Shengnan: EC-Book System FastPortal</title>
-    <link rel="stylesheet" type="text/css" href="elements/styles.css">
-    <script src="scripts/reponsivefontsize.js" defer></script>
-    <style>
-      /* Right column as positioning context and no overflow */
-      .right-column {
-        position: relative;
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-        height: 100%;
-        overflow: hidden; /* Prevent child elements from overflowing */
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EC-Book Icons — Standalone</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: #1a2238;
+    font-family: 'Noto Sans', Arial, sans-serif;
+    color: #fff;
+  }
 
-      /* Glassmorphism container fills right-column but stays inside */
-      .ec-container {
-        width: 95%;
-        height: 100%;
-        min-height: 60vh;
-        max-width: 100%;
-        box-sizing: border-box;
-        border-radius: 28px;
-        overflow: hidden;
-        padding: 2vw 3vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        --mouse-x: 50%;
-        --mouse-y: 50%;
-        background: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(18px) saturate(140%);
-        border: 1.5px solid rgba(255, 255, 255, 0.22);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-        position: relative;
-      }
+  .right-column {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2vw 3vw;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px) saturate(140%);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    min-height: 100vh;
+    margin: 0;
+  }
+  .right-column > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
 
-      /* Animated gradient overlay */
-      .ec-container::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background: radial-gradient(
-          circle at var(--mouse-x) var(--mouse-y),
-          rgba(255,255,255,0.22) 0%,
-          rgba(200,220,255,0.13) 40%,
-          rgba(180,200,220,0.16) 100%
-        );
-        opacity: 0.9;
-        animation: ec-glassmove 8s ease-in-out infinite alternate;
-        pointer-events: none;
-        filter: blur(12px) brightness(1.08);
-        transition: background 0.3s, filter 0.3s;
-      }
+  .right-column::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      rgba(255,255,255,0.22) 0%,
+      rgba(200,220,255,0.13) 40%,
+      rgba(180,200,220,0.16) 100%
+    );
+    opacity: 0.9;
+    animation: ec-glassmove 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    filter: blur(12px) brightness(1.08);
+    transition: background 0.3s, filter 0.3s;
+  }
+  @keyframes ec-glassmove {
+    0%   { background-position: 0% 50%;   filter: blur(12px) brightness(1.08); }
+    50%  { background-position: 100% 50%; filter: blur(18px) brightness(1.13); }
+    100% { background-position: 0% 50%;   filter: blur(12px) brightness(1.08); }
+  }
 
-      @keyframes ec-glassmove {
-        0% {
-          background-position: 0% 50%;
-          filter: blur(12px) brightness(1.08);
-        }
-        50% {
-          background-position: 100% 50%;
-          filter: blur(18px) brightness(1.13);
-        }
-        100% {
-          background-position: 0% 50%;
-          filter: blur(12px) brightness(1.08);
-        }
-      }
+  /* Category card */
+  .ec-category {
+    position: relative;
+    background: linear-gradient(135deg,
+      rgba(251, 251, 251, 0.78) 0%,
+      rgba(248, 250, 255, 0.82) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(180, 190, 210, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    padding: 16px 18px 18px;
+    flex: 0 0 auto;
+    min-height: max-content;
+    overflow: visible;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  .ec-category:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
 
-      /* Ensure content is above the animated background */
-      .ec-container > * {
-        position: relative;
-        z-index: 1;
-      }
+  .ec-cat-viewport {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .ec-cat-overlay {
+    position: absolute;
+    right: -8px;
+    bottom: -10px;
+    width: clamp(104px, 12vw, 142px);
+    height: auto;
+    color: #1a3a6e;
+    fill: currentColor;
+    opacity: 0.20;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: 82% 82%;
+    transition: opacity 0.42s ease,
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.42s ease;
+    will-change: transform, opacity;
+  }
+  .ec-category:hover .ec-cat-overlay {
+    opacity: 0.12;
+    transform: translate3d(-7px, -7px, 0) scale(1.055);
+    filter: saturate(1.08) contrast(1.05);
+  }
+  .ec-category > .ec-grid { position: relative; z-index: 1; }
 
-      /* Uniform square icons */
-      .ec-icon-box {
-        width: 10vw;
-        height: 10vw;
-        max-width: 80px;
-        max-height: 80px;
-        min-width: 60px;
-        min-height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 14px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+  /* Grid */
+  .ec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: clamp(6px, 0.8vw, 10px);
+    align-items: start;
+  }
 
-      /* Hover effect with circular glow */
-      .ec-icon-container:hover .ec-icon-box {
-        transform: scale(1.15);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        animation: ec-pulse 1.5s infinite;
-      }
+  /* Icon container (now label-less) */
+  .ec-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .ec-icon-container:hover { transform: translateY(-3px); }
+  .ec-icon-container:active {
+    transform: translateY(-1px) scale(0.97);
+    transition-duration: 0.1s;
+  }
 
-      @keyframes ec-pulse {
-        0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
-        50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
-        100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
-      }
+  /* Superellipse icon box */
+  .ec-icon-box {
+    position: relative;
+    width: clamp(56px, 7vw, 72px);
+    height: clamp(56px, 7vw, 72px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    clip-path: url(#ec-superellipse);
+    box-shadow: inset 0 0 6px rgba(25, 30, 38, 0.18);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.3s ease;
+    will-change: transform;
+  }
+  .ec-icon-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.16), transparent 55%),
+      linear-gradient(155deg, rgba(255, 255, 255, 0.05), transparent 55%, rgba(20, 25, 32, 0.10));
+  }
+  .ec-icon-box > * { position: relative; z-index: 1; }
 
-      /* No-logo icon styles */
-      .ec-no-logo-icon {
-        width: 60%;
-        height: 60%;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.4);
-        transition: background 0.3s ease;
-      }
-      .ec-icon-container:hover .ec-no-logo-icon {
-        background: rgba(255, 255, 255, 0.6);
-      }
+  .ec-icon-container:hover .ec-icon-box {
+    transform: scale(1.1);
+    filter: brightness(1.08);
+  }
+  .ec-icon-container:active .ec-icon-box {
+    transform: scale(1.02);
+    transition-duration: 0.1s;
+  }
 
-      /* SVG icon styles */
-      .ec-svg-icon {
-        width: 80%;
-        height: 80%;
-        display: flex;
-      }
+  .ec-svg-icon {
+    width: 72%;
+    height: 72%;
+    display: flex;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .ec-icon-container:hover .ec-svg-icon { transform: scale(1.06); }
 
-      /* Icon text styles */
-      .ec-icon-text {
-        font-family: 'Noto Sans', Arial, sans-serif;
-        font-size: clamp(6px, 1.4vw, 15px);
-        font-weight: 600;
-        color: #ffffff !important;
-        text-align: center;
-        letter-spacing: 0.5px;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 1;
-        width: 100%;
-        height: 100%;
-        padding: 4px;
-        box-sizing: border-box;
-      }
+  .ec-icon-text {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff !important;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.15;
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    white-space: normal;
+    transform: scale(var(--ec-text-scale, 1));
+    transform-origin: center center;
+    pointer-events: none;
+  }
 
-      /* Subtle entrance animation for categories */
-      .ec-category {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: ec-slideIn 0.5s ease forwards;
-      }
-      @keyframes ec-slideIn {
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .ec-category:nth-child(1) { animation-delay: 0.1s; }
-      .ec-category:nth-child(2) { animation-delay: 0.2s; }
-      .ec-category:nth-child(3) { animation-delay: 0.3s; }
+  /* Entrance animations */
+  .ec-category {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: ec-slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes ec-slideIn { to { opacity: 1; transform: translateY(0); } }
+  .ec-category:nth-child(1) { animation-delay: 0.05s; }
+  .ec-category:nth-child(2) { animation-delay: 0.15s; }
+  .ec-category:nth-child(3) { animation-delay: 0.25s; }
+  .ec-category:nth-child(4) { animation-delay: 0.35s; }
+  .ec-category:nth-child(5) { animation-delay: 0.45s; }
 
-      /* Grid layout for 7 icons per row */
-      .ec-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 2vw;
-        justify-items: center;
-        align-items: start; /* Key: align content to the top of each column */
-      }
+  .ec-grid > .ec-icon-container {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+    animation: ec-iconPop 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+  }
+  @keyframes ec-iconPop { to { opacity: 1; transform: translateY(0) scale(1); } }
+  .ec-grid > .ec-icon-container:nth-child(1) { animation-delay: 0.30s; }
+  .ec-grid > .ec-icon-container:nth-child(2) { animation-delay: 0.36s; }
+  .ec-grid > .ec-icon-container:nth-child(3) { animation-delay: 0.42s; }
+  .ec-grid > .ec-icon-container:nth-child(4) { animation-delay: 0.48s; }
+  .ec-grid > .ec-icon-container:nth-child(5) { animation-delay: 0.54s; }
+  .ec-grid > .ec-icon-container:nth-child(6) { animation-delay: 0.60s; }
+  .ec-grid > .ec-icon-container:nth-child(7) { animation-delay: 0.66s; }
 
-      /* Typography */
-      .cattitle {
-        color: #374151;
-        font-size: clamp(16px, 3vw, 20px);
-        font-weight: 30000;
-        letter-spacing: 0.5px;
-      }
-      .ec-icon-container > span {
-        color: #374151;
-        font-size: clamp(10px, 2vw, 12px);
-        font-weight: 400;
-        margin-top: 1vw;
-        text-align: center;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        line-height: 1.2;
-        display: block;
-        align-self: flex-start;
-      }
+  .ec-icon-container:empty { display: none; }
 
-      /* Make icons and text in each column top-aligned */
-      .ec-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 2vw;
-        justify-items: center;
-        align-items: start; /* Key: align content to the top of each column */
-      }
+  /* Copyright footer */
+  .ec-copyright {
+    margin-top: 6px;
+    padding: 14px 18px;
+    text-align: center;
+    font-family: 'Noto Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    background: linear-gradient(135deg,
+      rgba(251, 251, 251, 0.55) 0%,
+      rgba(248, 250, 255, 0.60) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(180, 190, 210, 0.30);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    user-select: none;
+  }
+  .ec-copyright a {
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.45);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .ec-copyright a:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+  .ec-copyright .ec-copy-mark { opacity: 0.85; }
 
-      /* Icon and text vertically arranged, both top-aligned */
-      .ec-icon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
-        width: 100%;
-        text-decoration: none; /* Remove underline */
-        color: inherit;        /* Keep text color unchanged */
-      }
+  a { text-decoration: none; color: inherit; }
 
-      /* Icon centered horizontally and vertically */
-      .ec-icon-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 10vw;
-        height: 10vw;
-        max-width: 80px;
-        max-height: 80px;
-        min-width: 60px;
-        min-height: 60px;
-        border-radius: 14px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        /* Ensure icon content is centered */
-      }
+  @media (max-width: 600px) {
+    .right-column { padding: 2vw; }
+    .ec-category { padding: 12px; border-radius: 10px; }
+    .ec-cat-overlay {
+      right: -12px; bottom: -12px;
+      width: clamp(112px, 33vw, 138px);
+      opacity: 0.11;
+    }
+    .ec-grid {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+      gap: 5px;
+    }
+    .ec-icon-box {
+      width: clamp(48px, 12vw, 60px);
+      height: clamp(48px, 12vw, 60px);
+    }
+  }
+  @media (max-width: 380px) {
+    .ec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="ec-superellipse" clipPathUnits="objectBoundingBox">
+      <path id="ec-se-path" d=""/>
+    </clipPath>
+  </defs>
+</svg>
 
-      /* Text below icon top-aligned and centered */
-      .ec-icon-container > span {
-        margin-top: 1vw;
-        width: 100%;
-        text-align: center;
-        align-self: flex-start;
-        display: block;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 600px) {
-        .ec-container {
-          max-width: 90vw;
-          padding: 4vw;
-        }
-        .ec-icon-box {
-          width: 10vw;
-          height: 10vw;
-          min-width: 36px;
-          min-height: 36px;
-        }
-        .ec-grid {
-          grid-template-columns: repeat(5, 1fr);
-          gap: 3vw;
-          align-items: start;
-        }
-      }
-      @media (max-width: 400px) {
-        .ec-icon-box {
-          width: 12vw;
-          height: 12vw;
-          min-width: 32px;
-          min-height: 32px;
-        }
-        .ec-grid {
-          grid-template-columns: repeat(4, 1fr);
-          gap: 4vw;
-          align-items: start;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-    </style>
-  </head>
-  <body>
-      <!-- Icon Templates for Copy-Pasting -->
-    <!--
-      Uploaded Icon Template:
-      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-        <div class="ec-icon-box" style="background: linear-gradient(135deg, #e0e0e0, #bdbdbd);">
-          <img src="[YOUR_SERVER_PATH]" alt="[ICON_ALT]" class="ec-svg-icon">
-        </div>
-        <span>[LABEL]</span>
-      </a>
-
-      Online Icon Template (SVG):
-      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-        <div class="ec-icon-box" style="background: linear-gradient(135deg, #424242, #212121);">
-          <svg class="ec-svg-icon" viewBox="0 0 24 24" fill="white">
-            <path d="[SVG_PATH]"/>
-          </svg>
-        </div>
-        <span>[LABEL]</span>
-      </a>
-
-      Text Icon Template:
-      <a href="[URL]" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-        <div class="ec-icon-box" style="background: linear-gradient(135deg, #1a1a1a, #000000);">
-          <span class="ec-icon-text">[ABBREVIATION]</span>
-        </div>
-        <span>[LABEL]</span>
-      </a>
-
-      Usage Instructions:
-      - Replace [URL] with the link (e.g., https://example.com).
-      - For Uploaded Icon: Replace [YOUR_SERVER_PATH] with your image URL (e.g., https://yourserver.com/logos/icon.png) and [ICON_ALT] with alt text.
-      - For Online Icon: Replace [SVG_PATH] with the SVG path data or use an <img> with a trusted external URL.
-      - For Text Icon: Replace [ABBREVIATION] with a 2-4 character abbreviation (e.g., TFE, IG).
-      - Replace [LABEL] with the display name (e.g., Microscope).
-      - Choose a monochrome gradient: #e0e0e0 to #bdbdbd, #424242 to #212121, or #1a1a1a to #000000.
-    -->
-    <!-- js load nav bar -->
-    <div id="jsnav"></div>
-    <script src="scripts/loadnav.js" defer></script>
-
-    <div class="container">
-      <div class="left-column">
-        <div>
-          <h2>EC-Book System Check In/Out FastPortal</h2>
-          <p>
-            Access to this portal requires a connection to the UM intranet—please ensure you're on campus Wi-Fi or using a VPN.
-          </p>
-        </div>
-        <!-- js load footer for large screens -->
-        <div id="jsfooter" class="footer-large-screen"></div>
+<div class="right-column">
+  <div>
+    <!-- Microscopy and Cell Imaging -->
+    <div class="ec-category">
+      <div class="ec-cat-viewport" aria-hidden="true">
+        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M31 8 Q31 5 34 5 H45 Q48 5 48 8 V13 H31 Z"/>
+            <path d="M52 8 Q52 5 55 5 H66 Q69 5 69 8 V13 H52 Z"/>
+            <path d="M33 13 H47 L53 30 H42 Z"/>
+            <path d="M54 13 H68 L65 30 H54 Z"/>
+            <path d="M40 27 Q40 24 43 24 H64 Q68 24 68 28 V36 Q68 40 64 40 H45 Q42 40 42 36 Z"/>
+            <path d="M65 29 Q82 30 82 47 V70 Q82 82 72 88 L66 79 Q72 75 72 67 V47 Q72 40 65 39 Z"/>
+            <path d="M42 39 H66 Q67 46 60 49 H47 Q40 47 42 39 Z"/>
+            <path d="M45 47 L51 49 L48 63 H41 Z"/>
+            <path d="M53 49 H60 L61 66 H53 Z"/>
+            <path d="M61 47 L67 44 L72 58 L65 61 Z"/>
+            <path d="M20 65 H73 V72 H20 Q17 72 17 69 V68 Q17 65 20 65 Z"/>
+            <path d="M36 72 H58 L55 80 H39 Z"/>
+            <path d="M42 79 H53 V87 H42 Z"/>
+            <path d="M20 84 H72 Q80 84 85 92 L87 95 H13 L15 91 Q17 86 20 84 Z"/>
+            <circle cx="81" cy="48" r="7"/>
+          </g>
+        </svg>
       </div>
-      <div class="right-column">
-        <div class="ec-container">
-          <!-- Category: Microscopy and Cell Imaging -->
-          <div class="ec-category">
-            <h2 class="cattitle">Microscopy and Cell Imaging</h2>
-            <div class="ec-grid">
-            
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3244" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(135deg, #440303, #424242);">
-                  <span class="ec-icon-text">Thermo Fisher EVOS</span>
-                </div>
-                <span>N22-2010 EVOS</span>
-              </a>
-              
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1479" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(215deg, #440303, #424242);">
-                  <span class="ec-icon-text">Lecia DMi8</span>
-                </div>
-                <span>N22-2028aa DMi8</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1217" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(215deg, #08562e, #1a1a1a);">
-                  <span class="ec-icon-text">Zeiss 880</span>
-                </div>
-                <span>N22-4030a Carl Zeiss LSM880 Confocal</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5817" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(215deg, #592304, #242424);">
-                  <span class="ec-icon-text">Nikon TiE</span>
-                </div>
-                <span>N22-4030 Nikon TiE</span>
-              </a>
-              
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2620" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(255deg, #2e3e85, #1e2020);">
-                  <span class="ec-icon-text">Cytell</span>
-                </div>
-                <span>N22-2008 GE Cytell</span>
-              </a> 
-
-              <div class="ec-icon-container flex flex-col items-center"></div>
-              <div class="ec-icon-container flex flex-col items-center"></div>
-            </div>
-          </div>
-
-          <!-- Category: Flow Cytometry -->
-          <div class="ec-category">
-            <h2 class="cattitle">Flow Cytometry</h2>
-            <div class="ec-grid">
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5805" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(135deg, #0a213d, #5c4d6b);">
-                  <span class="ec-icon-text">Beckman Coulter CytoFlex</span>
-                </div>
-                <span>N22-2008 CytoFlex</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1387" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(230deg, #0a213d, #4c4749);">
-                  <span class="ec-icon-text">Beckman Coulter CytoFlex</span>
-                </div>
-                <span>E12-2076 CytoFlex</span>
-              </a>
-
-              <div class="ec-icon-container flex flex-col items-center"></div>
-              <div class="ec-icon-container flex flex-col items-center"></div>
-            </div>
-          </div>
-
-          <!-- Category: Real-time PCR -->
-          <div class="ec-category">
-            <h2 class="cattitle">PCR and Reat-time PCR</h2>
-            <div class="ec-grid">
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4992" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(75deg,  #7a7881, #5d5d61);">
-                  <span class="ec-icon-text">Roche LC480II</span>
-                </div>
-                <span>N22-2028 Roche LC480II</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4989" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(75deg,  #c8c8c8, #a1a2b5);">
-                  <img src="assets/tools/Quantastudio7.png" alt="ABI Quantstudio 7" class="ec-svg-icon">
-                </div>
-                <span>E12-2076 ABI Quantstudio 7</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3121" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(150deg,  #c8c8c8, #a1a2b5);">
-                  <img src="assets/tools/Quantastudio7XU.png" alt="ABI Quantstudio 7 Xu Lab" class="ec-svg-icon">
-                </div>
-                <span>N22-4005a ABI Quantstudio 7</span>
-              </a>
-
-              <div class="ec-icon-container flex flex-col items-center"></div>
-              <div class="ec-icon-container flex flex-col items-center"></div>
-            </div>
-          </div>
-
-
-        <!-- Category: Histology -->
-          <div class="ec-category">
-            <h2 class="cattitle">Histology & Animal-Related</h2>
-            <div class="ec-grid">
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5994" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(185deg , #D4D1C8,#a89e94);">
-                  <img src="assets/tools/LeicaEG1150.png" alt="Leica EG1150 Embedding Centre" class="ec-svg-icon">
-                </div>
-                <span>N22-2014 Leica EG1150 Embedding Centre</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5533" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(235deg , #D4D1C8, #a89e94);">
-                  <img src="assets/tools/LeicaRM2235.png" alt="Leica RM2235 Microtome" class="ec-svg-icon">
-                </div>
-                <span>N22-2014 Leica RM2235 Microtome</span>
-              </a>
-
-              <div class="ec-icon-container flex flex-col items-center"></div>
-              <div class="ec-icon-container flex flex-col items-center"></div>
-            </div>
-          </div>
-
-          <!-- Category: Others -->
-          <div class="ec-category">
-            <h2 class="cattitle">Others</h2>
-            <div class="ec-grid">
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2796" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(135deg, #5c5c5c, rgb(38, 41, 43));">
-                  <span class="ec-icon-text">Chemi Doc</span>
-                </div>
-                <span>N22-2008 ChemiDoc</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3520" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(195deg, #5c5c5c, rgb(61, 47, 54));">
-                  <span class="ec-icon-text">TECAN Plate Reader</span>
-                </div>
-                <span>N22-2028 TECAN Platereader</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2624" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(235deg, #404747, rgb(16, 14, 46));">
-                  <span class="ec-icon-text">BioFlo Bio-reactor</span>
-                </div>
-                <span>N22-2017 BioFlo 120 Bioreactor</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2443" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(195deg, #09080a, rgb(74, 69, 78));">
-                  <span class="ec-icon-text">BioComp Gradient Maker</span>
-                </div>
-                <span> N22-2010 Gradient Master & Fractionator</span>
-              </a>
-
-              <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4634" target="_blank" rel="noopener noreferrer" class="ec-icon-container flex flex-col items-center">
-                <div class="ec-icon-box" style="background: linear-gradient(105deg, #DDD4C5, #bdbdbd);">
-                  <img src="assets/tools/seahorse.png" alt="Seahorse XFe96" class="ec-svg-icon">
-                </div>
-                <span> N22-2008 Agilent Seahorse XFe96</span>
-              </a>
-              
-              <div class="ec-icon-container flex flex-col items-center"></div>
-              <div class="ec-icon-container flex flex-col items-center"></div>
-            </div>
-          </div>
-        </div>
+      <div class="ec-grid">
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3244" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #94524c;"><span class="ec-icon-text">EVOS</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1479" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #a2635d;"><span class="ec-icon-text">Lecia DMi8</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1217" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #58855e;"><span class="ec-icon-text">Zeiss 880</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5817" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #aa6438;"><span class="ec-icon-text">Nikon TiE</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2620" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #6478b4;"><span class="ec-icon-text">Cytell</span></div>
+        </a>
       </div>
-      <!-- js load footer for small screens -->
-      <div id="jsfooter-small" class="footer-small-screen"></div>
     </div>
-    <script src="scripts/loadfooter.js" defer></script>
-    <script>
-      // When the mouse moves inside right-column, dynamically set highlight position
-      const rightCol = document.querySelector('.right-column');
-      const glass = document.querySelector('.ec-container');
-      rightCol.addEventListener('mousemove', e => {
-        const rect = rightCol.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        glass.style.setProperty('--mouse-x', `${x}%`);
-        glass.style.setProperty('--mouse-y', `${y}%`);
-      });
-      // Restore center when mouse leaves
-      rightCol.addEventListener('mouseleave', () => {
-        glass.style.setProperty('--mouse-x', `50%`);
-        glass.style.setProperty('--mouse-y', `50%`);
-      });
-    </script>
-  </body>
+
+    <!-- Flow Cytometry -->
+    <div class="ec-category">
+      <div class="ec-cat-viewport" aria-hidden="true">
+        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M38 4 H62 L59 29 Q58 35 54 39 V44 H46 V39 Q42 35 41 29 Z" fill="currentColor"/>
+          <path d="M45 8 H55 L54 29 Q53 34 50 37 Q47 34 46 29 Z" fill="#ffffff" opacity="0.28"/>
+          <path d="M50 36 C63 36 72 44 72 56 C72 68 63 76 50 76 C37 76 28 68 28 56 C28 44 37 36 50 36 Z" fill="currentColor"/>
+          <path d="M50 40 C60 40 67 46 67 56 C67 66 60 72 50 72 C40 72 33 66 33 56 C33 46 40 40 50 40 Z" fill="#ffffff" opacity="0.22"/>
+          <path d="M42 53 C43 47 49 44 55 46 C61 48 63 55 60 61 C57 67 48 68 43 63 C40 60 40 56 42 53 Z" fill="currentColor"/>
+          <path d="M3 53 H31 V59 H3 Z" fill="currentColor"/>
+          <path d="M69 53 L97 43 V49 L75 56 L97 63 V69 L69 59 Z" fill="currentColor" opacity="0.78"/>
+          <circle cx="84" cy="56" r="4" fill="currentColor"/>
+          <path d="M47 75 H53 V82 H47 Z" fill="currentColor" opacity="0.7"/>
+          <ellipse cx="50" cy="87" rx="3" ry="4" fill="currentColor"/>
+          <ellipse cx="42" cy="94" rx="2.5" ry="3" fill="currentColor" opacity="0.7"/>
+          <ellipse cx="58" cy="94" rx="2.5" ry="3" fill="currentColor" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="ec-grid">
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5805" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #b4c8dc;">
+            <img src="/assets/tools/CytoFlexN22.webp" alt="CytoFlex N22" class="ec-svg-icon">
+          </div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1387" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #aab9c8;">
+            <img src="/assets/tools/CytoFlexE12.webp" alt="CytoFlex E12" class="ec-svg-icon">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- PCR -->
+    <div class="ec-category">
+      <div class="ec-cat-viewport" aria-hidden="true">
+        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M30 2 C30 10 70 10 70 18 S30 26 30 34 S70 42 70 50 S30 58 30 66 S70 74 70 82 S30 90 30 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <path d="M70 2 C70 10 30 10 30 18 S70 26 70 34 S30 42 30 50 S70 58 30 66 S70 74 30 82 S70 90 70 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.62"/>
+          <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.78">
+            <path d="M33.5 2 H47 M53 2 H66.5"/>
+            <path d="M33.5 18 H47 M53 18 H66.5"/>
+            <path d="M33.5 34 H47 M53 34 H66.5"/>
+            <path d="M33.5 50 H47 M53 50 H66.5"/>
+            <path d="M33.5 66 H47 M53 66 H66.5"/>
+            <path d="M33.5 82 H47 M53 82 H66.5"/>
+            <path d="M33.5 98 H47 M53 98 H66.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="ec-grid">
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=8045" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #8cbe96;">
+            <img src="/assets/tools/CFXOpus384.webp" alt="CFX Opus 384" class="ec-svg-icon">
+          </div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4992" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #8c879b;"><span class="ec-icon-text">Roche LC480II</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4989" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #c8c8d7;">
+            <img src="/assets/tools/Quantastudio7.webp" alt="ABI Quantstudio 7" class="ec-svg-icon">
+          </div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3121" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #c8c8d7;">
+            <img src="/assets/tools/Quantastudio7XU.webp" alt="ABI Quantstudio 7 Xu Lab" class="ec-svg-icon">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Histology -->
+    <div class="ec-category">
+      <div class="ec-cat-viewport" aria-hidden="true">
+        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 62 C22 48 36 40 52 40 C64 40 72 44 79 49 C84 52 89 53 94 56 C97 58 97 61 94 63 C90 65 84 64 80 66 C73 69 68 75 59 77 C47 80 32 77 24 72 C19 69 16 66 18 62 Z" fill="currentColor"/>
+          <path d="M25 67 C20 70 20 76 25 79 C30 82 38 80 43 76 L47 72 Z" fill="currentColor"/>
+          <path d="M65 72 Q72 72 76 77 L79 80 H65 Q61 78 65 72 Z" fill="currentColor"/>
+          <path d="M69 46 C65 39 67 29 74 27 C81 25 86 32 83 39 C81 45 76 48 69 46 Z" fill="currentColor"/>
+          <path d="M72 42 C69 37 71 31 75 30 C79 30 81 34 79 38 C78 41 75 43 72 42 Z" fill="#ffffff" opacity="0.28"/>
+          <circle cx="83" cy="53" r="2" fill="#ffffff" opacity="0.9"/>
+          <circle cx="95" cy="60" r="1.7" fill="currentColor"/>
+          <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.7">
+            <path d="M88 59 L99 55"/>
+            <path d="M89 61 L100 61"/>
+            <path d="M88 63 L98 67"/>
+          </g>
+          <path d="M20 62 C9 59 3 65 5 74 C7 85 18 91 30 88" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M27 53 C39 44 57 44 70 50 C59 47 45 49 35 56 C29 60 27 66 29 72 C24 69 22 60 27 53 Z" fill="#ffffff" opacity="0.13"/>
+        </svg>
+      </div>
+      <div class="ec-grid">
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5994" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #dcd2be;">
+            <img src="/assets/tools/LeicaEG1150.webp" alt="Leica EG1150" class="ec-svg-icon">
+          </div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5533" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #d2cdc3;">
+            <img src="/assets/tools/LeicaRM2235.webp" alt="Leica RM2235" class="ec-svg-icon">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Others -->
+    <div class="ec-category">
+      <div class="ec-cat-viewport" aria-hidden="true">
+        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M38 5 H62 Q65 5 65 9 V12 Q65 14 62 14 H61 V32 L82 76 Q88 90 72 95 H28 Q12 90 18 76 L39 32 V14 H38 Q35 14 35 12 V9 Q35 5 38 5 Z" fill="currentColor"/>
+          <path d="M44 14 H56 V34 L75 76 Q79 85 69 88 H31 Q21 85 25 76 L44 34 Z" fill="#ffffff" opacity="0.24"/>
+          <path d="M29 61 Q50 56 71 61 L78 77 Q82 88 69 91 H31 Q18 88 22 77 Z" fill="currentColor" opacity="0.72"/>
+          <path d="M29 61 Q50 56 71 61 Q50 64 29 61 Z" fill="#ffffff" opacity="0.38"/>
+          <path d="M43 17 H47 V35 L31 73 Q27 80 30 84 C25 82 25 77 28 71 L43 33 Z" fill="#ffffff" opacity="0.34"/>
+          <g fill="#ffffff" opacity="0.55">
+            <circle cx="35" cy="75" r="2.3"/>
+            <circle cx="45" cy="83" r="1.6"/>
+            <circle cx="57" cy="72" r="2.8"/>
+            <circle cx="67" cy="82" r="1.9"/>
+          </g>
+        </svg>
+      </div>
+      <div class="ec-grid">
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2796" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #c8d2c8;">
+            <img src="/assets/tools/ChemiDoc.webp" alt="Bio-Rad ChemiDoc" class="ec-svg-icon">
+          </div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3520" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #6e696e;"><span class="ec-icon-text">TECAN Plate Reader</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2624" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #5a5f65;"><span class="ec-icon-text">BioFlo Bio-reactor</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2443" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #504b55;"><span class="ec-icon-text">BioComp Gradient Maker</span></div>
+        </a>
+        <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4634" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
+          <div class="ec-icon-box" style="background: #d7d2c8;">
+            <img src="/assets/tools/seahorse.webp" alt="Seahorse XFe96" class="ec-svg-icon">
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <footer class="ec-copyright">
+      <span class="ec-copy-mark">©</span> 2026 Shengnan &middot; EC-Book System &middot;
+      Faculty of Health Sciences, University of Macau
+      &middot; <a href="https://ec-book.fhs.um.edu.mo/" target="_blank" rel="noopener noreferrer">ec-book.fhs.um.edu.mo</a>
+    </footer>
+  </div>
+</div>
+
+<script>
+  // Superellipse clip-path generation
+  (function() {
+    const n = 2.5, steps = 200, cx = 0.5, cy = 0.5, rx = 0.5, ry = 0.5;
+    let d = '';
+    for (let i = 0; i <= steps; i++) {
+      const t = (i / steps) * Math.PI * 2;
+      const ct = Math.cos(t), st = Math.sin(t);
+      const px = cx + rx * Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n);
+      const py = cy + ry * Math.sign(st) * Math.pow(Math.abs(st), 2 / n);
+      d += (i === 0 ? 'M' : 'L') + px.toFixed(6) + ',' + py.toFixed(6) + ' ';
+    }
+    d += 'Z';
+    document.getElementById('ec-se-path').setAttribute('d', d);
+  })();
+
+  // Text auto-scale
+  (function() {
+    const textEls = Array.from(document.querySelectorAll('.ec-icon-text'));
+    if (!textEls.length) return;
+    const measurer = document.createElement('span');
+    measurer.className = 'ec-icon-text';
+    measurer.style.cssText =
+      'position:absolute;visibility:hidden;pointer-events:none;' +
+      'top:0;left:0;display:inline-block;' +
+      'transform:none !important;font-size:14px !important;' +
+      'width:auto;max-width:none;';
+    document.body.appendChild(measurer);
+
+    function fitText(el) {
+      const box = el.parentElement;
+      if (!box) return;
+      const boxW = box.clientWidth, boxH = box.clientHeight;
+      if (!boxW || !boxH) return;
+      measurer.textContent = el.textContent;
+      measurer.style.maxWidth = boxW + 'px';
+      measurer.style.width = 'auto';
+      void measurer.offsetWidth;
+      const natW = measurer.offsetWidth, natH = measurer.offsetHeight;
+      if (!natW || !natH) return;
+      const scale = Math.min((boxW * 0.70) / natW, (boxH * 0.55) / natH);
+      const clamped = Math.max(0.5, Math.min(1.6, scale));
+      el.style.setProperty('--ec-text-scale', clamped.toFixed(3));
+    }
+
+    fitAll();
+    window.addEventListener('resize', fitAll);
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(fitAll);
+      textEls.forEach(t => { if (t.parentElement) ro.observe(t.parentElement); });
+    }
+    function fitAll() { textEls.forEach(fitText); }
+  })();
+
+  // Mouse-tracking glow on the glass panel
+  (function() {
+    const panel = document.querySelector('.right-column');
+    if (!panel) return;
+    panel.addEventListener('mousemove', function(e) {
+      const r = panel.getBoundingClientRect();
+      panel.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+      panel.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  })();
+</script>
+</body>
 </html>
