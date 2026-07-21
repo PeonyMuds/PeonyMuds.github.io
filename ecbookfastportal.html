@@ -124,12 +124,26 @@
   /* Grid */
   .ec-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-    gap: clamp(6px, 0.8vw, 10px);
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: clamp(8px, 0.9vw, 12px);
     align-items: start;
   }
 
-  /* Icon container (now label-less) */
+  /* Category title */
+  .cattitle {
+    color: #2a3552;
+    font-size: clamp(15px, 1.9vw, 18px);
+    font-weight: 650;
+    letter-spacing: 0.3px;
+    margin: 0 0 10px 2px;
+    padding: 0;
+    line-height: 1.35;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Icon container (with label below) */
   .ec-icon-container {
     display: flex;
     flex-direction: column;
@@ -201,12 +215,35 @@
     line-height: 1.15;
     padding: 0; margin: 0;
     box-sizing: border-box;
+    display: block;
+    width: 72%;
+    margin: 0 auto;
     word-break: keep-all;
     overflow-wrap: normal;
-    white-space: normal;
-    transform: scale(var(--ec-text-scale, 1));
-    transform-origin: center center;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+    white-space: nowrap;
     pointer-events: none;
+  }
+
+  /* Equipment label below each icon */
+  .ec-icon-container > span {
+    margin-top: 5px;
+    font-size: clamp(10px, 1.15vw, 13px);
+    font-weight: 450;
+    color: #2a3552;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 0.1px;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    max-width: clamp(80px, 9vw, 100px);
+    user-select: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* Entrance animations */
@@ -283,13 +320,14 @@
       opacity: 0.11;
     }
     .ec-grid {
-      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-      gap: 5px;
+      grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+      gap: 6px;
     }
     .ec-icon-box {
       width: clamp(48px, 12vw, 60px);
       height: clamp(48px, 12vw, 60px);
     }
+    .ec-icon-container > span { max-width: 78px; font-size: clamp(11px, 2.6vw, 14px); -webkit-line-clamp: 3; line-clamp: 3; }
   }
   @media (max-width: 380px) {
     .ec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -328,23 +366,35 @@
             <path d="M20 84 H72 Q80 84 85 92 L87 95 H13 L15 91 Q17 86 20 84 Z"/>
             <circle cx="81" cy="48" r="7"/>
           </g>
+          <g fill="#ffffff" opacity="0.32">
+            <path d="M35 8 H44 V10 H35 Z"/>
+            <path d="M56 8 H65 V10 H56 Z"/>
+            <path d="M23 66 H51 V68 H23 Z"/>
+            <circle cx="81" cy="48" r="2.5"/>
+          </g>
         </svg>
       </div>
+      <h2 class="cattitle">Microscopy and Cell Imaging</h2>
       <div class="ec-grid">
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3244" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #94524c;"><span class="ec-icon-text">EVOS</span></div>
+          <span>N22-2010 EVOS</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1479" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
-          <div class="ec-icon-box" style="background: #a2635d;"><span class="ec-icon-text">Lecia DMi8</span></div>
+          <div class="ec-icon-box" style="background: #a2635d;"><span class="ec-icon-text">Leica DMi8</span></div>
+          <span>N22-2028aa DMi8</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1217" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #58855e;"><span class="ec-icon-text">Zeiss 880</span></div>
+          <span>N22-4030a Carl Zeiss LSM880 Confocal</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5817" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #aa6438;"><span class="ec-icon-text">Nikon TiE</span></div>
+          <span>N22-4030 Nikon TiE</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2620" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #6478b4;"><span class="ec-icon-text">Cytell</span></div>
+          <span>N22-2008 GE Cytell</span>
         </a>
       </div>
     </div>
@@ -367,16 +417,19 @@
           <ellipse cx="58" cy="94" rx="2.5" ry="3" fill="currentColor" opacity="0.7"/>
         </svg>
       </div>
+      <h2 class="cattitle">Flow Cytometry</h2>
       <div class="ec-grid">
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5805" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #b4c8dc;">
             <img src="/assets/tools/CytoFlexN22.webp" alt="CytoFlex N22" class="ec-svg-icon">
           </div>
+          <span>N22-2008 CytoFlex</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=1387" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #aab9c8;">
             <img src="/assets/tools/CytoFlexE12.webp" alt="CytoFlex E12" class="ec-svg-icon">
           </div>
+          <span>E12-2076 CytoFlex</span>
         </a>
       </div>
     </div>
@@ -384,38 +437,50 @@
     <!-- PCR -->
     <div class="ec-category">
       <div class="ec-cat-viewport" aria-hidden="true">
-        <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M30 2 C30 10 70 10 70 18 S30 26 30 34 S70 42 70 50 S30 58 30 66 S70 74 70 82 S30 90 30 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-          <path d="M70 2 C70 10 30 10 30 18 S70 26 70 34 S30 42 30 50 S70 58 30 66 S70 74 30 82 S70 90 70 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.62"/>
-          <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.78">
-            <path d="M33.5 2 H47 M53 2 H66.5"/>
-            <path d="M33.5 18 H47 M53 18 H66.5"/>
-            <path d="M33.5 34 H47 M53 34 H66.5"/>
-            <path d="M33.5 50 H47 M53 50 H66.5"/>
-            <path d="M33.5 66 H47 M53 66 H66.5"/>
-            <path d="M33.5 82 H47 M53 82 H66.5"/>
-            <path d="M33.5 98 H47 M53 98 H66.5"/>
-          </g>
-        </svg>
+            <svg class="ec-cat-overlay" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Complementary sugar-phosphate backbones -->
+              <path d="M30 2 C30 10 70 10 70 18 S30 26 30 34 S70 42 70 50 S30 58 30 66 S70 74 70 82 S30 90 30 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+              <path d="M70 2 C70 10 30 10 30 18 S70 26 70 34 S30 42 30 50 S70 58 70 66 S30 74 30 82 S70 90 70 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.62"/>
+              <!-- Base pairs appear only on open faces of the helix -->
+              <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.78">
+                <path d="M33.5 2 H47 M53 2 H66.5"/>
+                <path d="M33.5 18 H47 M53 18 H66.5"/>
+                <path d="M33.5 34 H47 M53 34 H66.5"/>
+                <path d="M33.5 50 H47 M53 50 H66.5"/>
+                <path d="M33.5 66 H47 M53 66 H66.5"/>
+                <path d="M33.5 82 H47 M53 82 H66.5"/>
+                <path d="M33.5 98 H47 M53 98 H66.5"/>
+              </g>
+              <!-- Short central dashes represent hydrogen bonds, not the bases themselves -->
+              <g fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1.2 2" opacity="0.52">
+                <path d="M47 2 H53 M47 18 H53 M47 34 H53 M47 50 H53"/>
+                <path d="M47 66 H53 M47 82 H53 M47 98 H53"/>
+              </g>
+            </svg>
       </div>
+      <h2 class="cattitle">PCR and Real-time PCR</h2>
       <div class="ec-grid">
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=8045" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #8cbe96;">
             <img src="/assets/tools/CFXOpus384.webp" alt="CFX Opus 384" class="ec-svg-icon">
           </div>
+          <span>N22-2008 CFX Opus 384</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4992" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #8c879b;"><span class="ec-icon-text">Roche LC480II</span></div>
+          <span>N22-2028 Roche LC480II</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4989" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #c8c8d7;">
             <img src="/assets/tools/Quantastudio7.webp" alt="ABI Quantstudio 7" class="ec-svg-icon">
           </div>
+          <span>E12-2076 ABI Quantstudio 7</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3121" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #c8c8d7;">
             <img src="/assets/tools/Quantastudio7XU.webp" alt="ABI Quantstudio 7 Xu Lab" class="ec-svg-icon">
           </div>
+          <span>N22-4005a ABI Quantstudio 7</span>
         </a>
       </div>
     </div>
@@ -440,16 +505,19 @@
           <path d="M27 53 C39 44 57 44 70 50 C59 47 45 49 35 56 C29 60 27 66 29 72 C24 69 22 60 27 53 Z" fill="#ffffff" opacity="0.13"/>
         </svg>
       </div>
+      <h2 class="cattitle">Histology &amp; Animal-Related</h2>
       <div class="ec-grid">
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5994" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #dcd2be;">
             <img src="/assets/tools/LeicaEG1150.webp" alt="Leica EG1150" class="ec-svg-icon">
           </div>
+          <span>N22-2014 EG1150 Embedding Centre</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=5533" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #d2cdc3;">
             <img src="/assets/tools/LeicaRM2235.webp" alt="Leica RM2235" class="ec-svg-icon">
           </div>
+          <span>N22-2014 RM2235 Microtome</span>
         </a>
       </div>
     </div>
@@ -469,27 +537,38 @@
             <circle cx="57" cy="72" r="2.8"/>
             <circle cx="67" cy="82" r="1.9"/>
           </g>
+          <g fill="#ffffff" opacity="0.34">
+            <path d="M30 51 H41 V53 H30 Z"/>
+            <path d="M30 61 H38 V63 H30 Z"/>
+            <path d="M30 71 H43 V73 H30 Z"/>
+          </g>
         </svg>
       </div>
+      <h2 class="cattitle">Others</h2>
       <div class="ec-grid">
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2796" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #c8d2c8;">
             <img src="/assets/tools/ChemiDoc.webp" alt="Bio-Rad ChemiDoc" class="ec-svg-icon">
           </div>
+          <span>N22-2008 ChemiDoc</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=3520" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #6e696e;"><span class="ec-icon-text">TECAN Plate Reader</span></div>
+          <span>N22-2028 TECAN Platereader</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2624" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #5a5f65;"><span class="ec-icon-text">BioFlo Bio-reactor</span></div>
+          <span>N22-2017 BioFlo 120 Bioreactor</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=2443" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #504b55;"><span class="ec-icon-text">BioComp Gradient Maker</span></div>
+          <span>N22-2010 Gradient Master &amp; Fractionator</span>
         </a>
         <a href="https://ec-book.fhs.um.edu.mo/eqinfo/?xeqid=4634" target="_blank" rel="noopener noreferrer" class="ec-icon-container">
           <div class="ec-icon-box" style="background: #d7d2c8;">
             <img src="/assets/tools/seahorse.webp" alt="Seahorse XFe96" class="ec-svg-icon">
           </div>
+          <span>N22-2008 Agilent Seahorse XFe96</span>
         </a>
       </div>
     </div>
@@ -528,7 +607,7 @@
     measurer.style.cssText =
       'position:absolute;visibility:hidden;pointer-events:none;' +
       'top:0;left:0;display:inline-block;' +
-      'transform:none !important;font-size:14px !important;' +
+      'font-size:14px !important;' +
       'width:auto;max-width:none;';
     document.body.appendChild(measurer);
 
@@ -537,15 +616,43 @@
       if (!box) return;
       const boxW = box.clientWidth, boxH = box.clientHeight;
       if (!boxW || !boxH) return;
+
+      // Measure natural single-line size at 14px (no maxWidth constraint)
       measurer.textContent = el.textContent;
-      measurer.style.maxWidth = boxW + 'px';
+      measurer.style.maxWidth = 'none';
       measurer.style.width = 'auto';
+      measurer.style.whiteSpace = 'nowrap';
       void measurer.offsetWidth;
       const natW = measurer.offsetWidth, natH = measurer.offsetHeight;
       if (!natW || !natH) return;
-      const scale = Math.min((boxW * 0.70) / natW, (boxH * 0.55) / natH);
-      const clamped = Math.max(0.5, Math.min(1.6, scale));
-      el.style.setProperty('--ec-text-scale', clamped.toFixed(3));
+
+      const innerW = boxW * 0.72;
+      const innerH = boxH * 0.82;
+      const lineH = natH * 1.15;
+
+      // Measure widest single word (split on spaces AND hyphens)
+      const subWords = el.textContent.split(/[\s-]+/).filter(Boolean);
+      let maxWordW = 0;
+      for (const w of subWords) {
+        measurer.textContent = w;
+        measurer.style.whiteSpace = 'nowrap';
+        measurer.style.maxWidth = 'none';
+        void measurer.offsetWidth;
+        if (measurer.offsetWidth > maxWordW) maxWordW = measurer.offsetWidth;
+      }
+      const sWord = maxWordW > 0 ? innerW / maxWordW : Infinity;
+
+      // Try L=1..3 lines, pick the scale that gives the largest font
+      let bestScale = 0;
+      for (let L = 1; L <= 3; L++) {
+        const sW = (L * innerW) / natW;
+        const sH = innerH / (L * lineH);
+        const s  = Math.min(sW, sH, sWord);
+        if (s > bestScale) bestScale = s;
+      }
+      const scale = Math.max(0.4, Math.min(2.5, bestScale));
+      el.style.whiteSpace = 'normal';
+      el.style.fontSize = (14 * scale).toFixed(2) + 'px';
     }
 
     fitAll();
