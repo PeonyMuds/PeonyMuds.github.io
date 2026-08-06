@@ -1,5 +1,5 @@
 
-# UM FHS EC-Book System Fast Portal
+# UM FMD EC-Book System Fast Portal
 
 <p align="center">
   <img src=".assets/portal.png" width="400">
