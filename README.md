@@ -69,7 +69,7 @@ ExpressEZ is an HTML-based tool for analysing qPCR data, supporting Roche LC480I
 A minimal and standalone code archiver and viewer.
 
 
-🔗 **Try CharcoalEZ Here:**  
+🔗 **Check out here:**  
 - [My Website](http://swei.website/tools/code/charcoalez.html)
 
 ---
@@ -107,7 +107,7 @@ WellMarker is a straightforward and practical well plate layout management tool 
 - **Arrange sample or treatment info for 6-, 12-, 24-, 48-, 96-, and 384-well plates** with as many as 24 labels.
 - **Export as TSV files.**
 
-🔗 **Try DiluHelper Here:**  
+🔗 **Try WellMarker Here:**  
 - [My Website](http://swei.website/tools/wellmarker.html)
 
 ---
@@ -125,7 +125,7 @@ HemoEZ is a **cell counting calculator** designed to assist researchers in deter
 ### ✨ Features:
 - **Automated Concentration Calculation After Manual Cell Counting**: Simplifies lab work
 
-🔗 **Try hemoEZ Here:**  
+🔗 **Try HemoEZ Here:**  
 - [GitHub Page](https://peonymuds.github.io/hemoez.html)
 - [My Website](http://swei.website/tools/hemoez.html)
 
